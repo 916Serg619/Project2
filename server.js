@@ -24,9 +24,9 @@ app.use(passport.session());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 //Set handlebar routes
-app.get('/', function (req,res){
-  res.render('index');
-})
+// app.get('/', function (req,res){
+//   res.render('index');
+// })
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
