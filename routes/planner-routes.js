@@ -21,7 +21,13 @@ module.exports = function(app) {
     console.log(req.body);
     db.eventInfos
       .create({
-        venueName: req.body.venueName
+        couple: req.body.couple,
+        venueName: req.body.venueName,
+        eventDate: req.body.eventDate,
+        addressStreet: req.body.addressStreet,
+        addressCity: req.body.addressCity,
+        foodOptionOne: req.body.foodOptionOne,
+        foodOptionTwo: req.body.foodOptionTwo
       })
       .then(dbEventInfos => {
         res.json(dbEventInfos);
