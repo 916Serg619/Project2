@@ -21,7 +21,7 @@ module.exports = function(app) {
     console.log(req.body);
     db.eventInfos
       .create({
-        venueName: req.body.venueName
+        venueName: req.body
       })
       .then(dbEventInfos => {
         res.json(dbEventInfos);
