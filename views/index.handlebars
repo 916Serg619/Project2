@@ -1,0 +1,52 @@
+{{!-- Header --}}
+<header class="jumbotron">
+    <h1 class="display-3">Wedding Planner</h1>
+    <p class="lead">Plan that wedding</p>
+</header>
+
+{{!-- Main --}}
+<div class="container">
+    <div class="row">
+        {{!-- Left Side --}}
+        <div class="col-6">
+            <h2>Wedding</h2>
+            <ul>
+                {{#each weddingGuests}}
+                <li>
+                    {{#unless devoured}}
+                    {{burger_name}}<button type="button" class="devour" id="devour" data-id="{{this.id}}"
+                        data-newDevoured="{{devour}}">DEVOUR!</button>
+                    {{/unless}}
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        {{!-- Right side --}}
+        <div class="col-6">
+            <h2>Devoured Burgers</h2>
+            <ul>
+                {{#each weddingGuests}}
+                <li>
+                    {{#if devoured}}
+                    {{burger_name}}
+                    {{/if}}
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{{!-- Footer --}}
+<footer class="jumbotron">
+    <div class="row">
+        <h1>Order Your Burger</h1>
+        {{!-- Form --}}
+        <form class="create-form">
+            <div class="form-group">
+                <label for="createBurger">Burger name:</label>
+                <input type="text" id="createBurger" name="name">
+            </div>
+        </form>
+    </div>
+</footer>
