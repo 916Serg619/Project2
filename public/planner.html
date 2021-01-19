@@ -10,50 +10,43 @@
 </head>
 
 <body>
-    <div class="input-group input-group-sm mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Couple</span>
+    <!-- Form -->
+    <form class="planner">
+        <div class="form-group">
+            <label for="couple">Couple</label>
+            <input type="text" class="form-control" id="coupleInput" placeholder="couple">
         </div>
-        <input type="text" class="form-control" id="couple" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
-    </div>
-
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Date</span>
+        <div class="form-group">
+            <label for="venue">Venue</label>
+            <input type="text" class="form-control" id="venueInput" placeholder="venue">
         </div>
-        <input type="text" class="form-control" id="date" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-    </div>
 
-    <div class="input-group input-group-lg">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Venue</span>
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input type="text" class="form-control" id="dateInput" placeholder="date">
         </div>
-        <input type="text" class="form-control" id="venue" aria-label="Default" aria-describedby="inputGroup-sizing-sm">
-    </div>
-
-
-    <div class="input-group input-group-sm mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-lg">Food Options</span>
+        <div class="form-group">
+            <label for="addressStreet">Street Address</label>
+            <input type="text" class="form-control" id="addressStreetInput" placeholder="addressStreet">
         </div>
-        <input type="text" class="form-control" id="foodOptions" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
-    </div>
-
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Custom 1</span>
+        <div class="form-group">
+            <label for="addressCity">City</label>
+            <input type="text" class="form-control" id="addressCityInput" placeholder="addressCity">
         </div>
-        <input type="text" class="form-control" id="custom1" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-    </div>
-
-    <div class="input-group input-group-lg">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Custom 2</span>
+        <!--  -->
+        <div class="form-group">
+            <label for="foodOptionOne">Food Option One</label>
+            <input type="text" class="form-control" id="foodOptionOneInput" placeholder="foodOptionOne">
         </div>
-        <input type="text" class="form-control" id="custom2" aria-label="Default" aria-describedby="inputGroup-sizing-sm">
-    </div>
+        <div class="form-group">
+            <label for="foodOptionTwo">Food Option Two</label>
+            <input type="text" class="form-control" id="foodOptionTwoInput" placeholder="foodOptionTwo">
+        </div>
+    </form>
+    <button type="button" class="btn btn-success" id="submit">Submit</button>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/planner.js"></script>
 </body>
 
 </html>
