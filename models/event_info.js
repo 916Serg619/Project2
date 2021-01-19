@@ -1,39 +1,40 @@
 module.exports = function(sequelize, DataTypes) {
-    var eventInfo = sequelize.define("eventInfo", {
-        venue_name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
-        },
-        event_date: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                isDate: true
-            }
-        },
-        address_street: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
-        },
-        address_city: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
-        },
-        address_street: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
-        },
-    })
-}
+  const eventInfo = sequelize.define("eventInfo", {
+    venueName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    eventDate: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isDate: true
+      }
+    },
+    addressStreet: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    addressCity: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    addressStreet: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    }
+  });
+  return eventInfo;
+};
