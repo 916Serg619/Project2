@@ -1,3 +1,6 @@
+// const express = require("express");
+// const exphbs = require("express-handlebars");
+// const app = express();
 $(document).ready(() => {
   // Getting references to our form and inputs
   const loginForm = $("form.login");
