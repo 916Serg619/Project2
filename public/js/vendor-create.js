@@ -25,7 +25,6 @@ $(document).ready(() => {
   });
 
   function enterData(vendorCreateData) {
-    console.log("123");
     $.post("/api/vendorInfos", {
       vendorName: vendorCreateData.vendorName,
       service: vendorCreateData.service,

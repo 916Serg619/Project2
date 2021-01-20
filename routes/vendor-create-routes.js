@@ -1,7 +1,6 @@
 const db = require("../models");
 
 module.exports = function(app) {
-  console.log("456")
   // Posts the data from the page to the db
   app.post("/api/vendorInfos", (req, res) => {
     console.log(req.body);
