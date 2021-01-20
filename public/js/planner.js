@@ -1,4 +1,7 @@
 $(document).ready(() => {
+  // vars below connect to Google API for autocomplete
+  let gpaInput = document.getElementById("venueInput");
+  let autocomplete = new google.maps.places.Autocomplete(gpaInput);
   $("#submit").on("click", event => {
     event.preventDefault();
 
