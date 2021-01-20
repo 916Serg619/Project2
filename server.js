@@ -26,7 +26,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 //Set handlebar routes
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("signup");
 });
 
 // Requiring our routes
