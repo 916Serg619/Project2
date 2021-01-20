@@ -29,4 +29,9 @@ module.exports = function(app) {
   app.get("/planner", isAuthenticated, (req, res) => {
     res.render("planner.handlebars");
   });
+
+  // Vendor creation page
+  app.get("/vendorInfos", isAuthenticated, (req, res) => {
+    res.render("vendor-create.handlebars");
+  });
 };
