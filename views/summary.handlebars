@@ -1,0 +1,37 @@
+{{!-- Event Info --}}
+<div class="card" style="width: 33rem;">
+  <div class="card-body">
+    <h5 class="card-title">Event Info</h5>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" id="couple">{{event.couple}}</li>
+      <li class="list-group-item" id="venue">{{event.venueName}}</li>
+      <li class="list-group-item" id="date">{{event.eventDate}}</li>
+      <li class="list-group-item" id="address">{{event.addressStreet}}</li>
+      <li class="list-group-item" id="city">{{event.addressCity}}</li>
+      <li class="list-group-item" id="foodOne">{{event.foodOptionOne}}</li>
+      <li class="list-group-item" id="foodTwo">{{event.foodOptionTwo}}</li>
+
+    {{!-- Edit button --}}
+    <button type="button" class="btn btn-success" id="editEvent">Edit</button>
+  </div>
+</div>
+
+{{!-- Vendor Info --}}
+<div class="card" style="width: 33rem;">
+  <div class="card-body">
+    <h5 class="card-title">Vendor Info</h5>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" id="vendorName">{{vendor.vendorName}}</li>
+      <li class="list-group-item" id="service">{{vendor.service}}</li>
+      <li class="list-group-item" id="email">{{vendor.email}}</li>
+      <li class="list-group-item" id="phone">{{vendor.phone}}</li>
+    </ul>
+
+    {{!-- Edit button --}}
+    <button type="button" class="btn btn-success" id="editVendor">Edit</button>
+  </div>
+</div>
+
+{{!-- Scripts --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/summary.js"></script>
