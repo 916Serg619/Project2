@@ -18,10 +18,12 @@
     "dotenv": "^8.2.0",
     "env.json": "^2.0.1",
     "express": "^4.17.0",
+    "express-handlebars": "^5.2.0",
     "express-session": "^1.16.1",
     "mysql2": "^1.7.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "path": "^0.12.7",
     "sequelize": "^5.22.3"
   },
   "devDependencies": {
