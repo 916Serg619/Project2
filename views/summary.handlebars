@@ -1,7 +1,7 @@
 {{!-- Event Info --}}
 <div class="card" style="width: 33rem;">
   <div class="card-body">
-    <h5 class="card-title">Event Info</h5>
+
     <ul class="list-group list-group-flush">
       <li class="list-group-item" id="couple">{{event.couple}}</li>
       <li class="list-group-item" id="venue">{{event.venueName}}</li>
@@ -10,7 +10,21 @@
       <li class="list-group-item" id="city">{{event.addressCity}}</li>
       <li class="list-group-item" id="foodOne">{{event.foodOptionOne}}</li>
       <li class="list-group-item" id="foodTwo">{{event.foodOptionTwo}}</li>
-
+    </ul>
+    <h3 class="card-title">Event Info</h3>
+    <table class="table table-striped">
+      <thread>
+        <th>Couple</th>
+        <th>Event Date</th>
+        <th>Venue</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Food Option One</th>
+        <th>Food Option Two</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </thread>
+    </table>
     {{!-- Edit button --}}
     <button type="button" class="btn btn-success" id="editEvent">Edit</button>
   </div>

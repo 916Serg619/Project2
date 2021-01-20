@@ -2,6 +2,8 @@ $(document).ready(() => {
   // vars below connect to Google API for autocomplete
   let gpaInput = document.getElementById("venueInput");
   let autocomplete = new google.maps.places.Autocomplete(gpaInput);
+
+  // Takes the data from the page and adds it to the db
   $("#submit").on("click", event => {
     event.preventDefault();
 
@@ -32,10 +34,12 @@ $(document).ready(() => {
     enterData(eventData);
   });
 
+  // Clears the text areas
   $("#submit").bind("click", () => {
     $("input[type=text], textarea").val("");
   });
 
+  // Create new entry in db
   function enterData(eventData) {
     $.post("/api/eventInfos", {
       couple: eventData.couple,
