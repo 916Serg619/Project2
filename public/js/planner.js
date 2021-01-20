@@ -1,5 +1,8 @@
 $(document).ready(() => {
-  $("#submit").on("click", event => {
+  // vars below connect to Google API for autocomplete
+  const gpaInput = document.getElementById("venueInput");
+  const autocomplete = new google.maps.places.Autocomplete(gpaInput);
+  $("#submit").on("click", (event) => {
     event.preventDefault();
 
     const eventData = {
@@ -23,7 +26,7 @@ $(document).ready(() => {
         .trim(),
       foodOptionTwo: $("#foodOptionTwoInput")
         .val()
-        .trim()
+        .trim(),
     };
 
     enterData(eventData);
@@ -41,12 +44,12 @@ $(document).ready(() => {
       addressStreet: eventData.address,
       addressCity: eventData.city,
       foodOptionOne: eventData.foodOptionOne,
-      foodOptionTwo: eventData.foodOptionTwo
+      foodOptionTwo: eventData.foodOptionTwo,
     })
       .then(() => {
         console.log(eventData);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
