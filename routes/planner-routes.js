@@ -1,11 +1,11 @@
 const db = require("../models");
 
 module.exports = function(app) {
-  // app.get("/api/eventInfos", (req, res) => {
-  //   db.eventInfo.findAll({}).then(dbeventInfo => {
-  //     res.json(dbeventInfo);
-  //   });
-  // });
+  app.get("/api/eventInfos", (req, res) => {
+    db.eventInfos.findAll({}).then(dbeventInfo => {
+      res.json(dbeventInfo);
+    });
+  });
 
   // app.post("/api/eventInfos", (req, res) => {
   //   db.eventInfo
