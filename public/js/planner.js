@@ -5,7 +5,7 @@ $(document).ready(() => {
   const autocomplete = new google.maps.places.Autocomplete(gpaInput);
 
   // Takes the data from the page and adds it to the db
-  $("#submit").on("click", event => {
+  $("#submitNewWedding").on("click", event => {
     event.preventDefault();
 
     const eventData = {
@@ -37,7 +37,7 @@ $(document).ready(() => {
   });
 
   // Clears the text areas
-  $("#submit").bind("click", () => {
+  $("#submitNewWedding").bind("click", () => {
     $("input[type=text], textarea").val("");
   });
 
