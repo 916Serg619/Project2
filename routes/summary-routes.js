@@ -34,6 +34,7 @@ module.exports = function(app) {
           res.json({
             dbEventInfo: dbEventInfo,
             vendorInfo: vendorInfo
+            // eventInfoId: res.params.eventInfoId
           });
         });
       });

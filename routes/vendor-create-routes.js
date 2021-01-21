@@ -9,7 +9,8 @@ module.exports = function(app) {
         vendorName: req.body.vendorName,
         service: req.body.service,
         email: req.body.email,
-        phone: req.body.phone
+        phone: req.body.phone,
+        eventInfoId: req.body.eventInfoId
       })
       .then(dbVendorInfos => {
         res.json(dbVendorInfos);

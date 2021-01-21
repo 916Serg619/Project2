@@ -70,13 +70,17 @@ module.exports = function(app) {
       .then(dbEventInfo => {
         console.log(dbEventInfo);
         const event = dbEventInfo.dataValues;
-        db.vendorInfos.findAll({}).then(dbVendorInfos => {
-          const vendor = dbVendorInfos;
-          res.render("summary", {
-            event: event,
-            vendor: vendor
+        db.vendorInfos
+          .findAll({
+            where: { eventInfoId: req.params.id }
+          })
+          .then(dbVendorInfos => {
+            const vendor = dbVendorInfos;
+            res.render("summary", {
+              event: event,
+              vendor: vendor
+            });
           });
-        });
       });
   });
 };
