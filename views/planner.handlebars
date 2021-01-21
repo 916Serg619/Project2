@@ -7,8 +7,9 @@
     </div>
     {{!-- Venue --}}
     <div class="form-group">
-        <label for="venue">Venue</label>
-        <input type="text" class="form-control" id="venueInput" placeholder="venue">
+        <label for="venue" id="venue">Venue</label>
+        <input type="text" class="form-control" id="venueInput" value= ""  placeholder="venue">
+        <h2 id="photo"></h2>
     </div>
     {{!-- Event Date --}}
     <div class="form-group">
@@ -44,4 +45,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 {{!-- API key for Google API autocomplete feature for Venue info --}}
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZugWOlMVS7_70ajiCk05Mcn_g7qHMsls&libraries=places"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script type="text/javascript" src="js/planner.js"></script>
