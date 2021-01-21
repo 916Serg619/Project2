@@ -31,5 +31,13 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
+  vendorInfo.associate = function(models) {
+    vendorInfo.belongsTo(models.eventInfos, {
+      foreignKey: {
+        type: DataTypes.STRING
+      }
+    });
+  };
+
   return vendorInfo;
 };

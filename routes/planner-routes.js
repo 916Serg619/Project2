@@ -2,7 +2,9 @@ const db = require("../models");
 
 module.exports = function(app) {
   app.get("/api/eventInfos", (req, res) => {
-    db.eventInfos.findAll({}).then(dbeventInfo => {
+    db.eventInfos.findAll({ 
+      include: db.vendorinfos
+    }).then(dbeventInfo => {
       res.json(dbeventInfo);
     });
   });
