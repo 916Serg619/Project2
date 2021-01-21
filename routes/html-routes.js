@@ -1,6 +1,5 @@
 // Requiring path to so we can use relative routes to our HTML files
 const db = require("../models");
-
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
@@ -24,12 +23,38 @@ module.exports = function(app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {
-    res.render("members.handlebars", {
-        couple: "this is a test"      
+    db.eventInfos.findAll({}).then(dbEventInfo => {
+      const event = dbEventInfo;
+      console.log(event);
+      res.render("members.handlebars", {
+        event: event
+      });
     });
   });
 
   app.get("/planner", isAuthenticated, (req, res) => {
     res.render("planner.handlebars");
+  });
+
+  // Vendor creation page
+  app.get("/vendorInfos", isAuthenticated, (req, res) => {
+    res.render("vendor-create.handlebars");
+  });
+
+  // Summary Page
+  app.get("/summary", isAuthenticated, (req, res) => {
+    db.eventInfos.findAll({}).then(dbEventInfo => {
+      const event = dbEventInfo[0].dataValues;
+      // console.log(event);
+      db.vendorInfos.findAll({}).then(dbVendorInfos => {
+        // const vendor = dbVendorInfos[0].dataValues;
+        const vendor = dbVendorInfos;
+        // console.log(vendor);
+        res.render("summary", {
+          event: event,
+          vendor: vendor
+        });
+      });
+    });
   });
 };
