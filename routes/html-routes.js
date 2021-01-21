@@ -37,26 +37,11 @@ module.exports = function(app) {
   });
 
   // Vendor creation page
-  app.get("/vendorInfos", isAuthenticated, (req, res) => {
-    res.render("vendor-create.handlebars");
+  app.get("/vendorInfos/:id?", isAuthenticated, (req, res) => {
+    res.render("vendor-create.handlebars", {
+      eventInfoId: req.params.id
+    });
   });
-
-  // Summary Page
-  // app.get("/summary", isAuthenticated, (req, res) => {
-  //   db.eventInfos.findAll({}).then(dbEventInfo => {
-  //     const event = dbEventInfo[0].dataValues;
-  //     // console.log(event);
-  //     db.vendorInfos.findAll({}).then(dbVendorInfos => {
-  //       // const vendor = dbVendorInfos[0].dataValues;
-  //       const vendor = dbVendorInfos;
-  //       // console.log(vendor);
-  //       res.render("summary", {
-  //         event: event,
-  //         vendor: vendor
-  //       });
-  //     });
-  //   });
-  // });
 
   // Summary Page rendering for each wedding
   app.get("/summary/:id?", isAuthenticated, (req, res) => {
