@@ -1,7 +1,8 @@
 $(document).ready(() => {
   // vars below connect to Google API for autocomplete
-  let gpaInput = document.getElementById("venueInput");
-  let autocomplete = new google.maps.places.Autocomplete(gpaInput);
+  const gpaInput = document.getElementById("venueInput");
+  // eslint-disable-next-line no-unused-vars
+  const autocomplete = new google.maps.places.Autocomplete(gpaInput);
 
   // Takes the data from the page and adds it to the db
   $("#submit").on("click", event => {
