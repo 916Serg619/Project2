@@ -26,12 +26,10 @@
         <td>{{event.addressCity}}</td>
         <td>{{event.foodOptionOne}}</td>
         <td>{{event.foodOptionTwo}}</td>
-        <td><a href="/planner">Edit</a></td>
+        <td><a href="/planner/">Edit</a></td>
         <td><a style='cursor:pointer;color:red' class='delete-event'>Delete</a></td>
       </tr>
     </table>
-    {{!-- Edit button --}}
-    <button type="button" class="btn btn-success" id="editEvent">Edit</button>
   </div>
 </div>
 
@@ -40,6 +38,7 @@
   <div class="card-body">
     <h5 class="card-title">Vendor Info</h5>
     <table class="table table-striped">
+      {{!-- Head --}}
       <thead>
         <tr>
           <th>Vendor Name</th>
@@ -50,20 +49,18 @@
           <th>Delete</th>
         </tr>
       </thead>
+      {{!-- Row populate --}}
       {{#each vendor}}
       <tr>
         <td>{{dataValues.vendorName}}</td>
         <td>{{dataValues.service}}</td>
         <td>{{dataValues.email}}</td>
         <td>{{dataValues.phone}}</td>
-        <td><a href="/vendorInfos">Edit</a></td>
+        <td><a href="/vendorInfos/{{dataValues.eventInfoId}}">Edit</a></td>
         <td><a style='cursor:pointer;color:red' class='delete-event'>Delete</a></td>
       </tr>
       {{/each}}
     </table>
-
-    {{!-- Edit button --}}
-    <button type="button" class="btn btn-success" id="editVendor">Edit</button>
   </div>
 </div>
 
