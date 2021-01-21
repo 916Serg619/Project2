@@ -33,6 +33,7 @@ $(document).ready(() => {
     };
 
     enterData(eventData);
+    window.location.href = "/summary";
   });
 
   // Clears the text areas
@@ -58,4 +59,12 @@ $(document).ready(() => {
         console.log(err);
       });
   }
+
+  // Navigation buttons
+  $("#backToMain").on("click", () => {
+    window.location.href = "/members";
+  });
+  $("#toSummary").on("click", () => {
+    window.location.href = "/summary";
+  });
 });
