@@ -42,19 +42,41 @@ module.exports = function(app) {
   });
 
   // Summary Page
-  app.get("/summary", isAuthenticated, (req, res) => {
-    db.eventInfos.findAll({}).then(dbEventInfo => {
-      const event = dbEventInfo[0].dataValues;
-      // console.log(event);
-      db.vendorInfos.findAll({}).then(dbVendorInfos => {
-        // const vendor = dbVendorInfos[0].dataValues;
-        const vendor = dbVendorInfos;
-        // console.log(vendor);
-        res.render("summary", {
-          event: event,
-          vendor: vendor
+  // app.get("/summary", isAuthenticated, (req, res) => {
+  //   db.eventInfos.findAll({}).then(dbEventInfo => {
+  //     const event = dbEventInfo[0].dataValues;
+  //     // console.log(event);
+  //     db.vendorInfos.findAll({}).then(dbVendorInfos => {
+  //       // const vendor = dbVendorInfos[0].dataValues;
+  //       const vendor = dbVendorInfos;
+  //       // console.log(vendor);
+  //       res.render("summary", {
+  //         event: event,
+  //         vendor: vendor
+  //       });
+  //     });
+  //   });
+  // });
+
+  // Summary Page rendering for each wedding
+  app.get("/summary/:id?", isAuthenticated, (req, res) => {
+    pageNum = req.params.id;
+    db.eventInfos
+      .findOne({
+        where: {
+          id: req.params.id
+        }
+      })
+      .then(dbEventInfo => {
+        console.log(dbEventInfo);
+        const event = dbEventInfo.dataValues;
+        db.vendorInfos.findAll({}).then(dbVendorInfos => {
+          const vendor = dbVendorInfos;
+          res.render("summary", {
+            event: event,
+            vendor: vendor
+          });
         });
       });
-    });
   });
 };
