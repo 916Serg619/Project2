@@ -50,4 +50,20 @@ module.exports = function(app) {
       });
     }
   });
+
+  // Redirect to specific summary page of each event
+  // app.get("/api/eventInfos/:id?", (req, res) => {
+  //   console.log(req.params.id);
+  //   if (req.params.id) {
+  //     db.eventInfos
+  //       .findOne({
+  //         where: {
+  //           id: req.params.id
+  //         }
+  //       })
+  //       .then(data => {
+  //         return res.json(data);
+  //       });
+  //   }
+  // });
 };

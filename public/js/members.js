@@ -9,4 +9,8 @@ $(document).ready(() => {
   $("#createWedding").on("click", () => {
     window.location.href = "/planner";
   });
+
+  // $.get("/api/eventInfos/" + "1", function(data) {
+  //   console.log(data);
+  // })
 });
