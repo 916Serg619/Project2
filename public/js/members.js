@@ -5,14 +5,8 @@ $(document).ready(() => {
     $(".member-name").text(data.email);
   });
 
-  // This takes the value from the drop down
-  // and does a page redirect when the select wedding button is clicked to that page
-  $("#selectWedding").on("click", () => {
-    const getValue = $("#weddingList").val();
-    window.location.href = `/${getValue}`;
-  });
-
-  $("#newWedding").on("click", () => {
+  // Create wedding button redirect
+  $("#createWedding").on("click", () => {
     window.location.href = "/planner";
   });
 });
