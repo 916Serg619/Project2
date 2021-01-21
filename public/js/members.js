@@ -6,7 +6,7 @@ $(document).ready(() => {
   });
 
   // Create wedding button redirect
-  $("#newWedding").on("click", () => {
-    window.location.href = "/summary";
+  $("#createWedding").on("click", () => {
+    window.location.href = "/planner";
   });
 });
