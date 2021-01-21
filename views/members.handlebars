@@ -28,8 +28,8 @@
 								<th>Couple</th>
                 <th>Event Date</th>
 								<th>View Summary</th>
-								<th>Edit Info</th>
-								<th>Delete</th>
+								<th>Add Vendor</th>
+								<th>Ca</th>
 							</tr>
 						</thead>
             {{#each event}}
@@ -37,7 +37,7 @@
               <td>{{dataValues.couple}}</td>
               <td>{{dataValues.eventDate}}</td>
               <td><a href="/summary/{{dataValues.id}}">Summary</a></td>
-              <td><a href="/vendorInfos/{{dataValues.id}}">Edit</a></td>
+              <td><a href="/vendorInfos/{{dataValues.id}}">Add</a></td>
               <td><a style='cursor:pointer;color:red' class='delete-event'>Delete</a></td>
             </tr>
             {{/each}}
