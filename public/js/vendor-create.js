@@ -14,7 +14,9 @@ $(document).ready(() => {
         .trim(),
       phone: $("#vendorPhoneInput")
         .val()
-        .trim()
+        .trim(),
+      // hard-coded event foreign key
+      eventInfoId: $("#eventInfoId").text()
     };
 
     enterData(vendorCreateData);
@@ -29,7 +31,9 @@ $(document).ready(() => {
       vendorName: vendorCreateData.vendorName,
       service: vendorCreateData.service,
       email: vendorCreateData.email,
-      phone: vendorCreateData.phone
+      phone: vendorCreateData.phone,
+      // event foreign key hard-code
+      eventInfoId: vendorCreateData.eventInfoId
     })
       .then(() => {
         console.log(vendorCreateData);

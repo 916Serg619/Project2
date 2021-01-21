@@ -51,5 +51,10 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
+  eventInfo.associate = function(models) {
+    eventInfo.hasMany(models.vendorInfos, {
+      onDelete: "cascade"
+    });
+  };
   return eventInfo;
 };

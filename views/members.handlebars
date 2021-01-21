@@ -37,7 +37,7 @@
               <td>{{dataValues.couple}}</td>
               <td>{{dataValues.eventDate}}</td>
               <td><a href="/summary/{{dataValues.id}}">Summary</a></td>
-              <td><a href="/vendorInfos">Edit</a></td>
+              <td><a href="/vendorInfos/{{dataValues.id}}">Edit</a></td>
               <td><a style='cursor:pointer;color:red' class='delete-event'>Delete</a></td>
             </tr>
             {{/each}}
@@ -62,7 +62,7 @@
         <!-- Select wedding -->
         <label for="weddingList">Select an current wedding to work on</label>
         <select name="weddingList" id="weddingList">
-          <option value="wedding1">wedding1</option>
+          <option value="wedding1">{{couple}}</option>
           <option value="wedding2">wedding2</option>
           <option value="wedding3">wedding3</option>
           <option value="wedding4">wedding4</option>
@@ -76,6 +76,16 @@
       </div>
     </div> --}}
   </div>
+    <script>
+      function getWedding() {
+    $.get("/api/eventInfos", data => {
+      const weddingName = data[0].couple;
+      console.log(data);
+      console.log(data[0].couple);
+    });
+  }
+
+    </script>
 
 
 
