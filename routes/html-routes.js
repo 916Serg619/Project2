@@ -23,7 +23,13 @@ module.exports = function(app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {
-    res.render("members.handlebars");
+    db.eventInfos.findAll({}).then(dbEventInfo => {
+      const event = dbEventInfo;
+      console.log(event);
+      res.render("members.handlebars", {
+        event: event
+      });
+    });
   });
 
   app.get("/planner", isAuthenticated, (req, res) => {
@@ -35,35 +41,15 @@ module.exports = function(app) {
     res.render("vendor-create.handlebars");
   });
 
-  // app.get("/summary", isAuthenticated, (req, res) => {
-  //   db.eventInfos.findAll({}).then(dbEventInfo => {
-  //     const event = dbEventInfo[0].dataValues;
-  //     console.log(event);
-  //     res.render("summary", event);
-  //   });
-  // });
-
-  // app.get("/summary", isAuthenticated, (req, res) => {
-  //   db.eventInfos.findAll({}).then(dbEventInfo => {
-  //     const event = dbEventInfo[0].dataValues;
-  //     console.log(event);
-  //     res.render("summary", event);
-  //   });
-  //   db.vendorInfos.findAll({}).then(dbVendorInfos => {
-  //     const vendor = dbVendorInfos[0];
-  //     console.log(dbVendorInfos);
-  //     res.render("summary", vendor);
-  //   });
-  // });
-
   // Summary Page
   app.get("/summary", isAuthenticated, (req, res) => {
     db.eventInfos.findAll({}).then(dbEventInfo => {
       const event = dbEventInfo[0].dataValues;
       // console.log(event);
       db.vendorInfos.findAll({}).then(dbVendorInfos => {
-        const vendor = dbVendorInfos[0].dataValues;
-        // console.log(dbVendorInfos);
+        // const vendor = dbVendorInfos[0].dataValues;
+        const vendor = dbVendorInfos;
+        // console.log(vendor);
         res.render("summary", {
           event: event,
           vendor: vendor

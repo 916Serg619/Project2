@@ -1,31 +1,66 @@
-{{!-- Event Info --}}
+{{!-- Event Info Card--}}
 <div class="card" style="width: 33rem;">
   <div class="card-body">
-    <h5 class="card-title">Event Info</h5>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item" id="couple">{{event.couple}}</li>
-      <li class="list-group-item" id="venue">{{event.venueName}}</li>
-      <li class="list-group-item" id="date">{{event.eventDate}}</li>
-      <li class="list-group-item" id="address">{{event.addressStreet}}</li>
-      <li class="list-group-item" id="city">{{event.addressCity}}</li>
-      <li class="list-group-item" id="foodOne">{{event.foodOptionOne}}</li>
-      <li class="list-group-item" id="foodTwo">{{event.foodOptionTwo}}</li>
-
+    <h3 class="card-title">Event Info</h3>
+    <table class="table table-striped">
+      {{!-- Head --}}
+      <thead>
+        <tr>
+          <th>Couple</th>
+          <th>Event Date</th>
+          <th>Venue</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>Food Option One</th>
+          <th>Food Option Two</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      {{!-- Body --}}
+      <tr>
+        <td>{{event.couple}}</td>
+        <td>{{event.venueName}}</td>
+        <td>{{event.eventDate}}</td>
+        <td>{{event.addressStreet}}</td>
+        <td>{{event.addressCity}}</td>
+        <td>{{event.foodOptionOne}}</td>
+        <td>{{event.foodOptionTwo}}</td>
+        <td><a href="/planner">Edit</a></td>
+        <td><a style='cursor:pointer;color:red' class='delete-event'>Delete</a></td>
+      </tr>
+    </table>
     {{!-- Edit button --}}
     <button type="button" class="btn btn-success" id="editEvent">Edit</button>
   </div>
 </div>
 
-{{!-- Vendor Info --}}
+{{!-- Vendor Info Card--}}
 <div class="card" style="width: 33rem;">
   <div class="card-body">
     <h5 class="card-title">Vendor Info</h5>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item" id="vendorName">{{vendor.vendorName}}</li>
-      <li class="list-group-item" id="service">{{vendor.service}}</li>
-      <li class="list-group-item" id="email">{{vendor.email}}</li>
-      <li class="list-group-item" id="phone">{{vendor.phone}}</li>
-    </ul>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Vendor Name</th>
+          <th>Service</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      {{#each vendor}}
+      <tr>
+        <td>{{dataValues.vendorName}}</td>
+        <td>{{dataValues.service}}</td>
+        <td>{{dataValues.email}}</td>
+        <td>{{dataValues.phone}}</td>
+        <td><a href="/vendorInfos">Edit</a></td>
+        <td><a style='cursor:pointer;color:red' class='delete-event'>Delete</a></td>
+      </tr>
+      {{/each}}
+    </table>
 
     {{!-- Edit button --}}
     <button type="button" class="btn btn-success" id="editVendor">Edit</button>

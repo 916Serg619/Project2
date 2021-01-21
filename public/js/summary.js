@@ -8,4 +8,9 @@ $(document).ready(() => {
   //   $("#foodOne").text(data.foodOptionOne);
   //   $("#foodTwo").text(data.foodOptionTwo);
   // });
+
+  // Edit button for event info
+  $("#editEvent").on("click", () => {
+    window.location.href = "/planner";
+  });
 });

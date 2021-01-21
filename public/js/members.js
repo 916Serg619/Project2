@@ -15,4 +15,18 @@ $(document).ready(() => {
   $("#newWedding").on("click", () => {
     window.location.href = "/planner";
   });
+
+  // NEW for table
+  // var coupleInput = $("#couple-name");
+  // $(document).on("submit", "#wedding-form", createAuthorRow);
+
+  // Function for creating a new list row for authors
+  // function createAuthorRow(coupleInput) {
+  //   var newTr = $("<tr>");
+  //   newTr.append("<td>" + coupleInput + "</td>");
+  //   newTr.append("<td><a href='/summary'>Summary</td>");
+  //   newTr.append("<td>Edit</td>");
+  //   newTr.append("<td>Delete</td>");
+  //   return newTr;
+  // }
 });

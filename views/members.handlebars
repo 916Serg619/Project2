@@ -18,7 +18,46 @@
       </div>
     </div>
 
-    <div class="row">
+		<div class="row">
+			<div class="col-md-8 offset-md-2">
+				<div class="wedding-container">
+					<h1>Weddings</h1>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Couple</th>
+                <th>Event Date</th>
+								<th>View Summary</th>
+								<th>Edit Info</th>
+								<th>Delete</th>
+							</tr>
+						</thead>
+            {{#each event}}
+            <tr>
+              <td>{{dataValues.couple}}</td>
+              <td>{{dataValues.eventDate}}</td>
+              <td><a href="/summary">Summary</a></td>
+              <td><a href="/vendorInfos">Edit</a></td>
+              <td><a style='cursor:pointer;color:red' class='delete-event'>Delete</a></td>
+            </tr>
+            {{/each}}
+						<tbody>
+							<tr id="form-row">
+								<form id="wedding-form">
+									<td colspan="4">
+										<input placeholder="Enter a name" id="couple-name" type="text" />
+									</td>
+									<td><button type="submit" class="btn btn-success">Create wedding</button>
+									</td>
+								</form>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+    {{!-- <div class="row">
       <div class="col">
         <!-- Select wedding -->
         <label for="weddingList">Select an current wedding to work on</label>
@@ -35,7 +74,7 @@
         <!-- New wedding -->
         <button type="button" class="btn btn-success" id="newWedding">Create New Wedding</button>
       </div>
-    </div>
+    </div> --}}
   </div>
 
 
