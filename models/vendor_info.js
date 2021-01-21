@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  const vendorInfo = sequelize.define("vendorInfo", {
+  const vendorInfo = sequelize.define("vendorInfos", {
     vendorName: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -18,14 +18,16 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: true,
       validate: {
-        isEmail: true
+        // isEmail: true
+        len: [1]
       }
     },
-    phoneNumber: {
+    phone: {
       type: DataTypes.STRING,
       allowNull: true,
       validate: {
-        isEmail: true
+        // isEmail: true
+        len: [1]
       }
     }
   });
