@@ -55,4 +55,12 @@ module.exports = function(app) {
         });
       });
   });
+  app.get("/api/vendorInfos", (req, res) => {
+    db.vendorInfos.findAll({}).then(vendorInfo => {
+      res.json({
+        vendorInfo: vendorInfo
+        // eventInfoId: res.params.eventInfoId
+      });
+    });
+  });
 };
