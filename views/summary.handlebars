@@ -1,69 +1,89 @@
-{{!-- Event Info Card--}}
-<div class="card" style="width: 33rem;">
-  <div class="card-body">
-    <h3 class="card-title">Event Info</h3>
-    <table class="table table-striped">
-      {{!-- Head --}}
-      <thead>
-        <tr>
-          <th>Couple</th>
-          <th>Event Date</th>
-          <th>Venue</th>
-          <th>Address</th>
-          <th>City</th>
-          <th>Food Option One</th>
-          <th>Food Option Two</th>
-          <th>Edit</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      {{!-- Body --}}
-      <tr>
-        <td>{{event.couple}}</td>
-        <td>{{event.venueName}}</td>
-        <td>{{event.eventDate}}</td>
-        <td>{{event.addressStreet}}</td>
-        <td>{{event.addressCity}}</td>
-        <td>{{event.foodOptionOne}}</td>
-        <td>{{event.foodOptionTwo}}</td>
-        <td><a href="/planner/">Edit</a></td>
-        <td><a style='cursor:pointer;color:red' data-Id = "{{event.id}}" class='delete-event' href="/members">Delete</a></td>
-      </tr>
-    </table>
-  </div>
-</div>
+<body>
+  <main>
+    {{!-- Event Info Card--}}
+    <section>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/members">
+            Main
+          </a>
+          <a class="navbar-brand" href="/logout">
+            Logout
+          </a>
+        </div>
+      </div>
+    </nav>
+    {{!-- <div class="card" style="width: 33rem;"> --}}
+      <div class="card-body">
+        <h3 class="card-title">Event Info</h3>
+        <table class="table table-striped">
+          {{!-- Head --}}
+          <thead>
+            <tr>
+              <th>Couple</th>
+              <th>Event Date</th>
+              <th>Venue</th>
+              <th>Address</th>
+              <th>City</th>
+              <th>Food Option One</th>
+              <th>Food Option Two</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          {{!-- Body --}}
+          <tr>
+            <td>{{event.couple}}</td>
+            <td>{{event.eventDate}}</td>
+            <td>{{event.venueName}}</td>
+            <td>{{event.addressStreet}}</td>
+            <td>{{event.addressCity}}</td>
+            <td>{{event.foodOptionOne}}</td>
+            <td>{{event.foodOptionTwo}}</td>
+            <td><a href="/planner/">Edit</a></td>
+            <td><a style='cursor:pointer;color:red' data-Id="{{event.id}}" class='delete-event'
+                href="/members">Delete</a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+</section>
+    {{!-- Vendor Info Card--}}
+    <section>
 
-{{!-- Vendor Info Card--}}
-<div class="card" style="width: 33rem;">
-  <div class="card-body">
-    <h5 class="card-title">Vendor Info</h5>
-    <table class="table table-striped">
-      {{!-- Head --}}
-      <thead>
-        <tr>
-          <th>Vendor Name</th>
-          <th>Service</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Edit</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      {{!-- Row populate --}}
-      {{#each vendor}}
-      <tr>
-        <td><textarea>{{dataValues.vendorName}}</textarea></td>
-        <td><textarea readonly>{{dataValues.service}}</textarea></td>
-        <td>{{dataValues.email}}</td>
-        <td>{{dataValues.phone}}</td>
-        <td><a href="/vendorInfos/{{dataValues.eventInfoId}}">Edit</a></td>
-        <td><a style='cursor:pointer;color:red' class='delete-event'>Delete</a></td>
-      </tr>
-      {{/each}}
-    </table>
-  </div>
-</div>
-<a href="/members" data-role="button">Main</a>
-{{!-- Scripts --}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/summary.js"></script>
+      <div class="card-body">
+        <h5 class="card-title">Vendor Info</h5>
+        <table class="table table-striped">
+          {{!-- Head --}}
+          <thead>
+            <tr>
+              <th>Vendor Name</th>
+              <th>Service</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          {{!-- Row populate --}}
+          {{#each vendor}}
+          <tr>
+            <td><textarea>{{dataValues.vendorName}}</textarea></td>
+            <td><textarea readonly>{{dataValues.service}}</textarea></td>
+            <td>{{dataValues.email}}</td>
+            <td>{{dataValues.phone}}</td>
+            <td><a href="/vendorInfos/{{dataValues.eventInfoId}}">Edit</a></td>
+            <td><a style='cursor:pointer;color:red' class='delete-event'>Delete</a></td>
+          </tr>
+          {{/each}}
+        </table>
+      </div>
+
+    </section>
+    {{!-- Scripts --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/summary.js"></script>
+</body>
+</main>
