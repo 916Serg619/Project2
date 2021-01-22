@@ -27,11 +27,13 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>Couple</th>
-              <th>Event Date</th>
-              <th>View Summary</th>
-              <th>Add Vendor</th>
-              <th>Delete</th>
+
+              <td>{{dataValues.couple}}</td>
+              <td>{{dataValues.eventDate}}</td>
+              <td><a href="/summary/{{dataValues.id}}">Summary</a></td>
+              <td><a href="/vendorInfos/{{dataValues.id}}">Add</a></td>
+              <td><a style='cursor:pointer;color:red' data-Id = "{{dataValues.id}}" class='delete-event'>Delete</a></td>
+
             </tr>
           </thead>
           {{!-- from html-routes --}}

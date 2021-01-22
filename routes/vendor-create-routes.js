@@ -10,7 +10,8 @@ module.exports = function(app) {
         service: req.body.service,
         email: req.body.email,
         phone: req.body.phone,
-        eventInfoId: req.body.id
+        // hard-coded event foreign key
+        eventInfoId: req.body.eventInfoId
       })
       .then(dbVendorInfos => {
         res.json(dbVendorInfos);

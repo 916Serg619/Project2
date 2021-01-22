@@ -27,7 +27,7 @@
         <td>{{event.foodOptionOne}}</td>
         <td>{{event.foodOptionTwo}}</td>
         <td><a href="/planner/">Edit</a></td>
-        <td><a style='cursor:pointer;color:red' class='delete-event'>Delete</a></td>
+        <td><a style='cursor:pointer;color:red' data-Id = "{{event.id}}" class='delete-event' href="/members">Delete</a></td>
       </tr>
     </table>
   </div>
@@ -52,8 +52,8 @@
       {{!-- Row populate --}}
       {{#each vendor}}
       <tr>
-        <td>{{dataValues.vendorName}}</td>
-        <td>{{dataValues.service}}</td>
+        <td><textarea>{{dataValues.vendorName}}</textarea></td>
+        <td><textarea readonly>{{dataValues.service}}</textarea></td>
         <td>{{dataValues.email}}</td>
         <td>{{dataValues.phone}}</td>
         <td><a href="/vendorInfos/{{dataValues.eventInfoId}}">Edit</a></td>
@@ -63,7 +63,7 @@
     </table>
   </div>
 </div>
-
+<a href="/members" data-role="button">Main</a>
 {{!-- Scripts --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/summary.js"></script>
