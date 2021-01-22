@@ -18,12 +18,6 @@ $(document).ready(() => {
       date: $("#dateInput")
         .val()
         .trim(),
-      address: $("#addressStreetInput")
-        .val()
-        .trim(),
-      city: $("#addressCityInput")
-        .val()
-        .trim(),
       foodOptionOne: $("#foodOptionOneInput")
         .val()
         .trim(),
@@ -47,8 +41,6 @@ $(document).ready(() => {
       couple: eventData.couple,
       venueName: eventData.venue,
       eventDate: eventData.date,
-      addressStreet: eventData.address,
-      addressCity: eventData.city,
       foodOptionOne: eventData.foodOptionOne,
       foodOptionTwo: eventData.foodOptionTwo
     })

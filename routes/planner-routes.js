@@ -24,8 +24,6 @@ module.exports = function(app) {
         couple: req.body.couple,
         venueName: req.body.venueName,
         eventDate: req.body.eventDate,
-        addressStreet: req.body.addressStreet,
-        addressCity: req.body.addressCity,
         foodOptionOne: req.body.foodOptionOne,
         foodOptionTwo: req.body.foodOptionTwo
       })
