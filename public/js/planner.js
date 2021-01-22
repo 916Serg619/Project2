@@ -5,7 +5,7 @@ $(document).ready(() => {
   const autocomplete = new google.maps.places.Autocomplete(gpaInput);
 
   // Takes the data from the page and adds it to the db
-  $("#submitNewWedding").on("click", event => {
+  $("#submitNewWedding").on("click", async event => {
     event.preventDefault();
 
     const eventData = {
@@ -25,9 +25,9 @@ $(document).ready(() => {
         .val()
         .trim()
     };
-
-    enterData(eventData);
-    window.location.href = "/members";
+    await enterData(eventData).then(() => {
+      window.location.href = "/members";
+    });
   });
 
   // Clears the text areas
@@ -37,7 +37,7 @@ $(document).ready(() => {
 
   // Create new entry in db
   function enterData(eventData) {
-    $.post("/api/eventInfos", {
+    return $.post("/api/eventInfos", {
       couple: eventData.couple,
       venueName: eventData.venue,
       eventDate: eventData.date,

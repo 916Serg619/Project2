@@ -11,12 +11,10 @@
       </div>
     </nav>
 
-
     <!-- Welcome message -->
     <section class="welcome-user-message">
 
       <h5>Welcome <span class="member-name"></span></h5>
-
 
     </section>
 
@@ -27,13 +25,11 @@
         <table class="table table-striped">
           <thead>
             <tr>
-
-              <td>{{dataValues.couple}}</td>
-              <td>{{dataValues.eventDate}}</td>
-              <td><a href="/summary/{{dataValues.id}}">Summary</a></td>
-              <td><a href="/vendorInfos/{{dataValues.id}}">Add</a></td>
-              <td><a style='cursor:pointer;color:red' data-Id = "{{dataValues.id}}" class='delete-event'>Delete</a></td>
-
+              <td>Couple</td>
+              <td>Event Date</td>
+              <td>Summary Page</td>
+              <td>Add Vendor</td>
+              <td>Delete</td>
             </tr>
           </thead>
           {{!-- from html-routes --}}
@@ -43,23 +39,14 @@
             <td>{{dataValues.eventDate}}</td>
             <td><a href="/summary/{{dataValues.id}}">Summary</a></td>
             <td><a href="/vendorInfos/{{dataValues.id}}">Add</a></td>
-            <td><a style='cursor:pointer;color:red' data-Id="{{dataValues.id}}" class='delete-event'>{{dataValues.id}}
-                Delete</a></td>
+            <td><a style='cursor:pointer;color:red' data-Id="{{dataValues.id}}" class='delete-event'>Delete</a></td>
           </tr>
           {{/each}}
           <tbody>
             <tr id="form-row">
               <form id="wedding-form">
                 <td colspan="4">
-                  {{!-- <input placeholder="Enter a name" id="couple-name" type="text" /> --}}
-                </td>
-                {{!-- {{#each event}}
-                {{@event}}
-                {{#if @last}} --}}
                 <td><button type="button" class="btn btn-success" id="createWedding">Create wedding</button>
-                  {{!-- {{/if}}
-                  {{/each}} --}}
-                  {{!-- {{event.[event.length - 1].dataValues.id}} --}}
                 </td>
               </form>
             </tr>
