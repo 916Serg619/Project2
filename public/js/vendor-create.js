@@ -20,6 +20,9 @@ $(document).ready(() => {
     };
 
     enterData(vendorCreateData);
+    const url = window.location.href;
+    const path = url.substr(url.length - 1);
+    window.location.href = `/summary/${path}`;
   });
 
   $("#submitVendorCreate").bind("click", () => {
