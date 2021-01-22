@@ -40,12 +40,36 @@ module.exports = function(app) {
         });
       });
   });
+  app.get("/api/vendorInfos/:id", (req, res) => {
+    db.vendorInfos
+      .findOne({
+        where: [
+          {
+            id: req.params.id
+          }
+        ]
+      })
+      .then(vendorInfo => {
+        res.json({
+          vendorInfo: vendorInfo
+          // eventInfoId: res.params.eventInfoId
+        });
+      });
+  });
+
   app.get("/api/vendorInfos", (req, res) => {
     db.vendorInfos.findAll({}).then(vendorInfo => {
       res.json({
         vendorInfo: vendorInfo
         // eventInfoId: res.params.eventInfoId
       });
+    });
+  });
+  app.delete("/api/vendorInfos/:id?", (req, res) => {
+    db.eventInfos.destroy({
+      where: {
+        id: req.params.id
+      }
     });
   });
 };

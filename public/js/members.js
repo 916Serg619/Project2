@@ -6,13 +6,9 @@ $(document).ready(() => {
   });
 
   // Render events on page load
-  $.get("/api/eventInfos", db => {
-    db.eventInfos.findAll({}).then(dbEventInfo => {
-      res.render("members.handlebars", {
-        event: dbEventInfo
-      });
-    });
-  });
+  // $.get("/api/eventInfos", (req, res) => {
+  //   res.render("members.handlebars", {});
+  // });
 
   // Create wedding button redirect
   $("#createWedding").on("click", () => {

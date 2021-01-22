@@ -57,7 +57,7 @@
         <td>{{dataValues.email}}</td>
         <td>{{dataValues.phone}}</td>
         <td><a href="/vendorInfos/{{dataValues.eventInfoId}}">Edit</a></td>
-        <td><a style='cursor:pointer;color:red' class='delete-event'>Delete</a></td>
+        <td><button style='cursor:pointer;color:red' data-id = "{{dataValues.id}}" class='delete-vendor'onclick="deleteVendor({{dataValues.id}})">{{dataValues.id}}Delete</button></td>
       </tr>
       {{/each}}
     </table>
@@ -66,4 +66,13 @@
 <a href="/members" data-role="button">Main</a>
 {{!-- Scripts --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/summary.js"></script>
+<script> function deleteVendor(id) {
+    console.log();
+    console.log("this was deleted");
+    let data = $(".delete-vendor").attr("data-id");
+    console.log(vendorInfos[id].dataValues.id);
+    $.ajax({
+      method: "DELETE",
+      url: "/api/vendorInfos/" + 10 
+       });
+  }</script>
