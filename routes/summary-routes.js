@@ -1,7 +1,6 @@
 const db = require("../models");
 
 module.exports = function(app) {
-
   // Searches all event info for specific id or all. displays json data
   app.get("/api/eventInfos/:id?", (req, res) => {
     if (req.params.id) {

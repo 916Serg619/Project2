@@ -27,4 +27,4 @@ function deleteEvent() {
     method: "DELETE",
     url: "/api/vendorInfos/" + data
   });
-};
+}
