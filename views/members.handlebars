@@ -11,66 +11,60 @@
       </div>
     </nav>
 
-    <div class="container">
-      <!-- Welcome message -->
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <h5>Welcome <span class="member-name"></span></h5>
-        </div>
-      </div>
 
-		<div class="row">
-			<div class="col-md-8 offset-md-2">
-				<div class="wedding-container">
-					<h1>Weddings</h1>
-					<table class="table table-striped">
-						<thead>
-							<tr>
-								<th>Couple</th>
-                <th>Event Date</th>
-								<th>View Summary</th>
-								<th>Add Vendor</th>
-								<th>Delete</th>
-							</tr>
-						</thead>
-            {{!-- from html-routes --}}
-            {{#each event}}
+    <!-- Welcome message -->
+    <section class="welcome-user-message">
+
+      <h5>Welcome <span class="member-name"></span></h5>
+
+
+    </section>
+
+    <section class="wedding-table-content">
+
+      <div class="wedding-container">
+        <h1>Weddings</h1>
+        <table class="table table-striped">
+          <thead>
             <tr>
-              <td>{{dataValues.couple}}</td>
-              <td>{{dataValues.eventDate}}</td>
-              <td><a href="/summary/{{dataValues.id}}">Summary</a></td>
-              <td><a href="/vendorInfos/{{dataValues.id}}">Add</a></td>
-              <td><a style='cursor:pointer;color:red' data-Id = "{{dataValues.id}}" class='delete-event'>{{dataValues.id}} Delete</a></td>
+              <th>Couple</th>
+              <th>Event Date</th>
+              <th>View Summary</th>
+              <th>Add Vendor</th>
+              <th>Delete</th>
             </tr>
-            {{/each}}
-						<tbody>
-							<tr id="form-row">
-								<form id="wedding-form">
-									<td colspan="4">
-										{{!-- <input placeholder="Enter a name" id="couple-name" type="text" /> --}}
-									</td>
-                  {{!-- {{#each event}}
-                  {{@event}}
-                  {{#if @last}} --}}
-									<td><button type="button" class="btn btn-success" id="createWedding">Create wedding</button>
-									{{!-- {{/if}}
+          </thead>
+          {{!-- from html-routes --}}
+          {{#each event}}
+          <tr>
+            <td>{{dataValues.couple}}</td>
+            <td>{{dataValues.eventDate}}</td>
+            <td><a href="/summary/{{dataValues.id}}">Summary</a></td>
+            <td><a href="/vendorInfos/{{dataValues.id}}">Add</a></td>
+            <td><a style='cursor:pointer;color:red' data-Id="{{dataValues.id}}" class='delete-event'>{{dataValues.id}}
+                Delete</a></td>
+          </tr>
+          {{/each}}
+          <tbody>
+            <tr id="form-row">
+              <form id="wedding-form">
+                <td colspan="4">
+                  {{!-- <input placeholder="Enter a name" id="couple-name" type="text" /> --}}
+                </td>
+                {{!-- {{#each event}}
+                {{@event}}
+                {{#if @last}} --}}
+                <td><button type="button" class="btn btn-success" id="createWedding">Create wedding</button>
+                  {{!-- {{/if}}
                   {{/each}} --}}
                   {{!-- {{event.[event.length - 1].dataValues.id}} --}}
-                  </td>
-								</form>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-  </div>
-    <script>
-      
-
-  
-
-    </script>
+                </td>
+              </form>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/members.js"></script>
