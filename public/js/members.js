@@ -12,8 +12,8 @@ $(document).ready(() => {
 
   // Create wedding button redirect
   $("#createWedding").on("click", () => {
-    const page = parseInt($("#createWedding").attr("data-id")) + 1;
-    window.location.href = `/planner/${page}`;
+    // const page = parseInt($("#createWedding").attr("data-id")) + 1;
+    window.location.href = "/planner";
   });
 
   // $("*[id*=edit]:visible").on("click", () => {
