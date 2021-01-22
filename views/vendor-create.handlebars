@@ -1,33 +1,37 @@
-{{!-- Vendor Input Form --}}
-<form class="vendor">
-  {{!-- This value here is for the eventInfoId to create vendor --}}
-  <h3 id="eventInfoId">{{eventInfoId}}</h3>
-  <div class="form-group">
-    {{!-- Name --}}
-    <div class="form-group">
-      <label for="vendorName">Name</label>
-      <input type="text" class="form-control" id="vendorNameInput" placeholder="vendorName">
-    </div>
-    {{!-- Service --}}
-    <div class="form-group">
-      <label for="vendorService">Service</label>
-      <input type="text" class="form-control" id="vendorServiceInput" placeholder="vendorService">
-    </div>
-    {{!-- Email --}}
-    <div class="form-group">
-      <label for="vendorEmail">Email</label>
-      <input type="text" class="form-control" id="vendorEmailInput" placeholder="vendorEmail">
-    </div>
-    {{!-- Phone --}}
-    <div class="form-group">
-      <label for="vendorPhone">Phone</label>
-      <input type="text" class="form-control" id="vendorPhoneInput" placeholder="vendorPhone">
-    </div>
-</form>
+<body>
+  <main>
+    {{!-- Vendor Input Form --}}
+    <form class="vendor">
+      {{!-- This value here is for the eventInfoId to create vendor --}}
+      <h3 id="eventInfoId">{{eventInfoId}}</h3>
+      <div class="form-group">
+        {{!-- Name --}}
+        <div class="form-group">
+          <label for="vendorName">Name</label>
+          <input type="text" class="form-control" id="vendorNameInput" placeholder="Vendor Name">
+        </div>
+        {{!-- Service --}}
+        <div class="form-group">
+          <label for="vendorService">Service</label>
+          <input type="text" class="form-control" id="vendorServiceInput" placeholder="Vendor Service">
+        </div>
+        {{!-- Email --}}
+        <div class="form-group">
+          <label for="vendorEmail">Email</label>
+          <input type="text" class="form-control" id="vendorEmailInput" placeholder="Email">
+        </div>
+        {{!-- Phone --}}
+        <div class="form-group">
+          <label for="vendorPhone">Phone</label>
+          <input type="text" class="form-control" id="vendorPhoneInput" placeholder="Phone">
+        </div>
+    </form>
 
-{{!-- Submit button --}}
-<button type="button" class="btn btn-success" id="submitVendorCreate">Submit</button>
+    {{!-- Submit button --}}
+    <button type="button" class="btn btn-success" id="submitVendorCreate">Submit</button>
 
-{{!-- Scripts --}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/vendor-create.js"></script>
+    {{!-- Scripts --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/vendor-create.js"></script>
+</body>
+</main>
