@@ -5,10 +5,21 @@ $(document).ready(() => {
     $(".member-name").text(data.email);
   });
 
+  // $.get("/api/eventInfos", data => {
+  //   const nextWedding = data[data.length - 1].id;
+  //   console.log("kjahsfdiuasy7dfyhsdjhfkjsdf" + data);
+  // });
+
   // Create wedding button redirect
   $("#createWedding").on("click", () => {
-    window.location.href = "/planner";
+    const page = parseInt($("#createWedding").attr("data-id")) + 1;
+    window.location.href = `/planner/${page}`;
   });
+
+  // $("*[id*=edit]:visible").on("click", () => {
+  //   const page = parseInt($("#createWedding").attr("data-id")) + 1;
+  //   window.location.href = `/planner/${page}`;
+  // });
 
   // $.get("/api/eventInfos/" + "1", function(data) {
   //   console.log(data);
