@@ -19,79 +19,58 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-8 offset-md-2">
-          <div class="wedding-container">
-            <h1>Weddings</h1>
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Couple</th>
-                  <th>Event Date</th>
-                  <th>View Summary</th>
-                  <th>Add Vendor</th>
-                  <th>Ca</th>
-                </tr>
-              </thead>
-              {{#each event}}
-              <tr>
-                <td>{{dataValues.couple}}</td>
-                <td>{{dataValues.eventDate}}</td>
-                <td><a href="/summary/{{dataValues.id}}">Summary</a></td>
-                <td><a href="/vendorInfos/{{dataValues.id}}">Add</a></td>
-                <td><a style='cursor:pointer;color:red' class='delete-event'>Delete</a></td>
-              </tr>
-              {{/each}}
-              <tbody>
-                <tr id="form-row">
-                  <form id="wedding-form">
-                    <td colspan="4">
-                      {{!-- <input placeholder="Enter a name" id="couple-name" type="text" /> --}}
-                    </td>
-                    <td><button type="button" class="btn btn-success" id="createWedding">Create wedding</button>
-                    </td>
-                  </form>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      {{!-- <div class="row">
-        <div class="col">
-          <!-- Select wedding -->
-          <label for="weddingList">Select an current wedding to work on</label>
-          <select name="weddingList" id="weddingList">
-            <option value="wedding1">{{couple}}</option>
-            <option value="wedding2">wedding2</option>
-            <option value="wedding3">wedding3</option>
-            <option value="wedding4">wedding4</option>
-          </select>
-          <button type="button" class="btn btn-primary" id="selectWedding">Select Wedding</button>
-        </div>
-
-        <div class="col">
-          <!-- New wedding -->
-          <button type="button" class="btn btn-success" id="newWedding">Create New Wedding</button>
-        </div>
-      </div> --}}
-    </div>
+		<div class="row">
+			<div class="col-md-8 offset-md-2">
+				<div class="wedding-container">
+					<h1>Weddings</h1>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Couple</th>
+                <th>Event Date</th>
+								<th>View Summary</th>
+								<th>Add Vendor</th>
+								<th>Delete</th>
+							</tr>
+						</thead>
+            {{!-- from html-routes --}}
+            {{#each event}}
+            <tr>
+              <td>{{dataValues.couple}}</td>
+              <td>{{dataValues.eventDate}}</td>
+              <td><a href="/summary/{{dataValues.id}}">Summary</a></td>
+              <td><a href="/vendorInfos/{{dataValues.id}}">Add</a></td>
+              <td><a style='cursor:pointer;color:red' class='delete-event'>Delete</a></td>
+            </tr>
+            {{/each}}
+						<tbody>
+							<tr id="form-row">
+								<form id="wedding-form">
+									<td colspan="4">
+										{{!-- <input placeholder="Enter a name" id="couple-name" type="text" /> --}}
+									</td>
+                  {{#each event}}
+                  {{@event}}
+                  {{#if @last}}
+									<td><button type="button" class="btn btn-success" id="createWedding" data-id="{{dataValues.id}}">Create wedding</button>
+									{{/if}}
+                  {{/each}}
+                  {{!-- {{event.[event.length - 1].dataValues.id}} --}}
+                  </td>
+								</form>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+  </div>
     <script>
-      function getWedding() {
-        $.get("/api/eventInfos", data => {
-          const weddingName = data[0].couple;
-          console.log(data);
-          console.log(data[0].couple);
-        });
-      }
+      
+
+  
 
     </script>
-
-
-
-
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/members.js"></script>

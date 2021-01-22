@@ -24,10 +24,8 @@ module.exports = function(app) {
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {
     db.eventInfos.findAll({}).then(dbEventInfo => {
-      const event = dbEventInfo;
-      console.log(event);
       res.render("members.handlebars", {
-        event: event
+        event: dbEventInfo
       });
     });
   });

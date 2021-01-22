@@ -38,7 +38,7 @@ $(document).ready(() => {
     };
 
     enterData(eventData);
-    window.location.href = "/summary";
+    window.location.href = "/members";
   });
 
   // Clears the text areas
