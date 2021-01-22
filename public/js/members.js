@@ -1,3 +1,4 @@
+const db = require("../models");
 $(document).ready(() => {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
@@ -30,10 +31,18 @@ $(".delete-event").on("click", deleteEvent);
 
 function deleteEvent() {
   console.log("this was deleted");
-  const itemData = $(this).siblings(".select");
-  const di = itemData;
+  const data = $(this).attr("data-id");
+  console.log(data);
   $.ajax({
     method: "DELETE",
-    url: "/api/eventInfos/" + di
-  });
+    url: "/api/eventInfos/" + data
+  }).then(
+    app.get("/members", isAuthenticated, (req, res) => {
+      db.eventInfos.findAll({}).then(dbEventInfo => {
+        res.render("members.handlebars", {
+          event: dbEventInfo
+        });
+      });
+    })
+  );
 }
