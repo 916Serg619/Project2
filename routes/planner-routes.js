@@ -7,16 +7,7 @@ module.exports = function(app) {
     });
   });
 
-  // app.post("/api/eventInfos", (req, res) => {
-  //   db.eventInfo
-  //     .create({
-  //       venue: req.body.venueInput
-  //     })
-  //     .then(dbeventInfo => {
-  //       res.json(dbeventInfo);
-  //     });
-  // });
-
+  // Create new event
   app.post("/api/eventInfos", (req, res) => {
     console.log(req.body);
     db.eventInfos
