@@ -5,10 +5,13 @@ $(document).ready(() => {
     $(".member-name").text(data.email);
   });
 
-  // $.get("/api/eventInfos", data => {
-  //   const nextWedding = data[data.length - 1].id;
-  //   console.log("kjahsfdiuasy7dfyhsdjhfkjsdf" + data);
-  // });
+  $.get("/api/eventInfos", db => {
+    db.eventInfos.findAll({}).then(dbEventInfo => {
+      res.render("members.handlebars", {
+        event: dbEventInfo
+      });
+    });
+  });
 
   // Create wedding button redirect
   $("#createWedding").on("click", () => {
