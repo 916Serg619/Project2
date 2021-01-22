@@ -25,3 +25,15 @@ $(document).ready(() => {
   //   console.log(data);
   // })
 });
+
+$(".delete-event").on("click", deleteEvent);
+
+function deleteEvent() {
+  console.log("this was deleted");
+  const data = $(this).attr("data-id");
+  console.log(data);
+  $.ajax({
+    method: "DELETE",
+    url: "/api/eventInfos/" + data
+  }).then(location.reload());
+}
