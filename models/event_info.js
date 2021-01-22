@@ -27,20 +27,6 @@ module.exports = function(sequelize, DataTypes) {
         // isDate: true
       }
     },
-    addressStreet: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      validate: {
-        len: [1]
-      }
-    },
-    addressCity: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      validate: {
-        len: [1]
-      }
-    },
     foodOptionOne: {
       type: DataTypes.STRING,
       allowNull: true,
