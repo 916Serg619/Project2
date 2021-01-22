@@ -17,10 +17,12 @@ $(document).ready(() => {
 
 $(".delete-event").on("click", deleteEvent);
 
-function deleteEvent(id) {
+function deleteEvent() {
   console.log("this was deleted");
+  const itemData = $(this).siblings(".select");
+  const di = itemData;
   $.ajax({
     method: "DELETE",
-    url: "/api/eventInfos/" + id
+    url: "/api/eventInfos/" + di
   });
 }
