@@ -14,3 +14,13 @@ $(document).ready(() => {
   //   console.log(data);
   // })
 });
+
+$(".delete-event").on("click", deleteEvent);
+
+function deleteEvent(id) {
+  console.log("this was deleted");
+  $.ajax({
+    method: "DELETE",
+    url: "/api/eventInfos/" + id
+  });
+}

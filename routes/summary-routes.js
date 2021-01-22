@@ -40,4 +40,19 @@ module.exports = function(app) {
       });
     }
   });
+  app.delete("/api/eventInfos/:id?", (req, res) => {
+    db.eventInfos
+      .destroy({
+        where: {
+          id: req.params.id
+        }
+      })
+      .then(dbEventInfo => {
+        res.json({
+          dbEventInfo: dbEventInfo,
+          vendorInfo: vendorInfo
+          // eventInfoId: res.params.eventInfoId
+        });
+      });
+  });
 };
