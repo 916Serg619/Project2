@@ -5,6 +5,7 @@ $(document).ready(() => {
     $(".member-name").text(data.email);
   });
 
+  // Render events on page load
   $.get("/api/eventInfos", db => {
     db.eventInfos.findAll({}).then(dbEventInfo => {
       res.render("members.handlebars", {
@@ -15,22 +16,12 @@ $(document).ready(() => {
 
   // Create wedding button redirect
   $("#createWedding").on("click", () => {
-    // const page = parseInt($("#createWedding").attr("data-id")) + 1;
     window.location.href = "/planner";
   });
-
-  // $("*[id*=edit]:visible").on("click", () => {
-  //   const page = parseInt($("#createWedding").attr("data-id")) + 1;
-  //   window.location.href = `/planner/${page}`;
-  // });
-
-  // $.get("/api/eventInfos/" + "1", function(data) {
-  //   console.log(data);
-  // })
 });
 
+// Delete event button
 $(".delete-event").on("click", deleteEvent);
-
 function deleteEvent() {
   console.log("this was deleted");
   const data = $(this).attr("data-id");

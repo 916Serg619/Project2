@@ -1,4 +1,5 @@
 $(document).ready(() => {
+  // Create vendor functionality
   $("#submitVendorCreate").on("click", event => {
     event.preventDefault();
 
@@ -19,16 +20,19 @@ $(document).ready(() => {
       eventInfoId: $("#eventInfoId").text()
     };
 
+    // Post and redirect
     enterData(vendorCreateData);
     const url = window.location.href;
     const path = url.substr(url.length - 1);
     window.location.href = `/summary/${path}`;
   });
 
+  // Clears values from inputs
   $("#submitVendorCreate").bind("click", () => {
     $("input[type=text], textarea").val("");
   });
 
+  // Create new db entry
   function enterData(vendorCreateData) {
     $.post("/api/vendorInfos", {
       vendorName: vendorCreateData.vendorName,

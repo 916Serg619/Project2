@@ -23,11 +23,11 @@ p{
   line-height: 20px;
   color: #a9a9a9;
 }
-
-
-
 }
 
 textarea {
-  background-color: rgb(222, 226, 230);
+  border: none;
+  background-color: transparent;
+  outline: none;
+  resize: none;
 }
