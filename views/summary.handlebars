@@ -33,17 +33,15 @@
           </thead>
           {{!-- Body --}}
           <tr class="eventInfoEdit">
-            <td class="event-data" readonly><textarea>{{event.couple}}</textarea></td>
-            <td class="event-data" readonly><textarea>{{event.venueName}}</textarea></td>
-            <td class="event-data" readonly><textarea>{{event.eventDate}}</textarea></td>
-            <td class="event-data" readonly><textarea>{{event.foodOptionOne}}</textarea></td>
-            <td class="event-data" readonly><textarea>{{event.foodOptionTwo}}</textarea></td>
-            {{!-- <td><button class="editEvent" id="edit{{event.id}}"><i class="far fa-edit"></i>edit</button></td> --}}
-            <td><a class="editEvent" data-control="userBtn">Edit</a><a class="editEventSave" style="color: blueviolet;"
-                data-control="userBtnSave">Save</a></td>
+            <td class="event-data"><textarea readonly>{{event.couple}}</textarea></td>
+            <td class="event-data"><textarea readonly>{{event.venueName}}</textarea></td>
+            <td class="event-data"><textarea readonly>{{event.eventDate}}</textarea></td>
+            <td class="event-data"><textarea readonly>{{event.foodOptionOne}}</textarea></td>
+            <td class="event-data"><textarea readonly>{{event.foodOptionTwo}}</textarea></td>
+            <td><button type="button" class="btn btn-success editEvent"><i class="far fa-edit fa-1.5x"></i> Edit</button>
+            <button type="button" class="btn btn-primary editEventSave"><i class="far fa-save fa-1.5x"></i> Save</button>
             <td><a style='cursor:pointer;color:red' data-Id="{{event.id}}" class='delete-event'
-                href="/members">Delete</a>
-            </td>
+                href="/members">Delete</a></td>
           </tr>
         </table>
       </div>
@@ -72,14 +70,11 @@
             <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.service}}</textarea></td>
             <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.email}}</textarea></td>
             <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.phone}}</textarea></td>
-            <td><a class="editVendor" id="{{dataValues.id}}" data-control="userBtn">Edit</a><a class="editVendorSave" id="{{dataValues.id}}"
-                style="color: blueviolet;" data-control="userBtnSave">Save</a></td>
+            <td><button type="button" class="btn btn-success editVendor" id="{{dataValues.id}}"><i class="far fa-edit fa-1.5x"></i> Edit</button>
+            <button type="button" class="btn btn-primary editVendorSave"  id="{{dataValues.id}}"><i class="far fa-save fa-1.5x"></i> Save</button>
+            <td>
             <td><button style='cursor:pointer;color:red' data-id="{{dataValues.id}}" class='delete-vendor'
                 onclick="deleteVendor({{dataValues.id}})">Delete</button></td>
-            {{!-- test top --}}
-            <a href="#" class="updown-arrow" onClick="callUserDetail()" data-control="userBtn"><i
-                class="icon-arrow-big"></i></a>
-            {{!-- test bottom --}}
           </tr>
           {{/each}}
         </table>
@@ -170,8 +165,6 @@
           data[key] = $(this).val();
           counter++;
         });
-        // // Grab the id from the url
-        // var id = (window.location.href).slice(-1)
         $.ajax("/api/vendorInfos/" + idNum, {
           type: "PUT",
           data: data
