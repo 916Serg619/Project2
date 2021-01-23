@@ -7,12 +7,13 @@ $(document).ready(() => {
 
   // Render events on page load
   renderpage();
- function renderpage() {$.get("/api/eventInfos", (req, res) => {
-    res.render("members.handlebars", {
-      event: dbEventInfo
+  function renderpage() {
+    $.get("/api/eventInfos", (req, res) => {
+      res.render("members.handlebars", {
+        event: dbEventInfo
+      });
     });
-  });
-)
+  }
   // Create wedding button redirect
   $("#createWedding").on("click", () => {
     window.location.href = "/planner";
