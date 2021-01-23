@@ -38,10 +38,11 @@
             <td class="event-data"><textarea readonly>{{event.eventDate}}</textarea></td>
             <td class="event-data"><textarea readonly>{{event.foodOptionOne}}</textarea></td>
             <td class="event-data"><textarea readonly>{{event.foodOptionTwo}}</textarea></td>
-            <td><button type="button" class="btn btn-success editEvent"><i class="far fa-edit fa-1.5x"></i> Edit</button>
-            <button type="button" class="btn btn-primary editEventSave"><i class="far fa-save fa-1.5x"></i> Save</button>
-            <td><a style='cursor:pointer;color:red' data-Id="{{event.id}}" class='delete-event'
-                href="/members">Delete</a></td>
+            <td><button type="button" class="btn btn-success editEvent"><i class="far fa-edit fa-1x"></i> Edit</button>
+            <button type="button" class="btn btn-primary editEventSave"><i class="far fa-save fa-1x"></i> Save</button>
+            {{!-- <td><a style='cursor:pointer;color:red' data-Id="{{event.id}}" class='delete-event'
+                href="/members">Delete</a></td> --}}
+            <td><button type="button" class="btn btn-danger delete-event" data-Id="{{event.id}}" onclick="deleteEvent({{event.id}})" href="/members"><i class="far fa-trash-alt fa-1x"></i> Delete</button>
           </tr>
         </table>
       </div>
@@ -70,11 +71,12 @@
             <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.service}}</textarea></td>
             <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.email}}</textarea></td>
             <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.phone}}</textarea></td>
-            <td><button type="button" class="btn btn-success editVendor" id="{{dataValues.id}}"><i class="far fa-edit fa-1.5x"></i> Edit</button>
-            <button type="button" class="btn btn-primary editVendorSave"  id="{{dataValues.id}}"><i class="far fa-save fa-1.5x"></i> Save</button>
+            <td><button type="button" class="btn btn-success editVendor" id="{{dataValues.id}}"><i class="far fa-edit fa-1x"></i> Edit</button>
+            <button type="button" class="btn btn-primary editVendorSave"  id="{{dataValues.id}}"><i class="far fa-save fa-1x"></i> Save</button>
             <td>
-            <td><button style='cursor:pointer;color:red' data-id="{{dataValues.id}}" class='delete-vendor'
-                onclick="deleteVendor({{dataValues.id}})">Delete</button></td>
+            {{!-- <td><button style='cursor:pointer;color:red' data-id="{{dataValues.id}}" class='delete-vendor'
+                onclick="deleteVendor({{dataValues.id}})">Delete</button></td> --}}
+            <td><button type="button" class="btn btn-danger delete-vendor" data-Id="{{dataValues.id}}" onclick="deleteVendor({{dataValues.id}})"><i class="far fa-trash-alt fa-1x"></i> Delete</button>
           </tr>
           {{/each}}
         </table>
@@ -131,6 +133,18 @@
         }
         )
         location.reload();
+      }
+
+      // DELETE EVENT
+      function deleteEvent(id) {
+        console.log("this event was deleted");
+        console.log(id);
+        $.ajax({
+          method: "DELETE",
+          url: "/api/eventInfos/" + id
+        }
+        )
+        window.location.href = "/members";
       }
 
       // EDIT VENDOR
