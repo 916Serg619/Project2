@@ -40,11 +40,12 @@
           <tr>
             <td>{{dataValues.couple}}</td>
             <td>{{dataValues.eventDate}}</td>
-            <td><a href="/summary/{{dataValues.id}}">Summary</a></td>
-            <td><a href="/vendorInfos/{{dataValues.id}}">Add</a></td>
+            {{!-- <td><a href="/summary/{{dataValues.id}}">Summary</a></td> --}}
+            <td><button type="button" class="btn btn-primary" onclick="window.location = '/summary/{{dataValues.id}}';"><i class="far fa-file"></i> Summary</button></td>
+            {{!-- <td><a href="/vendorInfos/{{dataValues.id}}">Add</a></td> --}}
+            <td><button type="button" class="btn btn-success" onclick="window.location = '/vendorInfos/{{dataValues.id}}';"><i class="fas fa-user-plus"></i> Add</button></td>
             {{!-- <td><a style='cursor:pointer;color:red' data-Id="{{dataValues.id}}" class='delete-event'>Delete</a></td> --}}
-            <td><button type="button" class="btn btn-danger delete-event" data-Id="{{dataValues.id}}"><i class="far fa-trash-alt fa-1x"></i> Delete</button>
-
+            <td><button type="button" class="btn btn-danger delete-event" data-Id="{{dataValues.id}}"><i class="far fa-trash-alt fa-1x"></i> Delete</button></td>
           </tr>
           {{/each}}
         </table>
