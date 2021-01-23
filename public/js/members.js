@@ -2,7 +2,8 @@ $(document).ready(() => {
     // This file just does a GET request to figure out which user is logged in
     // and updates the HTML on the page
     $.get("/api/user_data").then(data => {
-        $(".member-name").text(data.email);
+        console.log(data.firstName);
+        $(".member-name").text(data.firstName);
     });
 
     // Render events on page load
@@ -30,16 +31,12 @@ function deleteEvent() {
 }
 
 //GSAP//
-var tl = gsap.timeline({ defaults: { duration: 0.5 } })
-
-
+const tl = gsap.timeline({ defaults: { duration: 0.5 } });
 
 tl.from("#member", { x: -50, stagger: 0.2, opacity: 0 })
     .from("#wedding-info", { x: -500, stagger: 0.2, opacity: 0 })
     .from(".navbar", { x: -100, stagger: 0.2, opacity: 0 })
 
-
-
-document.getElementById('btn-success').addEventListener('click', () => {
+document.getElementById("btn-success").addEventListener("click", () => {
     tl.reversed() ? tl.play() : tl.reverse();
-})
+});

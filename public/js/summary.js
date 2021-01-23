@@ -5,37 +5,37 @@ $(document).ready(() => {
     });
     // Delete vendor
     $(".delete-vendor").on("click", deleteVendor()); {
-        console.log("this was clicked"), preventDefault();
+        {
+            console.log("this was clicked"), preventDefault();
+        }
+
+        // function deleteVendor() {
+        //   console.log();
+        //   console.log("this was deleted");
+        //   const data1 = $(this).attr("data-id");
+        //   console.log(data1);
+        //   $.ajax({
+        //     method: "DELETE",
+        //     url: "/api/vendorInfos/" + data
+        //   });
+        // }
+        // Delete event
+        $(".delete-event").on("click", deleteEvent());
+
+        function deleteEvent() {
+            console.log("this was deleted");
+            const data = $(this).attr("data-id");
+            console.log(data);
+            $.ajax({
+                method: "DELETE",
+                url: "/api/eventInfos/" + data
+            });
+        }
+        //GSAP//
+        const tl = gsap.timeline({ defaults: { duration: 0.5 } });
+
+        tl.from("#event-info", { x: -500, stagger: 0.2, opacity: 0 })
+            .from("#vendor-info", { x: -500, stagger: 0.2, opacity: 0 })
+            .from(".navbar", { x: -100, stagger: 0.2, opacity: 0 })
     }
-
-    function deleteVendor() {
-        console.log();
-        console.log("this was deleted");
-        const data1 = $(this).attr("data-id");
-        console.log(data1);
-        $.ajax({
-            method: "DELETE",
-            url: "/api/vendorInfos/" + data
-        });
-    }
-    // Delete event
-    $(".delete-event").on("click", deleteEvent());
-
-    function deleteEvent() {
-        console.log("this was deleted");
-        const data = $(this).attr("data-id");
-        console.log(data);
-        $.ajax({
-            method: "DELETE",
-            url: "/api/eventInfos/" + data
-        });
-    }
-    //GSAP//
-    var tl = gsap.timeline({ defaults: { duration: 0.5 } })
-
-
-
-    tl.from("#event-info", { x: -500, stagger: 0.2, opacity: 0 })
-        .from("#vendor-info", { x: -500, stagger: 0.2, opacity: 0 })
-        .from(".navbar", { x: -100, stagger: 0.2, opacity: 0 })
 });
