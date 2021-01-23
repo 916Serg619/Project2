@@ -28,8 +28,8 @@
                 <th>Event Date</th>
                 <th>Food Option One</th>
                 <th>Food Option Two</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th></th>
+                <th></th>
               </tr>
             </thead>
             {{!-- Body --}}
@@ -43,12 +43,14 @@
                   Edit</button>
                 <button type="button" class="btn btn-primary editEventSave"><i class="far fa-save fa-1x"></i>
                   Save</button>
+                  <button type="button" class="btn btn-danger delete-event" data-Id="{{event.id}}"
+                  onclick="deleteEvent({{event.id}})" href="/members"><i class="far fa-trash-alt fa-1x"></i>
+                  Delete</button>
+                  </td>
                 {{!--
               <td><a style='cursor:pointer;color:red' data-Id="{{event.id}}" class='delete-event'
                   href="/members">Delete</a></td> --}}
-              <td><button type="button" class="btn btn-danger delete-event" data-Id="{{event.id}}"
-                  onclick="deleteEvent({{event.id}})" href="/members"><i class="far fa-trash-alt fa-1x"></i>
-                  Delete</button>
+            
             </tr>
           </table>
         </div>
@@ -59,12 +61,10 @@
     {{!-- Vendor Info Card--}}
     <section id="vendor-section">
       <div class="card-body">
-        <div class = "container">
-          <div class = "row">
-        <h3 class="card-title col-3">Vendor Info</h3>
-        <a type="button" class="btn btn-success col-1" id="circleButton" href="/vendorInfos/{{event.id}}">Add</a>
+        <div class = "row">
+        <h3 class="card-title col-11">Vendor Info</h3>
+        <button type="button" class="btn btn-success col col-1" onclick="window.location = '/vendorInfos/{{dataValues.id}}';"><i class="fas fa-user-plus"></i> Add</button>
           </div>
-        </div>
         <div style="overflow-x:auto;"></div>
         <div style="overflow-x:auto;">
           <table class="table table-striped">
@@ -76,8 +76,8 @@
                   <th>Service</th>
                   <th>Email</th>
                   <th>Phone</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
+                  <th></th>
+                  <th></th>
                 </tr>
               </thead>
               {{!-- Row populate --}}
@@ -91,13 +91,9 @@
                       class="far fa-edit fa-1x"></i> Edit</button>
                   <button type="button" class="btn btn-primary editVendorSave" id="{{dataValues.id}}"><i
                       class="far fa-save fa-1x"></i> Save</button>
-                <td>
-                  {{!--
-                <td><button style='cursor:pointer;color:red' data-id="{{dataValues.id}}" class='delete-vendor'
-                    onclick="deleteVendor({{dataValues.id}})">Delete</button></td> --}}
-                <td><button type="button" class="btn btn-danger delete-vendor" data-Id="{{dataValues.id}}"
+                      <button type="button" class="btn btn-danger delete-vendor" data-Id="{{dataValues.id}}"
                     onclick="deleteVendor({{dataValues.id}})"><i class="far fa-trash-alt fa-1x"></i> Delete</button>
-                </td>
+                <td>
               </tr>
               {{/each}}
             </table>
