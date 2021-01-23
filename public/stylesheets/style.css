@@ -2,14 +2,15 @@
 
 @media(min-width:468px) {
 
+
 form.signup,
 form.login {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 main, header, section, aside, footer, .container {
   margin: 0;
-  padding: 20px; 
+  padding: 10px; 
   box-sizing: border-box;
   outline: none;
   list-style: none;
@@ -31,3 +32,8 @@ textarea {
   outline: none;
   resize: none;
 }
+
+#eventInfoId{
+  visibility: hidden;
+}
+

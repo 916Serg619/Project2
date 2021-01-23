@@ -1,10 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
   const eventInfo = sequelize.define("eventInfos", {
-    // eventInfoId: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   primaryKey: true
-    // },
     couple: {
       type: DataTypes.STRING,
       allowNull: true,
