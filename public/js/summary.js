@@ -8,7 +8,6 @@ $(document).ready(() => {
         {
             console.log("this was clicked"), preventDefault();
         }
-
         // function deleteVendor() {
         //   console.log();
         //   console.log("this was deleted");
@@ -33,9 +32,10 @@ $(document).ready(() => {
         }
         //GSAP//
         const tl = gsap.timeline({ defaults: { duration: 0.5 } });
-
-        tl.from("#event-info", { x: -500, stagger: 0.2, opacity: 0 })
-            .from("#vendor-info", { x: -500, stagger: 0.2, opacity: 0 })
-            .from(".navbar", { x: -100, stagger: 0.2, opacity: 0 })
+        tl.from(".card-title", { y: -50, stagger: 0.2, opacity: 0 })
+            .from(".form-group", { y: -50, stagger: 0.2, opacity: 0 })
+            .from(".btn", { y: -50, opacity: 0 })
+            .from(".newSign", { y: -50, opacity: 0 })
+            .from(".navbar", { x: -100, stagger: 0.2, opacity: 0 });
     }
 });
