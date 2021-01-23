@@ -95,6 +95,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/summary.js"></script>
     <script type="text/javascript">
+      // EDIT EVENT
       // When edit button toggle textarea readonly
       $('td').on('click', '.editEvent', function (event) {
         event.preventDefault();
@@ -105,6 +106,7 @@
         });
       });
 
+      // SAVE EVENT
       // Save button 
       $('td').on('click', '.editEventSave', function (event) {
         event.preventDefault();
@@ -128,6 +130,8 @@
           console.log("event edited");
         })
       });
+
+      // DELETE VENDOR
       function deleteVendor(id) {
         console.log("this was deleted");
         console.log(id);
@@ -138,6 +142,48 @@
         )
         location.reload();
       }
+
+      // EDIT VENDOR
+      // When edit button toggle textarea readonly
+      $('td').on('click', '.editVendor', function (event) {
+        event.preventDefault();
+
+        // Id of the row
+        var idNum = $(this).attr("id");
+
+        // Target all text areas and toggle readonly
+        $(`*[id*=vendor-data${idNum}]`).children("textarea").each(function () {
+          var re = $(this).prop('readonly');
+          $(this).prop('readonly', !re);
+        });
+      });
+
+      // SAVE Vendor
+      // Save button 
+      $('td').on('click', '.editVendorSave', function (event) {
+        event.preventDefault();
+
+        // Id of the row
+        var idNum = $(this).attr("id");
+        // This holds our event data
+        var data = {};
+        var counter = 0
+        // Target all text areas and put data into array
+        $(`*[id*=vendor-data${idNum}]`).children("textarea").each(function () {
+          // We create key value pairs for the data obj
+          var key = "key" + counter;
+          data[key] = $(this).val();
+          counter++;
+        });
+        // // Grab the id from the url
+        // var id = (window.location.href).slice(-1)
+        $.ajax("/api/vendorInfos/" + idNum, {
+          type: "PUT",
+          data: data
+        }).then(function () {
+          console.log("vendor edited");
+        })
+      });
     </script>
 </body>
 </main>

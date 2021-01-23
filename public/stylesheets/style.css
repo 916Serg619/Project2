@@ -33,6 +33,7 @@ textarea {
   resize: none;
 }
 
-#sticky-footer {
-  flex-shrink: none;
+#eventInfoId{
+  visibility: hidden;
 }
+
