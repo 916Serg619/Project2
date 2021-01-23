@@ -39,4 +39,7 @@ $(document).ready(() => {
         console.log(err);
       });
   }
+  $(".signupbutton").on("click", () => {
+    window.location.href = "/signup";
+  });
 });

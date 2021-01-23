@@ -66,10 +66,16 @@ module.exports = function(app) {
     });
   });
   app.delete("/api/vendorInfos/:id?", (req, res) => {
-    db.eventInfos.destroy({
-      where: {
-        id: req.params.id
-      }
-    });
+    db.vendorInfos
+      .destroy({
+        where: {
+          id: req.params.id
+        }
+      })
+      .then(dbEventInfo => {
+        res.json({
+          dbEventInfo: dbEventInfo
+        });
+      });
   });
 };
