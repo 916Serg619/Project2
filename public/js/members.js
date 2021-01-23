@@ -6,13 +6,9 @@ $(document).ready(() => {
   });
 
   // Render events on page load
-  $.get("/api/eventInfos", db => {
-    db.eventInfos.findAll({}).then(dbEventInfo => {
-      res.render("members.handlebars", {
-        event: dbEventInfo
-      });
-    });
-  });
+  // $.get("/api/eventInfos", (req, res) => {
+  //   res.render("members.handlebars", {});
+  // });
 
   // Create wedding button redirect
   $("#createWedding").on("click", () => {
@@ -22,6 +18,7 @@ $(document).ready(() => {
 
 // Delete event button
 $(".delete-event").on("click", deleteEvent);
+
 function deleteEvent() {
   console.log("this was deleted");
   const data = $(this).attr("data-id");
@@ -31,3 +28,14 @@ function deleteEvent() {
     url: "/api/eventInfos/" + data
   }).then(location.reload());
 }
+
+//GSAP//
+const tl = gsap.timeline({ defaults: { duration: 0.5 } });
+
+tl.from(".container", { x: -100, stagger: 0.2, opacity: 0 })
+  .from(".row", { x: -50, stagger: 0.2, opacity: 0 })
+  .from(".navbar", { x: -100, stagger: 0.2, opacity: 0 });
+
+document.getElementById("btn-success").addEventListener("click", () => {
+  tl.reversed() ? tl.play() : tl.reverse();
+});

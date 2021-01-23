@@ -29,6 +29,10 @@ module.exports = function(app) {
       });
     });
   });
+  //Path to login page
+  app.get("/signup", (req, res) => {
+    res.render("signup.handlebars");
+  });
 
   // Create new event page
   app.get("/planner", isAuthenticated, (req, res) => {
