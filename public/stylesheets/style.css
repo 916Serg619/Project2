@@ -1,29 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 
-@media(min-width:468px) {
+@media (min-width: 468px) {
+  form.signup,
+  form.login {
+    margin-top: 20px;
+  }
 
+  main,
+  header,
+  section,
+  aside,
+  .container {
+    margin: 10;
+    margin-bottom:20px;
+    padding: 10px;
+    box-sizing: border-box;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Raleway", sans-serif;
+  }
 
-form.signup,
-form.login {
-  margin-top: 20px;
-}
+  /* #vendor-section {
+    margin-bottom: 10px;
+  } */
 
-main, header, section, aside, footer, .container {
-  margin: 0;
-  padding: 10px; 
-  box-sizing: border-box;
-  outline: none;
-  list-style: none;
-  text-decoration: none;
-  font-family: 'Raleway', sans-serif;
-}
-
-p{
-  margin-bottom: 15px;
-  font-size: 14px;
-  line-height: 20px;
-  color: #a9a9a9;
-}
+  p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #a9a9a9;
+  }
 }
 
 textarea {
@@ -33,7 +40,15 @@ textarea {
   resize: none;
 }
 
-#eventInfoId{
+#eventInfoId {
   visibility: hidden;
 }
 
+#sticky-footer {
+  position: fixed;
+  left: 
+  0;
+  bottom: 0;
+  width: 100%;  
+  text-align: center;
+}
