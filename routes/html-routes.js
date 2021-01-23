@@ -29,6 +29,7 @@ module.exports = function(app) {
       });
     });
   });
+  //Path to login page
   app.get("/signup", (req, res) => {
     res.render("signup.handlebars");
   });
