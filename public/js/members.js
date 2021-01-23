@@ -34,8 +34,8 @@ var tl = gsap.timeline({ defaults: { duration: 0.5 } })
 
 
 
-tl.from(".container", { x: -100, stagger: 0.2, opacity: 0 })
-    .from(".row", { x: -50, stagger: 0.2, opacity: 0 })
+tl.from("#member", { x: -50, stagger: 0.2, opacity: 0 })
+    .from("#wedding-info", { x: -500, stagger: 0.2, opacity: 0 })
     .from(".navbar", { x: -100, stagger: 0.2, opacity: 0 })
 
 
