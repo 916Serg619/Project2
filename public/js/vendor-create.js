@@ -49,4 +49,31 @@ $(document).ready(() => {
         console.log(err);
       });
   }
+  $("#addNewVendor").on("click", event => {
+    event.preventDefault();
+
+    const vendorCreateData = {
+      vendorName: $("#vendorNameInput")
+        .val()
+        .trim(),
+      service: $("#vendorServiceInput")
+        .val()
+        .trim(),
+      email: $("#vendorEmailInput")
+        .val()
+        .trim(),
+      phone: $("#vendorPhoneInput")
+        .val()
+        .trim(),
+      // hard-coded event foreign key
+      eventInfoId: $("#eventInfoId").text()
+    };
+
+    // Post and redirect
+    enterData(vendorCreateData);
+    const url = window.location.href;
+    const path = url.substr(url.length - 1);
+    window.location.href = `/summary/${path}`;
+    location.reload();
+  });
 });

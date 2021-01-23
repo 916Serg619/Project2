@@ -31,3 +31,15 @@ textarea {
   outline: none;
   resize: none;
 }
+
+#circleButton{
+  border-radius: 50%;
+  font-size:x-large;
+  height: 30px;
+  width: 30px;
+  align-content: center;
+}
+
+#eventInfoId{
+  visibility: hidden;
+}
