@@ -21,9 +21,10 @@ $(document).ready(() => {
     //   });
     // }
     // Delete event
-    $(".delete-event").on("click", deleteEvent());
-
-    function deleteEvent() {
+    // $(".delete-event").on("click", deleteEvent());
+    $("td").on("click", ".delete-event", function(event) {
+      event.preventDefault();
+      console.log(123);
       console.log("this was deleted");
       const data = $(this).attr("data-id");
       console.log(data);
@@ -31,8 +32,7 @@ $(document).ready(() => {
         method: "DELETE",
         url: "/api/eventInfos/" + data
       });
-    }
-
+    });
     //GSAP//
     const tl = gsap.timeline({ defaults: { duration: 0.5 } });
 
