@@ -5,27 +5,18 @@ $(document).ready(() => {
         $(".member-name").text(data.email);
     });
 
-    // $.get("/api/eventInfos", data => {
-    //   const nextWedding = data[data.length - 1].id;
-    //   console.log("kjahsfdiuasy7dfyhsdjhfkjsdf" + data);
+    // Render events on page load
+    // $.get("/api/eventInfos", (req, res) => {
+    //   res.render("members.handlebars", {});
     // });
 
     // Create wedding button redirect
     $("#createWedding").on("click", () => {
-        // const page = parseInt($("#createWedding").attr("data-id")) + 1;
         window.location.href = "/planner";
     });
-
-    // $("*[id*=edit]:visible").on("click", () => {
-    //   const page = parseInt($("#createWedding").attr("data-id")) + 1;
-    //   window.location.href = `/planner/${page}`;
-    // });
-
-    // $.get("/api/eventInfos/" + "1", function(data) {
-    //   console.log(data);
-    // })
 });
 
+// Delete event button
 $(".delete-event").on("click", deleteEvent);
 
 function deleteEvent() {

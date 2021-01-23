@@ -29,7 +29,11 @@ module.exports = function(app) {
       });
     });
   });
+  app.get("/signup", (req, res) => {
+    res.render("signup.handlebars");
+  });
 
+  // Create new event page
   app.get("/planner", isAuthenticated, (req, res) => {
     res.render("planner.handlebars");
   });
@@ -41,9 +45,10 @@ module.exports = function(app) {
     });
   });
 
-  // Summary Page rendering for each wedding
+  // Summary Page/Event summary
   app.get("/summary/:id?", isAuthenticated, (req, res) => {
     pageNum = req.params.id;
+    // Find that event
     db.eventInfos
       .findOne({
         where: {
@@ -53,6 +58,7 @@ module.exports = function(app) {
       .then(dbEventInfo => {
         console.log(dbEventInfo);
         const event = dbEventInfo.dataValues;
+        // Finds all associated vendors
         db.vendorInfos
           .findAll({
             where: { eventInfoId: req.params.id }

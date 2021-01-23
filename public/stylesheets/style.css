@@ -23,7 +23,11 @@ p{
   line-height: 20px;
   color: #a9a9a9;
 }
+}
 
-
-
+textarea {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  resize: none;
 }
