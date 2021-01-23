@@ -40,4 +40,53 @@ module.exports = function(app) {
         });
       });
   });
+
+  app.get("/api/vendorInfos/:id", (req, res) => {
+    db.vendorInfos
+      .findOne({
+        where: {
+          id: req.params.id
+        }
+      })
+      .then(vendorInfo => {
+        res.json({
+          vendorInfo: vendorInfo
+          // eventInfoId: res.params.eventInfoId
+        });
+      });
+  });
+  app.get("/api/vendorInfos", (req, res) => {
+    db.vendorInfos.findAll({}).then(vendorInfo => {
+      console.log(vendorInfo[id].dataValues.id);
+      res.json({
+        vendorInfo: vendorInfo
+        // eventInfoId: res.params.eventInfoId
+      });
+    });
+  });
+
+  // Edit event
+  app.put("/api/eventInfos/:id", (req, res) => {
+    db.eventInfos
+      .update(
+        {
+          couple: req.body.key0,
+          venueName: req.body.key1,
+          eventDate: req.body.key2,
+          foodOptionOne: req.body.key3,
+          foodOptionTwo: req.body.key4
+        },
+        {
+          where: {
+            id: req.params.id
+          }
+        }
+      )
+      .then(dbEventInfos => {
+        res.json(dbEventInfos);
+      })
+      .catch(err => {
+        res.json(err);
+      });
+  });
 };
