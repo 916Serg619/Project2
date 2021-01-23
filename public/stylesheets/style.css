@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 
-@media (min-width: 468px) {
+
   form.signup,
   form.login {
     margin-top: 20px;
@@ -31,7 +31,7 @@
     line-height: 20px;
     color: #a9a9a9;
   }
-}
+
 
 textarea {
   border: none;
