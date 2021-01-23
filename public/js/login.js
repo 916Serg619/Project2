@@ -39,4 +39,20 @@ $(document).ready(() => {
         console.log(err);
       });
   }
+  $(".signupbutton").on("click", () => {
+    window.location.href = "/signup";
+  });
+});
+
+//GSAP//
+const tl = gsap.timeline({ defaults: { duration: 0.5 } });
+
+tl.from(".logForm", { y: -50, stagger: 0.2, opacity: 0 })
+  .from(".form-group", { y: -50, stagger: 0.2, opacity: 0 })
+  .from(".btn", { y: -50, opacity: 0 })
+  .from(".newSign", { y: -50, opacity: 0 })
+  .from(".navbar", { x: -100, stagger: 0.2, opacity: 0 });
+
+document.getElementById("btn-success").addEventListener("click", () => {
+  tl.reversed() ? tl.play() : tl.reverse();
 });

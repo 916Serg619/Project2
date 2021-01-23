@@ -73,7 +73,7 @@
             <td><textarea readonly>{{dataValues.email}}</textarea></td>
             <td><textarea readonly>{{dataValues.phone}}</textarea></td>
             <td><a href="/vendorInfos/{{dataValues.eventInfoId}}">Edit</a></td>
-            <td><a style='cursor:pointer;color:red' class='delete-event'>Delete</a></td>
+            <td><button style='cursor:pointer;color:red' data-id = "{{dataValues.id}}" class='delete-vendor'onclick="deleteVendor({{dataValues.id}})">Delete</button></td>
             {{!-- test top --}}
             <a href="#" class="updown-arrow" onClick="callUserDetail()" data-control="userBtn"><i
                 class="icon-arrow-big"></i></a>
@@ -121,6 +121,16 @@
           console.log("event edited");
         })
       });
+      function deleteVendor(id) {
+    console.log("this was deleted");
+    console.log(id);
+    $.ajax({
+      method: "DELETE",
+      url: "/api/vendorInfos/" + id 
+      }
+      )
+      location.reload();   
+  }
     </script>
 </body>
 </main>

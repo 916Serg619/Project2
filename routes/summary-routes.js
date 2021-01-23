@@ -40,13 +40,14 @@ module.exports = function(app) {
         });
       });
   });
-
   app.get("/api/vendorInfos/:id", (req, res) => {
     db.vendorInfos
       .findOne({
-        where: {
-          id: req.params.id
-        }
+        where: [
+          {
+            id: req.params.id
+          }
+        ]
       })
       .then(vendorInfo => {
         res.json({
@@ -55,14 +56,27 @@ module.exports = function(app) {
         });
       });
   });
+
   app.get("/api/vendorInfos", (req, res) => {
     db.vendorInfos.findAll({}).then(vendorInfo => {
-      console.log(vendorInfo[id].dataValues.id);
       res.json({
         vendorInfo: vendorInfo
         // eventInfoId: res.params.eventInfoId
       });
     });
+  });
+  app.delete("/api/vendorInfos/:id?", (req, res) => {
+    db.vendorInfos
+      .destroy({
+        where: {
+          id: req.params.id
+        }
+      })
+      .then(dbEventInfo => {
+        res.json({
+          dbEventInfo: dbEventInfo
+        });
+      });
   });
 
   // Edit event
