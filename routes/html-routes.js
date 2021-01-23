@@ -30,6 +30,10 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/signup", (req, res) => {
+    res.render("signup.handlebars");
+  });
+
   // Create new event page
   app.get("/planner", isAuthenticated, (req, res) => {
     res.render("planner.handlebars");
