@@ -1,81 +1,136 @@
-{{!-- Event Info Card--}}
-<div class="card" style="width: 33rem;">
-  <div class="card-body">
-    <h3 class="card-title">Event Info</h3>
-    <table class="table table-striped">
-      {{!-- Head --}}
-      <thead>
-        <tr>
-          <th>Couple</th>
-          <th>Event Date</th>
-          <th>Venue</th>
-          <th>Address</th>
-          <th>City</th>
-          <th>Food Option One</th>
-          <th>Food Option Two</th>
-          <th>Edit</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      {{!-- Body --}}
-      <tr>
-        <td>{{event.couple}}</td>
-        <td>{{event.venueName}}</td>
-        <td>{{event.eventDate}}</td>
-        <td>{{event.addressStreet}}</td>
-        <td>{{event.addressCity}}</td>
-        <td>{{event.foodOptionOne}}</td>
-        <td>{{event.foodOptionTwo}}</td>
-        <td><a href="/planner/">Edit</a></td>
-        <td><a style='cursor:pointer;color:red' data-Id = "{{event.id}}" class='delete-event' href="/members">Delete</a></td>
-      </tr>
-    </table>
-  </div>
-</div>
+<body>
+  <main>
 
-{{!-- Vendor Info Card--}}
-<div class="card" style="width: 33rem;">
-  <div class="card-body">
-    <h5 class="card-title">Vendor Info</h5>
-    <table class="table table-striped">
-      {{!-- Head --}}
-      <thead>
-        <tr>
-          <th>Vendor Name</th>
-          <th>Service</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Edit</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      {{!-- Row populate --}}
-      {{#each vendor}}
-      <tr>
-        <td><textarea>{{dataValues.vendorName}}</textarea></td>
-        <td><textarea readonly>{{dataValues.service}}</textarea></td>
-        <td>{{dataValues.email}}</td>
-        <td>{{dataValues.phone}}</td>
-        <td><a href="/vendorInfos/{{dataValues.eventInfoId}}">Edit</a></td>
-        <td><button style='cursor:pointer;color:red' data-id = "{{dataValues.id}}" class='delete-vendor'onclick="deleteVendor({{dataValues.id}})">{{dataValues.id}}Delete</button></td>
-      </tr>
-      {{/each}}
-    </table>
-  </div>
-</div>
-<a href="/members" data-role="button">Main</a>
-{{!-- Scripts --}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script> function deleteVendor(id) {
-    console.log();
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/members">
+            Main
+          </a>
+          <a class="navbar-brand" href="/logout">
+            Logout
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    {{!-- Event Info Table --}}
+    <section>
+      <div class="card-body">
+        <h3 class="card-title">Event Info</h3>
+        <table class="table table-striped">
+          {{!-- Head --}}
+          <thead>
+            <tr>
+              <th>Couple</th>
+              <th>Venue</th>
+              <th>Event Date</th>
+              <th>Food Option One</th>
+              <th>Food Option Two</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          {{!-- Body --}}
+          <tr class="eventInfoEdit">
+            <td class="event-data" readonly><textarea>{{event.couple}}</textarea></td>
+            <td class="event-data" readonly><textarea>{{event.venueName}}</textarea></td>
+            <td class="event-data" readonly><textarea>{{event.eventDate}}</textarea></td>
+            <td class="event-data" readonly><textarea>{{event.foodOptionOne}}</textarea></td>
+            <td class="event-data" readonly><textarea>{{event.foodOptionTwo}}</textarea></td>
+            {{!-- <td><button class="editEvent" id="edit{{event.id}}"><i class="far fa-edit"></i>edit</button></td> --}}
+            <td><a class="editEvent" data-control="userBtn">Edit</a><a class="editEventSave" style="color: blueviolet;"
+                data-control="userBtnSave">Save</a></td>
+            <td><a style='cursor:pointer;color:red' data-Id="{{event.id}}" class='delete-event'
+                href="/members">Delete</a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+    {{!-- Vendor Info Card--}}
+    <section>
+      <div class="card-body">
+        <h3 class="card-title">Vendor Info</h3>
+        <table class="table table-striped">
+          {{!-- Head --}}
+          <thead>
+            <tr>
+              <th>Vendor Name</th>
+              <th>Service</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          {{!-- Row populate --}}
+          {{#each vendor}}
+          <tr>
+            <td><textarea>{{dataValues.vendorName}}</textarea></td>
+            <td><textarea readonly>{{dataValues.service}}</textarea></td>
+            <td><textarea readonly>{{dataValues.email}}</textarea></td>
+            <td><textarea readonly>{{dataValues.phone}}</textarea></td>
+            <td><a href="/vendorInfos/{{dataValues.eventInfoId}}">Edit</a></td>
+            <td><button style='cursor:pointer;color:red' data-id = "{{dataValues.id}}" class='delete-vendor'onclick="deleteVendor({{dataValues.id}})">Delete</button></td>
+            {{!-- test top --}}
+            <a href="#" class="updown-arrow" onClick="callUserDetail()" data-control="userBtn"><i
+                class="icon-arrow-big"></i></a>
+            {{!-- test bottom --}}
+          </tr>
+          {{/each}}
+        </table>
+      </div>
+    </section>
+
+    {{!-- Scripts --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/summary.js"></script>
+    <script type="text/javascript">
+      // When edit button toggle textarea readonly
+      $('td').on('click', '.editEvent', function (event) {
+        event.preventDefault();
+        // Target all text areas and toggle readonly
+        $("td.event-data").children("textarea").each(function () {
+          var re = $(this).prop('readonly');
+          $(this).prop('readonly', !re);
+        });
+      });
+
+      // Save button 
+      $('td').on('click', '.editEventSave', function (event) {
+        event.preventDefault();
+
+        // This holds our event data
+        var data = {};
+        var counter = 0
+        // Target all text areas and put data into array
+        $("td.event-data").children("textarea").each(function () {
+          // We create key value pairs for the data obj
+          var key = "key" + counter;
+          data[key] = $(this).val();
+          counter++;
+        });
+        // Grab the id from the url
+        var id = (window.location.href).slice(-1)
+        $.ajax("/api/eventInfos/" + id, {
+          type: "PUT",
+          data: data
+        }).then(function () {
+          console.log("event edited");
+        })
+      });
+      function deleteVendor(id) {
     console.log("this was deleted");
-    console.log(data);
     console.log(id);
     $.ajax({
       method: "DELETE",
       url: "/api/vendorInfos/" + id 
       }
       )
-      location.reload();
-   
-  }</script>
+      location.reload();   
+  }
+    </script>
+</body>
+</main>

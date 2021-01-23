@@ -4,6 +4,9 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
+          <a class="navbar-brand" href="/members">
+            Main
+          </a>
           <a class="navbar-brand" href="/logout">
             Logout
           </a>
@@ -14,7 +17,7 @@
     <!-- Welcome message -->
     <section class="welcome-user-message">
 
-      <h5>Welcome <span class="member-name"></span></h5>
+      <h5>Welcome back, <span class="member-name"></span>!</h5>
 
     </section>
 
@@ -42,16 +45,8 @@
             <td><a style='cursor:pointer;color:red' data-Id="{{dataValues.id}}" class='delete-event'>Delete</a></td>
           </tr>
           {{/each}}
-          <tbody>
-            <tr id="form-row">
-              <form id="wedding-form">
-                <td colspan="4">
-                <td><button type="button" class="btn btn-success" id="createWedding">Create wedding</button>
-                </td>
-              </form>
-            </tr>
-          </tbody>
         </table>
+        <button type="button" class="btn btn-success" id="createWedding">Add Wedding</button>
       </div>
     </section>
 
