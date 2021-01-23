@@ -1,7 +1,7 @@
 <body>
   <main>
     <!-- Nav bar -->
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-expand-sm bg-light">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="/members">
@@ -42,7 +42,9 @@
             <td>{{dataValues.eventDate}}</td>
             <td><a href="/summary/{{dataValues.id}}">Summary</a></td>
             <td><a href="/vendorInfos/{{dataValues.id}}">Add</a></td>
-            <td><a style='cursor:pointer;color:red' data-Id="{{dataValues.id}}" class='delete-event'>Delete</a></td>
+            {{!-- <td><a style='cursor:pointer;color:red' data-Id="{{dataValues.id}}" class='delete-event'>Delete</a></td> --}}
+            <td><button type="button" class="btn btn-danger delete-event" data-Id="{{dataValues.id}}"><i class="far fa-trash-alt fa-1x"></i> Delete</button>
+
           </tr>
           {{/each}}
         </table>

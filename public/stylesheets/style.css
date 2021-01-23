@@ -2,14 +2,15 @@
 
 @media(min-width:468px) {
 
+
 form.signup,
 form.login {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 main, header, section, aside, footer, .container {
   margin: 0;
-  padding: 20px; 
+  padding: 10px; 
   box-sizing: border-box;
   outline: none;
   list-style: none;
@@ -36,6 +37,9 @@ textarea {
   visibility: hidden;
 }
 
+<<<<<<< HEAD
 .logo{
   background-image: url(/public/Ap4p.png);
 }
+=======
+>>>>>>> 549d77eb047df0b10d5f3194527814c1374870a3

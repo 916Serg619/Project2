@@ -1,7 +1,7 @@
 <body>
   <main>
 
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-expand-sm bg-light">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="/members">
@@ -18,76 +18,86 @@
     <section>
       <div class="card-body">
         <h3 class="card-title">Event Info</h3>
-        <table class="table table-striped">
-          {{!-- Head --}}
-          <thead>
-            <tr>
-              <th>Couple</th>
-              <th>Venue</th>
-              <th>Event Date</th>
-              <th>Food Option One</th>
-              <th>Food Option Two</th>
-              <th>Edit</th>
-              <th>Delete</th>
+        <div style="overflow-x:auto;">
+          <table class="table table-striped">
+            {{!-- Head --}}
+            <thead>
+              <tr>
+                <th>Couple</th>
+                <th>Venue</th>
+                <th>Event Date</th>
+                <th>Food Option One</th>
+                <th>Food Option Two</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            {{!-- Body --}}
+            <tr class="eventInfoEdit">
+              <td class="event-data"><textarea readonly>{{event.couple}}</textarea></td>
+              <td class="event-data"><textarea readonly>{{event.venueName}}</textarea></td>
+              <td class="event-data"><textarea readonly>{{event.eventDate}}</textarea></td>
+              <td class="event-data"><textarea readonly>{{event.foodOptionOne}}</textarea></td>
+              <td class="event-data"><textarea readonly>{{event.foodOptionTwo}}</textarea></td>
+              <td><button type="button" class="btn btn-success editEvent"><i class="far fa-edit fa-1x"></i>
+                  Edit</button>
+                <button type="button" class="btn btn-primary editEventSave"><i class="far fa-save fa-1x"></i>
+                  Save</button>
+                {{!--
+              <td><a style='cursor:pointer;color:red' data-Id="{{event.id}}" class='delete-event'
+                  href="/members">Delete</a></td> --}}
+              <td><button type="button" class="btn btn-danger delete-event" data-Id="{{event.id}}"
+                  onclick="deleteEvent({{event.id}})" href="/members"><i class="far fa-trash-alt fa-1x"></i>
+                  Delete</button>
             </tr>
-          </thead>
-          {{!-- Body --}}
-          <tr class="eventInfoEdit">
-            <td class="event-data" readonly><textarea>{{event.couple}}</textarea></td>
-            <td class="event-data" readonly><textarea>{{event.venueName}}</textarea></td>
-            <td class="event-data" readonly><textarea>{{event.eventDate}}</textarea></td>
-            <td class="event-data" readonly><textarea>{{event.foodOptionOne}}</textarea></td>
-            <td class="event-data" readonly><textarea>{{event.foodOptionTwo}}</textarea></td>
-            {{!-- <td><button class="editEvent" id="edit{{event.id}}"><i class="far fa-edit"></i>edit</button></td> --}}
-            <td><a class="editEvent" data-control="userBtn">Edit</a><a class="editEventSave" style="color: blueviolet;"
-                data-control="userBtnSave">Save</a></td>
-            <td><a style='cursor:pointer;color:red' data-Id="{{event.id}}" class='delete-event'
-                href="/members">Delete</a>
-            </td>
-          </tr>
-        </table>
+          </table>
+        </div>
+      </div>
       </div>
     </section>
 
     {{!-- Vendor Info Card--}}
     <section>
       <div class="card-body">
-        <div class = "container">
-          <div class = "row">
-        <h3 class="card-title col-3">Vendor Info</h3>
-        <a type="button" class="btn btn-success col-1" id="circleButton" href="/vendorInfos/{{event.id}}">Add</a>
-          </div>
+        <h3 class="card-title">Vendor Info</h3>
+        <div style="overflow-x:auto;"></div>
+        <div style="overflow-x:auto;">
+          <table class="table table-striped">
+            <table class="table table-striped">
+              {{!-- Head --}}
+              <thead>
+                <tr>
+                  <th>Vendor Name</th>
+                  <th>Service</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              {{!-- Row populate --}}
+              {{#each vendor}}
+              <tr>
+                <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.vendorName}}</textarea></td>
+                <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.service}}</textarea></td>
+                <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.email}}</textarea></td>
+                <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.phone}}</textarea></td>
+                <td><button type="button" class="btn btn-success editVendor" id="{{dataValues.id}}"><i
+                      class="far fa-edit fa-1x"></i> Edit</button>
+                  <button type="button" class="btn btn-primary editVendorSave" id="{{dataValues.id}}"><i
+                      class="far fa-save fa-1x"></i> Save</button>
+                <td>
+                  {{!--
+                <td><button style='cursor:pointer;color:red' data-id="{{dataValues.id}}" class='delete-vendor'
+                    onclick="deleteVendor({{dataValues.id}})">Delete</button></td> --}}
+                <td><button type="button" class="btn btn-danger delete-vendor" data-Id="{{dataValues.id}}"
+                    onclick="deleteVendor({{dataValues.id}})"><i class="far fa-trash-alt fa-1x"></i> Delete</button>
+                </td>
+              </tr>
+              {{/each}}
+            </table>
         </div>
-        <table class="table table-striped">
-          {{!-- Head --}}
-          <thead>
-            <tr>
-              <th>Vendor Name</th>
-              <th>Service</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Edit</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          {{!-- Row populate --}}
-          {{#each vendor}}
-          <tr>
-            <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.vendorName}}</textarea></td>
-            <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.service}}</textarea></td>
-            <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.email}}</textarea></td>
-            <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.phone}}</textarea></td>
-            <td><a class="editVendor" id="{{dataValues.id}}" data-control="userBtn">Edit</a><a class="editVendorSave" id="{{dataValues.id}}"
-                style="color: blueviolet;" data-control="userBtnSave">Save</a></td>
-            <td><button style='cursor:pointer;color:red' data-id="{{dataValues.id}}" class='delete-vendor'
-                onclick="deleteVendor({{dataValues.id}})">Delete</button></td>
-            {{!-- test top --}}
-            <a href="#" class="updown-arrow" onClick="callUserDetail()" data-control="userBtn"><i
-                class="icon-arrow-big"></i></a>
-            {{!-- test bottom --}}
-          </tr>
-          {{/each}}
-        </table>
+      </div>
       </div>
     </section>
 
@@ -143,6 +153,18 @@
         location.reload();
       }
 
+      // DELETE EVENT
+      function deleteEvent(id) {
+        console.log("this event was deleted");
+        console.log(id);
+        $.ajax({
+          method: "DELETE",
+          url: "/api/eventInfos/" + id
+        }
+        )
+        window.location.href = "/members";
+      }
+
       // EDIT VENDOR
       // When edit button toggle textarea readonly
       $('td').on('click', '.editVendor', function (event) {
@@ -175,8 +197,6 @@
           data[key] = $(this).val();
           counter++;
         });
-        // // Grab the id from the url
-        // var id = (window.location.href).slice(-1)
         $.ajax("/api/vendorInfos/" + idNum, {
           type: "PUT",
           data: data
