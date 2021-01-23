@@ -1,13 +1,16 @@
 <body>
+     <!-- Nav bar -->
     <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <ul>
-                    {{!-- EC: add link to members page --}}
-                    <li><a href="#">Home</a></li>
-                </ul>
-            </div>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/members">
+            Main
+          </a>
+          <a class="navbar-brand" href="/logout">
+            Logout
+          </a>
         </div>
+      </div>
     </nav>
     <div class="container">
         {{!-- Event Input Form --}}
@@ -15,35 +18,35 @@
             {{!-- Couple --}}
             <div class="form-group">
                 <label for="couple">Couple</label>
-                <input type="text" class="form-control" id="coupleInput" placeholder="couple">
+                <input type="text" class="form-control" id="coupleInput" placeholder="Couple">
             </div>
             {{!-- Venue --}}
             <div class="form-group">
                 <label for="venue">Venue</label>
-                <input type="text" class="form-control" id="venueInput" placeholder="venue">
+                <input type="text" class="form-control" id="venueInput" placeholder="Venue">
             </div>
             {{!-- Event Date --}}
             <div class="form-group">
                 <label for="date">Date</label>
-                <input type="date" class="form-control" id="dateInput" placeholder="date">
+                <input type="date" class="form-control" id="dateInput">
             </div>
             
             {{!-- Food Option One --}}
             <div class="form-group">
                 <label for="foodOptionOne">Food Option One</label>
-                <input type="text" class="form-control" id="foodOptionOneInput" placeholder="foodOptionOne">
+                <input type="text" class="form-control" id="foodOptionOneInput" placeholder="Option One">
             </div>
             {{!-- Food Option Two --}}
             <div class="form-group">
                 <label for="foodOptionTwo">Food Option Two</label>
-                <input type="text" class="form-control" id="foodOptionTwoInput" placeholder="foodOptionTwo">
+                <input type="text" class="form-control" id="foodOptionTwoInput" placeholder="Option Two">
             </div>
         </form>
 
         {{!-- Navigation buttons --}}
         <button type="button" class="btn btn-success" id="submitNewWedding">Submit</button>
-        <button type="button" class="btn btn-success" id="backToMain">Main</button>
-        <button type="button" class="btn btn-success" id="toSummary">Summary</button>
+        {{!-- <button type="button" class="btn btn-success" id="backToMain">Main</button> --}}
+        {{!-- <button type="button" class="btn btn-success" id="toSummary">Summary</button> --}}
     </div>
     {{!-- Scripts --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
