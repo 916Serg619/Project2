@@ -10,7 +10,7 @@ form.login {
 
 main, header, section, aside, footer, .container {
   margin: 0;
-  padding: 20px; 
+  padding: 10px; 
   box-sizing: border-box;
   outline: none;
   list-style: none;
