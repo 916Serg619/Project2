@@ -35,3 +35,7 @@ textarea {
 #eventInfoId{
   visibility: hidden;
 }
+
+.logo{
+  background-image: url(/public/Ap4p.png);
+}

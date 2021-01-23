@@ -10,16 +10,6 @@ $(document).ready(() => {
       console.log("this was clicked"), preventDefault();
     }
 
-    // function deleteVendor() {
-    //   console.log();
-    //   console.log("this was deleted");
-    //   const data1 = $(this).attr("data-id");
-    //   console.log(data1);
-    //   $.ajax({
-    //     method: "DELETE",
-    //     url: "/api/vendorInfos/" + data
-    //   });
-    // }
     // Delete event
     $(".delete-event").on("click", deleteEvent());
 
