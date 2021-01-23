@@ -32,3 +32,7 @@ textarea {
   outline: none;
   resize: none;
 }
+
+#sticky-footer {
+  flex-shrink: none;
+}
