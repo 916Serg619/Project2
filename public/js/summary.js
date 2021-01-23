@@ -32,6 +32,7 @@ $(document).ready(() => {
         url: "/api/eventInfos/" + data
       });
     }
+
     //GSAP//
     const tl = gsap.timeline({ defaults: { duration: 0.5 } });
 

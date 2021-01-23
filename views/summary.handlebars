@@ -52,7 +52,12 @@
     {{!-- Vendor Info Card--}}
     <section>
       <div class="card-body">
-        <h3 class="card-title">Vendor Info</h3>
+        <div class = "container">
+          <div class = "row">
+        <h3 class="card-title col-3">Vendor Info</h3>
+        <a type="button" class="btn btn-success col-1" id="circleButton" href="/vendorInfos/{{event.id}}">Add</a>
+          </div>
+        </div>
         <table class="table table-striped">
           {{!-- Head --}}
           <thead>
@@ -128,6 +133,14 @@
 
       // DELETE VENDOR
       function deleteVendor(id) {
+<<<<<<< HEAD
+    console.log("this was deleted");
+    console.log(id);
+    
+    $.ajax({
+      method: "DELETE",
+      url: "/api/vendorInfos/" + id 
+=======
         console.log("this was deleted");
         console.log(id);
         $.ajax({
@@ -136,6 +149,7 @@
         }
         )
         location.reload();
+>>>>>>> 486b8d0bbcc9f3c5f62edd463150327fe7a27f31
       }
 
       // EDIT VENDOR

@@ -31,3 +31,7 @@ textarea {
   outline: none;
   resize: none;
 }
+
+#eventInfoId{
+  visibility: hidden;
+}
