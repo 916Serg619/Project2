@@ -15,8 +15,8 @@
     </nav>
 
     {{!-- Event Info Table --}}
-    <section>
-      <div class="card-body">
+    <section id="event-info">
+      <div  class="card-body">
         <h3 class="card-title">Event Info</h3>
         <table class="table table-striped">
           {{!-- Head --}}
@@ -51,7 +51,7 @@
 
     {{!-- Vendor Info Card--}}
     <section>
-      <div class="card-body">
+      <div id="vendor-info" class="card-body">
         <h3 class="card-title">Vendor Info</h3>
         <table class="table table-striped">
           {{!-- Head --}}
@@ -85,8 +85,7 @@
     </section>
 
     {{!-- Scripts --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/summary.js"></script>
+    
     <script type="text/javascript">
       // When edit button toggle textarea readonly
       $('td').on('click', '.editEvent', function (event) {
@@ -132,5 +131,11 @@
       location.reload();   
   }
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/summary.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CustomBounce3.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CustomEase3.min.js"></script>
+    
 </body>
 </main>
