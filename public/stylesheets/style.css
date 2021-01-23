@@ -2,6 +2,9 @@
 
 @media(min-width:468px) {
 
+.navbar
+
+
 form.signup,
 form.login {
   margin-top: 50px;
