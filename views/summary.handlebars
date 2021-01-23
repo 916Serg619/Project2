@@ -73,12 +73,14 @@
           {{!-- Row populate --}}
           {{#each vendor}}
           <tr>
-            <td><textarea>{{dataValues.vendorName}}</textarea></td>
-            <td><textarea readonly>{{dataValues.service}}</textarea></td>
-            <td><textarea readonly>{{dataValues.email}}</textarea></td>
-            <td><textarea readonly>{{dataValues.phone}}</textarea></td>
-            <td><a href="/vendorInfos/{{dataValues.eventInfoId}}">Edit</a></td>
-            <td><button style='cursor:pointer;color:red' data-id = "{{dataValues.id}}" class='delete-vendor'onclick="deleteVendor({{dataValues.id}})">Delete</button></td>
+            <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.vendorName}}</textarea></td>
+            <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.service}}</textarea></td>
+            <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.email}}</textarea></td>
+            <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.phone}}</textarea></td>
+            <td><a class="editVendor" id="{{dataValues.id}}" data-control="userBtn">Edit</a><a class="editVendorSave" id="{{dataValues.id}}"
+                style="color: blueviolet;" data-control="userBtnSave">Save</a></td>
+            <td><button style='cursor:pointer;color:red' data-id="{{dataValues.id}}" class='delete-vendor'
+                onclick="deleteVendor({{dataValues.id}})">Delete</button></td>
             {{!-- test top --}}
             <a href="#" class="updown-arrow" onClick="callUserDetail()" data-control="userBtn"><i
                 class="icon-arrow-big"></i></a>
@@ -93,6 +95,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/summary.js"></script>
     <script type="text/javascript">
+      // EDIT EVENT
       // When edit button toggle textarea readonly
       $('td').on('click', '.editEvent', function (event) {
         event.preventDefault();
@@ -103,6 +106,7 @@
         });
       });
 
+      // SAVE EVENT
       // Save button 
       $('td').on('click', '.editEventSave', function (event) {
         event.preventDefault();
@@ -126,17 +130,69 @@
           console.log("event edited");
         })
       });
+
+      // DELETE VENDOR
       function deleteVendor(id) {
+<<<<<<< HEAD
     console.log("this was deleted");
     console.log(id);
     
     $.ajax({
       method: "DELETE",
       url: "/api/vendorInfos/" + id 
+=======
+        console.log("this was deleted");
+        console.log(id);
+        $.ajax({
+          method: "DELETE",
+          url: "/api/vendorInfos/" + id
+        }
+        )
+        location.reload();
+>>>>>>> 486b8d0bbcc9f3c5f62edd463150327fe7a27f31
       }
-      )
-      location.reload();   
-  }
+
+      // EDIT VENDOR
+      // When edit button toggle textarea readonly
+      $('td').on('click', '.editVendor', function (event) {
+        event.preventDefault();
+
+        // Id of the row
+        var idNum = $(this).attr("id");
+
+        // Target all text areas and toggle readonly
+        $(`*[id*=vendor-data${idNum}]`).children("textarea").each(function () {
+          var re = $(this).prop('readonly');
+          $(this).prop('readonly', !re);
+        });
+      });
+
+      // SAVE Vendor
+      // Save button 
+      $('td').on('click', '.editVendorSave', function (event) {
+        event.preventDefault();
+
+        // Id of the row
+        var idNum = $(this).attr("id");
+        // This holds our event data
+        var data = {};
+        var counter = 0
+        // Target all text areas and put data into array
+        $(`*[id*=vendor-data${idNum}]`).children("textarea").each(function () {
+          // We create key value pairs for the data obj
+          var key = "key" + counter;
+          data[key] = $(this).val();
+          counter++;
+        });
+        // // Grab the id from the url
+        // var id = (window.location.href).slice(-1)
+        $.ajax("/api/vendorInfos/" + idNum, {
+          type: "PUT",
+          data: data
+        }).then(function () {
+          console.log("vendor edited");
+        })
+      });
     </script>
 </body>
 </main>
