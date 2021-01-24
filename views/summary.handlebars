@@ -1,13 +1,15 @@
 <body>
   <main>
 
-    <nav class="navbar navbar-expand-sm bg-light color">
+    <nav class="navbar navbar-expand-sm color">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/members">
+          <a class="navbar-brand navbtn1" href="/members"><i class="fab fa-pagelines fa-2x"></i>
+          <br>
             Main
           </a>
-          <a class="navbar-brand" href="/logout">
+          <a class="navbar-brand navbtn1" href="/logout"><i class="fab fa-envira"></i>
+          <br>
             Logout
           </a>
         </div>
@@ -39,11 +41,11 @@
               <td class="event-data"><textarea readonly>{{event.eventDate}}</textarea></td>
               <td class="event-data"><textarea readonly>{{event.foodOptionOne}}</textarea></td>
               <td class="event-data"><textarea readonly>{{event.foodOptionTwo}}</textarea></td>
-              <td><button type="button" class="btn btn-success editEvent"><i class="far fa-edit fa-1x"></i>
+              <td><button type="button" class="btn navbtn1 editEvent"><i class="far fa-edit fa-1x"></i>
                   Edit</button>
-                <button type="button" class="btn btn-primary editEventSave"><i class="far fa-save fa-1x"></i>
+                <button type="button" class="btn navbtn1 editEventSave"><i class="far fa-save fa-1x"></i>
                   Save</button>
-                  <button type="button" class="btn btn-danger delete-event" data-Id="{{event.id}}"
+                  <button type="button" class="btn navbtn1 delete-event" data-Id="{{event.id}}"
                   onclick="deleteEvent({{event.id}})" href="/members"><i class="far fa-trash-alt fa-1x"></i>
                   Delete</button>
                   </td>
@@ -59,7 +61,7 @@
       <div class="card-body">
         <div class = "row">
         <h3 class="card-title col-11">Vendor Info</h3>
-        <button type="button" class="btn btn-success col col-1" onclick="window.location = '/vendorInfos/{{dataValues.id}}';"><i class="fas fa-user-plus"></i> Add</button>
+        <button type="button" class="btn navbtn1 col col-1" onclick="window.location = '/vendorInfos/{{dataValues.id}}';"><i class="fas fa-user-plus"></i> Add</button>
           </div>
         <div style="overflow-x:auto;"></div>
         <div style="overflow-x:auto;">
@@ -81,11 +83,11 @@
                 <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.service}}</textarea></td>
                 <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.email}}</textarea></td>
                 <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.phone}}</textarea></td>
-                <td><button type="button" class="btn btn-success editVendor" id="{{dataValues.id}}"><i
+                <td><button type="button" class="btn navbtn1 editVendor" id="{{dataValues.id}}"><i
                       class="far fa-edit fa-1x"></i> Edit</button>
-                  <button type="button" class="btn btn-primary editVendorSave" id="{{dataValues.id}}"><i
+                  <button type="button" class="btn navbtn1 editVendorSave" id="{{dataValues.id}}"><i
                       class="far fa-save fa-1x"></i> Save</button>
-                      <button type="button" class="btn btn-danger delete-vendor" data-Id="{{dataValues.id}}"
+                      <button type="button" class="btn navbtn1 delete-vendor" data-Id="{{dataValues.id}}"
                     onclick="deleteVendor({{dataValues.id}})"><i class="far fa-trash-alt fa-1x"></i> Delete</button>
                 <td>
               </tr>

@@ -55,18 +55,21 @@ textarea {
 
 
 body{
-  background-color: #d8f0ec !important;
+  background-color: #e9f4f2 !important;
 }
 
 #logo{
   width: 100%;
 }
 .color{
-background-color: #d8f0ec;
+background-color: #e9f4f2;
 color: black !important;
 }
 
 .navbtn1{
   background: transparent;
   border: none;
+}
+#memberslogo{
+  width: 60%;
 }
