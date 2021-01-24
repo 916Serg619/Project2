@@ -23,10 +23,16 @@
   }
 
   .card {
-    width: 40rem;
+    width: 50rem;
+    padding: 10px;
+    margin: 15px;
+  }
+
+  .summary-card {
+    width: 50rem;
     padding: 10px;
     margin: 10px;
-  }
+    }
 
   #vendor-section {
     margin-bottom: 10px;
@@ -58,4 +64,8 @@ textarea {
   bottom: 0;
   width: 100%;  
   text-align: center;
+}
+
+#circleButton {
+  width: fit-content;
 }
