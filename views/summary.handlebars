@@ -16,7 +16,7 @@
 
     {{!-- Event Info Table --}}
     <section>
-      <div class="card-body">
+      <div class="card-body" id="eventInfo">
         <h3 class="card-title">Event Info</h3>
         <div style="overflow-x:auto;">
           <table class="table table-striped">
@@ -43,14 +43,14 @@
                   Edit</button>
                 <button type="button" class="btn btn-primary editEventSave"><i class="far fa-save fa-1x"></i>
                   Save</button>
-                  <button type="button" class="btn btn-danger delete-event" data-Id="{{event.id}}"
+                <button type="button" class="btn btn-danger delete-event" data-Id="{{event.id}}"
                   onclick="deleteEvent({{event.id}})" href="/members"><i class="far fa-trash-alt fa-1x"></i>
                   Delete</button>
-                  </td>
-                {{!--
+              </td>
+              {{!--
               <td><a style='cursor:pointer;color:red' data-Id="{{event.id}}" class='delete-event'
                   href="/members">Delete</a></td> --}}
-            
+
             </tr>
           </table>
         </div>
@@ -59,12 +59,13 @@
     </section>
 
     {{!-- Vendor Info Card--}}
-    <section id="vendor-section">
+    <section id="vendor-section" id="vendorInfo">
       <div class="card-body">
-        <div class = "row">
-        <h3 class="card-title col-11">Vendor Info</h3>
-        <button type="button" class="btn btn-success col col-1" onclick="window.location = '/vendorInfos/{{dataValues.id}}';"><i class="fas fa-user-plus"></i> Add</button>
-          </div>
+        <div class="row">
+          <h3 class="card-title col-11">Vendor Info</h3>
+          <button type="button" class="btn btn-success col col-1"
+            onclick="window.location = '/vendorInfos/{{dataValues.id}}';"><i class="fas fa-user-plus"></i> Add</button>
+        </div>
         <div style="overflow-x:auto;"></div>
         <div style="overflow-x:auto;">
           <table class="table table-striped">
@@ -91,7 +92,7 @@
                       class="far fa-edit fa-1x"></i> Edit</button>
                   <button type="button" class="btn btn-primary editVendorSave" id="{{dataValues.id}}"><i
                       class="far fa-save fa-1x"></i> Save</button>
-                      <button type="button" class="btn btn-danger delete-vendor" data-Id="{{dataValues.id}}"
+                  <button type="button" class="btn btn-danger delete-vendor" data-Id="{{dataValues.id}}"
                     onclick="deleteVendor({{dataValues.id}})"><i class="far fa-trash-alt fa-1x"></i> Delete</button>
                 <td>
               </tr>
