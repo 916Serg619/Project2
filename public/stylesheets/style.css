@@ -52,3 +52,21 @@ textarea {
   width: 100%;  
   text-align: center;
 }
+
+
+body{
+  background-color: #d8f0ec !important;
+}
+
+#logo{
+  width: 100%;
+}
+.color{
+background-color: #d8f0ec;
+color: black !important;
+}
+
+.navbtn1{
+  background: transparent;
+  border: none;
+}

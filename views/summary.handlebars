@@ -1,7 +1,7 @@
 <body>
   <main>
 
-    <nav class="navbar navbar-expand-sm bg-light">
+    <nav class="navbar navbar-expand-sm bg-light color">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="/members">
@@ -47,10 +47,6 @@
                   onclick="deleteEvent({{event.id}})" href="/members"><i class="far fa-trash-alt fa-1x"></i>
                   Delete</button>
                   </td>
-                {{!--
-              <td><a style='cursor:pointer;color:red' data-Id="{{event.id}}" class='delete-event'
-                  href="/members">Delete</a></td> --}}
-            
             </tr>
           </table>
         </div>
@@ -76,8 +72,6 @@
                   <th>Service</th>
                   <th>Email</th>
                   <th>Phone</th>
-                  <th></th>
-                  <th></th>
                 </tr>
               </thead>
               {{!-- Row populate --}}

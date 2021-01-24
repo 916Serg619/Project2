@@ -1,18 +1,21 @@
 <body>
   <main>
     <!-- Nav bar -->
-    <nav class="navbar navbar-expand-sm bg-light">
+    <nav class="navbar navbar-expand-sm color">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/members">
+          <button class="navbar-brand navbtn1" href="/members"><i class="fab fa-pagelines fa-2x"></i>
+          <br>
             Main
-          </a>
-          <a class="navbar-brand" href="/logout">
+          </button>
+          <button class="navbar-brand navbtn1" href="/logout"><i class="fab fa-envira"></i>
+          <br>
             Logout
-          </a>
+          </button>
         </div>
       </div>
     </nav>
+     <img src="/assets/Ap4p.png" class="jumbotron" id="logo"></img>
 
     <!-- Welcome message -->
     <section class="welcome-user-message">
@@ -43,12 +46,14 @@
             <td><a href="/summary/{{dataValues.id}}">Summary</a></td>
             <td><a href="/vendorInfos/{{dataValues.id}}">Add</a></td>
             {{!-- <td><a style='cursor:pointer;color:red' data-Id="{{dataValues.id}}" class='delete-event'>Delete</a></td> --}}
-            <td><button type="button" class="btn btn-danger delete-event" data-Id="{{dataValues.id}}"><i class="far fa-trash-alt fa-1x"></i> Delete</button>
+            <td><button type="button" class="btn navbtn1 delete-event" data-Id="{{dataValues.id}}"><i class="far fa-trash-alt fa-1x"></i> Delete</button>
 
           </tr>
           {{/each}}
         </table>
-        <button type="button" class="btn btn-success" id="createWedding">Add Wedding</button>
+        <button type="button" class="btn navbtn1" id="createWedding"><i class="fas fa-heart"></i>
+        <br>
+        Add Wedding</button>
       </div>
     </section>
 
