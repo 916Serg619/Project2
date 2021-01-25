@@ -42,8 +42,6 @@ $(document).ready(() => {
   $(".signupbutton").on("click", () => {
     window.location.href = "/signup";
   });
-
-  
 });
 
 //GSAP//
