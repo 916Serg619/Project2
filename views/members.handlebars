@@ -18,6 +18,7 @@
               <td>Couple</td>
               <td>Event Date</td>
               <td>Summary Page</td>
+              <td>Add Guest</td>
               <td>Add Vendor</td>
               <td>Delete</td>
             </tr>
@@ -32,13 +33,10 @@
                 onclick="window.location = '/summary/{{dataValues.id}}';"><i class="far fa-file"></i> Summary</button>
             </td>
             {{!-- <td><a href="/vendorInfos/{{dataValues.id}}">Add</a></td> --}}
-            <td><button type="button" class="btn btn-success"
-                onclick="window.location = '/vendorInfos/{{dataValues.id}}';"><i class="fas fa-user-plus"></i>
-                Add</button></td>
-            {{!-- <td><a style='cursor:pointer;color:red' data-Id="{{dataValues.id}}" class='delete-event'>Delete</a>
-            </td> --}}
-            <td><button type="button" class="btn btn-danger delete-event" data-Id="{{dataValues.id}}"><i
-                  class="far fa-trash-alt fa-1x"></i> Delete</button></td>
+            <td><button type="button" class="btn btn-success" onclick="window.location = '/guests/{{dataValues.id}}';"><i class="fas fa-user-plus"></i> Add</button></td>
+            <td><button type="button" class="btn btn-success" onclick="window.location = '/vendorInfos/{{dataValues.id}}';"><i class="fas fa-user-plus"></i> Add</button></td>
+            {{!-- <td><a style='cursor:pointer;color:red' data-Id="{{dataValues.id}}" class='delete-event'>Delete</a></td> --}}
+            <td><button type="button" class="btn btn-danger delete-event" data-Id="{{dataValues.id}}"><i class="far fa-trash-alt fa-1x"></i> Delete</button></td>
           </tr>
           {{/each}}
         </table>
