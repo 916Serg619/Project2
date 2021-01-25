@@ -86,9 +86,7 @@ module.exports = function(app) {
         {
           couple: req.body.key0,
           venueName: req.body.key1,
-          eventDate: req.body.key2,
-          foodOptionOne: req.body.key3,
-          foodOptionTwo: req.body.key4
+          eventDate: req.body.key2
         },
         {
           where: {
