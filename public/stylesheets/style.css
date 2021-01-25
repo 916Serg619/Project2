@@ -10,7 +10,7 @@
   header,
   section {
     margin: 10;
-    margin-bottom:20px;
+    /* margin-bottom:20px; */
     padding: 10px;
     justify-content: center;
     box-sizing: border-box;
@@ -18,17 +18,24 @@
     list-style: none;
     text-decoration: none;
     font-family: "Raleway", sans-serif;
-    position: relative;
+    /* position: relative; */
   }
 
   .container {
     width: auto;
+    /* padding: 0 15px; */
+  }
+
+  #summary-card {
+    max-width: 900px;
+  }
+
+  #members-card {
     max-width: 700px;
-    padding: 0 15px;
   }
 
   .card {
-   max-width: 800px;
+   max-width: 500px;
     padding: 10px;
     margin: 15px;
   }
@@ -66,8 +73,8 @@ textarea {
   visibility: hidden;
 }
 
-#sticky-footer {
-  position: absolute;
+footer {
+  position: fixed;
   bottom: 0;
   width: 100%;  
   text-align: center;
