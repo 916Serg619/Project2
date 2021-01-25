@@ -1,4 +1,5 @@
 $(document).ready(() => {
+  gsaploading();
   // Edit button for event info
   $("#editEvent").on("click", () => {
     window.location.href = "/planner";
@@ -23,10 +24,12 @@ $(document).ready(() => {
         url: "/api/eventInfos/" + data
       });
     });
-    //GSAP//
-    const tl = gsap.timeline({ defaults: { duration: 0.5 } });
+  }
+  //GSAP//
 
-    tl.from(".card-title", { y: -50, stagger: 0.2, opacity: 0 })
+  function gsaploading() {
+    const tl = gsap.timeline({ defaults: { duration: 0.5 } });
+    tl.from("#vendorInfo", { y: -50, stagger: 0.2, opacity: 0 })
       .from(".form-group", { y: -50, stagger: 0.2, opacity: 0 })
       .from(".btn", { y: -50, opacity: 0 })
       .from(".newSign", { y: -50, opacity: 0 })
