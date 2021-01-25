@@ -21,20 +21,6 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
         // isDate: true
       }
-    },
-    foodOptionOne: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      validate: {
-        len: [1]
-      }
-    },
-    foodOptionTwo: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      validate: {
-        len: [1]
-      }
     }
   });
   eventInfo.associate = function(models) {

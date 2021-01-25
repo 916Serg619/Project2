@@ -17,12 +17,6 @@ $(document).ready(() => {
         .trim(),
       date: $("#dateInput")
         .val()
-        .trim(),
-      foodOptionOne: $("#foodOptionOneInput")
-        .val()
-        .trim(),
-      foodOptionTwo: $("#foodOptionTwoInput")
-        .val()
         .trim()
     };
     await enterData(eventData).then(() => {
@@ -40,9 +34,7 @@ $(document).ready(() => {
     return $.post("/api/eventInfos", {
       couple: eventData.couple,
       venueName: eventData.venue,
-      eventDate: eventData.date,
-      foodOptionOne: eventData.foodOptionOne,
-      foodOptionTwo: eventData.foodOptionTwo
+      eventDate: eventData.date
     })
       .then(() => {
         console.log(eventData);

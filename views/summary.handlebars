@@ -3,33 +3,32 @@
 
     <nav class="navbar navbar-expand-sm color">
       <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand navbtn1" href="/members"><i class="fab fa-pagelines fa-2x"></i>
+        <div class="navbar-header row">
+          <a class="navbar-brand navbtn1 col" href="/members"><i class="fab fa-pagelines fa-1x"></i>
           <br>
             Main
           </a>
-          <a class="navbar-brand navbtn1" href="/logout"><i class="fab fa-envira"></i>
+          <a class="navbar-brand navbtn1 col" href="/logout"><i class="fab fa-envira"></i>
           <br>
             Logout
           </a>
         </div>
       </div>
     </nav>
-
+<h3 id="eventInfoId">{{event.id}}</h3>
     {{!-- Event Info Table --}}
-    <section>
-      <div class="card-body" id="eventInfo">
-        <h3 class="card-title">Event Info</h3>
-        <div style="overflow-x:auto;">
-          <table class="table table-striped">
+    <div class="card color">
+      <div class="card-header">
+        <h3>Event Info</h3>
+      </div>
+      <div style="overflow-x:auto;">
+        <table class="table table-striped">
             {{!-- Head --}}
             <thead>
               <tr>
                 <th>Couple</th>
                 <th>Venue</th>
                 <th>Event Date</th>
-                <th>Food Option One</th>
-                <th>Food Option Two</th>
                 <th></th>
                 <th></th>
               </tr>
@@ -53,15 +52,15 @@
           </table>
         </div>
       </div>
-      </div>
-    </section>
+    </div>
 
+   
     {{!-- Vendor Info Card--}}
     <section id="vendor-section" id="vendorInfo">
       <div class="card-body">
         <div class = "row">
         <h3 class="card-title col-11">Vendor Info</h3>
-        <button type="button" class="btn navbtn1 col col-1" onclick="window.location = '/vendorInfos/{{dataValues.id}}';"><i class="fas fa-user-plus"></i> Add</button>
+        <button type="button" class="btn navbtn1 col col-1" onclick="window.location = '/vendorInfos/{{event.id}}';"><i class="fas fa-user-plus"></i> Add</button>
           </div>
         <div style="overflow-x:auto;"></div>
         <div style="overflow-x:auto;">
@@ -96,7 +95,8 @@
         </div>
       </div>
       </div>
-    </section>
+    </div>
+    </div>
 
     {{!-- Scripts --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

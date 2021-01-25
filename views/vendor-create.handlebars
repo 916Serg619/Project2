@@ -1,12 +1,14 @@
 <body>
   <main>
-      <nav class="navbar navbar-expand-sm bg-light color">
+      <nav class="navbar navbar-expand-sm color">
       <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/members">
+        <div class="navbar-header row">
+          <a class="navbar-brand navbtn1 col" href="/members"><i class="fab fa-pagelines fa-1x"></i>
+          <br>
             Main
           </a>
-          <a class="navbar-brand" href="/logout">
+          <a class="navbar-brand navbtn1 col" href="/logout"><i class="fab fa-envira"></i>
+          <br>
             Logout
           </a>
         </div>
@@ -40,8 +42,8 @@
     </form>
 
     {{!-- Submit button --}}
-    <button type="button" class="btn btn-success" id="submitVendorCreate">Submit</button>
-    <button type="button" class="btn btn-success" id="addNewVendor">New Vendor</button>
+    <button type="button" class="btn navbtn1" id="submitVendorCreate">Submit<br><i class="fas fa-sign-in-alt"></i></button>
+    <button type="button" class="btn navbtn1" id="addNewVendor">New Vendor<br><i class="fas fa-user-plus"></i></button>
 
     {{!-- Scripts --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
