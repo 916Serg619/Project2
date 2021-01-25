@@ -33,6 +33,10 @@
     margin: 15px;
   }
 
+  .btn {
+    margin: 5px;
+  }
+
   .summary-card {
     width: 45rem;
     padding: 10px;
