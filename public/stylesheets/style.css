@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 
-nav {
-  border-color: blue;
-}
 
   form.signup,
   form.login {
@@ -26,13 +23,13 @@ nav {
   }
 
   .card {
-    width: 50rem;
+    width: 45rem;
     padding: 10px;
     margin: 15px;
   }
 
   .summary-card {
-    width: 50rem;
+    width: 45rem;
     padding: 10px;
     margin: 10px;
     }
