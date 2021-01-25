@@ -1,19 +1,6 @@
-<body>
-  <main>
-    <!-- Nav bar -->
-    <nav class="navbar navbar-expand-sm bg-light">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/members">
-            Main
-          </a>
-          <a class="navbar-brand" href="/logout">
-            Logout
-          </a>
-        </div>
-      </div>
-    </nav>
 
+  <main>
+    <body>
     <!-- Welcome message -->
     <section class="welcome-user-message">
 
@@ -21,7 +8,7 @@
 
     </section>
 
-    <div class="card">
+    <div class="card" id="members-card">
 
       <div class="wedding-container">
         <h1>Weddings</h1>
@@ -42,7 +29,9 @@
             <td>{{dataValues.couple}}</td>
             <td>{{dataValues.eventDate}}</td>
             {{!-- <td><a href="/summary/{{dataValues.id}}">Summary</a></td> --}}
-            <td><button type="button" class="btn btn-primary" onclick="window.location = '/summary/{{dataValues.id}}';"><i class="far fa-file"></i> Summary</button></td>
+            <td><button type="button" class="btn btn-primary"
+                onclick="window.location = '/summary/{{dataValues.id}}';"><i class="far fa-file"></i> Summary</button>
+            </td>
             {{!-- <td><a href="/vendorInfos/{{dataValues.id}}">Add</a></td> --}}
             <td><button type="button" class="btn btn-success" onclick="window.location = '/guests/{{dataValues.id}}';"><i class="fas fa-user-plus"></i> Add</button></td>
             <td><button type="button" class="btn btn-success" onclick="window.location = '/vendorInfos/{{dataValues.id}}';"><i class="fas fa-user-plus"></i> Add</button></td>
@@ -54,9 +43,10 @@
         <button type="button" class="btn btn-success" id="createWedding">Add Wedding</button>
       </div>
     </div>
-
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/members.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
-  </main>
-</body>
+
+  </body>
+</main>

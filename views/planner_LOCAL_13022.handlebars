@@ -1,0 +1,62 @@
+<body>
+  <main>
+     <!-- Nav bar -->
+     <nav class="navbar navbar-expand-sm bg-light">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/members">
+            Main
+          </a>
+          <a class="navbar-brand" href="/logout">
+            Logout
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+        {{!-- Event Input Form --}}
+        <form class="planner">
+            {{!-- Couple --}}
+            <div class="form-group">
+                <label for="couple">Couple</label>
+                <input type="text" class="form-control" id="coupleInput" placeholder="Couple">
+            </div>
+            {{!-- Venue --}}
+            <div class="form-group">
+                <label for="venue">Venue</label>
+                <input type="text" class="form-control" id="venueInput" placeholder="Venue">
+            </div>
+            {{!-- Event Date --}}
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" class="form-control" id="dateInput">
+            </div>
+            
+            {{!-- Food Option One --}}
+            <div class="form-group">
+                <label for="foodOptionOne">Food Option One</label>
+                <input type="text" class="form-control" id="foodOptionOneInput" placeholder="Option One">
+            </div>
+            {{!-- Food Option Two --}}
+            <div class="form-group">
+                <label for="foodOptionTwo">Food Option Two</label>
+                <input type="text" class="form-control" id="foodOptionTwoInput" placeholder="Option Two">
+            </div>
+        </form>
+
+        {{!-- Navigation buttons --}}
+        <button type="button" class="btn btn-success" id="submitNewWedding">Submit</button>
+        {{!-- <button type="button" class="btn btn-success" id="backToMain">Main</button> --}}
+        {{!-- <button type="button" class="btn btn-success" id="toSummary">Summary</button> --}}
+    </div>
+    {{!-- Scripts --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {{!-- API key for Google API autocomplete feature for Venue info --}}
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZugWOlMVS7_70ajiCk05Mcn_g7qHMsls&libraries=places"></script>
+    <script type="text/javascript" src="js/planner.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CustomBounce3.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CustomEase3.min.js"></script>
+  </main>
+</body>
