@@ -15,11 +15,12 @@
     </nav>
 
     {{!-- Event Info Table --}}
-    <section>
-      <div class="card-body">
-        <h3 class="card-title">Event Info</h3>
-        <div style="overflow-x:auto;">
-          <table class="table table-striped">
+    <div class="card">
+      <div class="card-header">
+        <h3>Event Info</h3>
+      </div>
+      <div style="overflow-x:auto;">
+        <table class="table table-striped">
             {{!-- Head --}}
             <thead>
               <tr>
@@ -39,7 +40,7 @@
               <td class="event-data"><textarea readonly>{{event.eventDate}}</textarea></td>
               <td class="event-data"><textarea readonly>{{event.foodOptionOne}}</textarea></td>
               <td class="event-data"><textarea readonly>{{event.foodOptionTwo}}</textarea></td>
-              <td><button type="button" class="btn btn-success editEvent"><i class="far fa-edit fa-1x"></i>
+            <td><button type="button" class="btn btn-success editEvent"><i class="far fa-edit fa-1x"></i>
                   Edit</button>
                 <button type="button" class="btn btn-primary editEventSave"><i class="far fa-save fa-1x"></i>
                   Save</button>
@@ -50,57 +51,57 @@
                 {{!--
               <td><a style='cursor:pointer;color:red' data-Id="{{event.id}}" class='delete-event'
                   href="/members">Delete</a></td> --}}
-            
-            </tr>
-          </table>
-        </div>
+          </tr>
+        </table>
       </div>
-      </div>
-    </section>
+    </div>
 
+   
     {{!-- Vendor Info Card--}}
-    <section id="vendor-section">
-      <div class="card-body">
-        <div class = "row">
-        <h3 class="card-title col-11">Vendor Info</h3>
-        <button type="button" class="btn btn-success col col-1" onclick="window.location = '/vendorInfos/{{dataValues.id}}';"><i class="fas fa-user-plus"></i> Add</button>
-          </div>
-        <div style="overflow-x:auto;"></div>
-        <div style="overflow-x:auto;">
-          <table class="table table-striped">
-            <table class="table table-striped">
-              {{!-- Head --}}
-              <thead>
-                <tr>
-                  <th>Vendor Name</th>
-                  <th>Service</th>
-                  <th>Email</th>
-                  <th>Phone</th>
-                  <th></th>
-                  <th></th>
-                </tr>
-              </thead>
-              {{!-- Row populate --}}
-              {{#each vendor}}
-              <tr>
-                <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.vendorName}}</textarea></td>
-                <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.service}}</textarea></td>
-                <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.email}}</textarea></td>
-                <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.phone}}</textarea></td>
-                <td><button type="button" class="btn btn-success editVendor" id="{{dataValues.id}}"><i
-                      class="far fa-edit fa-1x"></i> Edit</button>
-                  <button type="button" class="btn btn-primary editVendorSave" id="{{dataValues.id}}"><i
-                      class="far fa-save fa-1x"></i> Save</button>
-                      <button type="button" class="btn btn-danger delete-vendor" data-Id="{{dataValues.id}}"
-                    onclick="deleteVendor({{dataValues.id}})"><i class="far fa-trash-alt fa-1x"></i> Delete</button>
-                <td>
-              </tr>
-              {{/each}}
-            </table>
-        </div>
+    <div class="card">
+      <div class="card-header">
+        <h3>Vendor Info</h3>
+       </div>
+      {{!-- <div style="overflow-x:auto;"></div> --}}
+      <div style="overflow-x:auto;">
+        <table class="table table-striped"></table>
+        <table class="table table-striped">
+          {{!-- Head --}}
+          <thead>
+            <tr>
+              <th>Vendor Name</th>
+              <th>Service</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          {{!-- Row populate --}}
+          {{#each vendor}}
+          <tr>
+            <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.vendorName}}</textarea></td>
+            <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.service}}</textarea></td>
+            <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.email}}</textarea></td>
+            <td id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.phone}}</textarea></td>
+            <td><button type="button" class="btn btn-success editVendor" id="{{dataValues.id}}"><i
+                  class="far fa-edit fa-1x"></i> Edit</button>
+              <button type="button" class="btn btn-primary editVendorSave" id="{{dataValues.id}}"><i
+                  class="far fa-save fa-1x"></i> Save</button>
+            <td>
+              {{!--
+            <td><button style='cursor:pointer;color:red' data-id="{{dataValues.id}}" class='delete-vendor'
+                onclick="deleteVendor({{dataValues.id}})">Delete</button></td> --}}
+            <td><button type="button" class="btn btn-danger delete-vendor" data-Id="{{dataValues.id}}"
+                onclick="deleteVendor({{dataValues.id}})"><i class="far fa-trash-alt fa-1x"></i> Delete</button>
+            </td>
+          </tr>
+          {{/each}}
+        </table>
+        <a type="button" class="btn btn-success col-1" id="circleButton" href="/vendorInfos/{{event.id}}">Add Vendor</a>
       </div>
-      </div>
-    </section>
+    </div>
+    </div>
 
     {{!-- Scripts --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

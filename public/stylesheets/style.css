@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 
-@media (min-width: 468px) {
+
   form.signup,
   form.login {
     margin-top: 20px;
@@ -14,12 +14,25 @@
     margin: 10;
     margin-bottom:20px;
     padding: 10px;
+    justify-content: center;
     box-sizing: border-box;
     outline: none;
     list-style: none;
     text-decoration: none;
     font-family: "Raleway", sans-serif;
   }
+
+  .card {
+    width: 50rem;
+    padding: 10px;
+    margin: 15px;
+  }
+
+  .summary-card {
+    width: 50rem;
+    padding: 10px;
+    margin: 10px;
+    }
 
   #vendor-section {
     margin-bottom: 10px;
@@ -31,7 +44,7 @@
     line-height: 20px;
     color: #a9a9a9;
   }
-}
+
 
 textarea {
   border: none;
@@ -51,4 +64,8 @@ textarea {
   bottom: 0;
   width: 100%;  
   text-align: center;
+}
+
+#circleButton {
+  width: fit-content;
 }
