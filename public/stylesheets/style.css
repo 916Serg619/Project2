@@ -9,7 +9,6 @@
   main,
   header,
   section,
-  aside,
   .container {
     margin: 10;
     margin-bottom:20px;
@@ -20,10 +19,11 @@
     list-style: none;
     text-decoration: none;
     font-family: "Raleway", sans-serif;
+    position: relative;
   }
 
   .card {
-    width: 45rem;
+   max-width: 800px;
     padding: 10px;
     margin: 15px;
   }
@@ -58,7 +58,7 @@ textarea {
 }
 
 #sticky-footer {
-  position: fixed;
+  position: relative;
   left: 
   0;
   bottom: 0;
