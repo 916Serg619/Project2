@@ -36,4 +36,3 @@ $(document).ready(() => {
     tl.reversed() ? tl.play() : tl.reverse();
   });
 });
-
