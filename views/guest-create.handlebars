@@ -1,0 +1,51 @@
+<body>
+  <main>
+      <nav class="navbar navbar-expand-sm bg-light">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/members">
+            Main
+          </a>
+          <a class="navbar-brand" href="/logout">
+            Logout
+          </a>
+        </div>
+      </div>
+    </nav>
+    {{!-- Guest Input Form --}}
+    <form class="guest">
+      {{!-- This value here is for the eventInfoId to create guest --}}
+      <h3 id="eventInfoId">{{eventInfoId}}</h3>
+      <div class="form-group">
+        {{!-- First Name --}}
+        <div class="form-group">
+          <label for="firstName">Name</label>
+          <input type="text" class="form-control" id="firstNameInput" placeholder="First Name">
+        </div>
+        {{!-- Last Name --}}
+        <div class="form-group">
+          <label for="lastName">Name</label>
+          <input type="text" class="form-control" id="lastNameInput" placeholder="Last Name">
+        </div>
+        {{!-- Email --}}
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" id="emailInput" placeholder="Email">
+        </div>
+        {{!-- Phone --}}
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="text" class="form-control" id="phoneInput" placeholder="Phone">
+        </div>
+    </form>
+
+    {{!-- Submit button --}}
+    <button type="button" class="btn btn-success" id="submitGuestCreate">Submit</button>
+    <button type="button" class="btn btn-success" id="addNewGuest">New Guest</button>
+
+    {{!-- Scripts --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/guest-create.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+</body>
+</main>

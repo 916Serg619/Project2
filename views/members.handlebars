@@ -1,22 +1,7 @@
-<body>
-  <main>
-    <!-- Nav bar -->
-    <nav class="navbar navbar-expand-sm color">
-      <div class="container-fluid">
-        <div class="navbar-header row">
-          <a class="navbar-brand navbtn1 col" href="/members"><i class="fab fa-pagelines fa-1x"></i>
-          <br>
-            Main
-          </a>
-          <a class="navbar-brand navbtn1 col" href="/logout"><i class="fab fa-envira"></i>
-          <br>
-            Logout
-          </a>
-        </div>
-      </div>
-    </nav>
     <img src="/assets/Ap4p.png" class="jumbotron" id="memberslogo"></img>
 
+  <main>
+    <body>
     <!-- Welcome message -->
     <section class="welcome-user-message">
 
@@ -24,7 +9,7 @@
 
     </section>
 
-    <div class="card cardwork">
+    <div class="card" id="members-card">
 
       <div class="wedding-container newrow">
         <h1>Weddings</h1>
@@ -35,8 +20,11 @@
             <td>{{dataValues.couple}}</td>
             <td>{{dataValues.eventDate}}</td>
             {{!-- <td><a href="/summary/{{dataValues.id}}">Summary</a></td> --}}
-            <td><button type="button" class="btn navbtn1" onclick="window.location = '/summary/{{dataValues.id}}';"><i class="far fa-file"></i> Summary</button></td>
+            <td><button type="button" class="btn navbtn1"
+                onclick="window.location = '/summary/{{dataValues.id}}';"><i class="far fa-file"></i> Summary</button>
+            </td>
             {{!-- <td><a href="/vendorInfos/{{dataValues.id}}">Add</a></td> --}}
+            <td><button type="button" class="btn navbtn1" onclick="window.location = '/guests/{{dataValues.id}}';"><i class="fas fa-user-plus"></i> Add</button></td>
             <td><button type="button" class="btn navbtn1" onclick="window.location = '/vendorInfos/{{dataValues.id}}';"><i class="fas fa-user-plus"></i> Add</button></td>
             {{!-- <td><a style='cursor:pointer;color:red' data-Id="{{dataValues.id}}" class='delete-event'>Delete</a></td> --}}
             <td><button type="button" class="btn navbtn1 delete-event" data-Id="{{dataValues.id}}"><i class="far fa-trash-alt fa-1x"></i> Delete</button>
@@ -49,9 +37,10 @@
         Add Wedding</button>
       </div>
     </div>
-
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/members.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
-  </main>
-</body>
+
+  </body>
+</main>

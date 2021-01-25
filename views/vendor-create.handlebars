@@ -1,45 +1,41 @@
 <body>
   <main>
-      <nav class="navbar navbar-expand-sm color">
-      <div class="container-fluid">
-        <div class="navbar-header row">
-          <a class="navbar-brand navbtn1 col" href="/members"><i class="fab fa-pagelines fa-1x"></i>
-          <br>
-            Main
-          </a>
-          <a class="navbar-brand navbtn1 col" href="/logout"><i class="fab fa-envira"></i>
-          <br>
-            Logout
-          </a>
-        </div>
-      </div>
-    </nav>
     {{!-- Vendor Input Form --}}
-    <form class="vendor">
-      {{!-- This value here is for the eventInfoId to create vendor --}}
-      <h3 id="eventInfoId">{{eventInfoId}}</h3>
-      <div class="form-group">
-        {{!-- Name --}}
+    <div class="card">
+      <div class="card-header">
+        <h3>Add a Vendor</h3>
+      </div>
+      <form class="vendor">
+        {{!-- This value here is for the eventInfoId to create vendor --}}
+        <h3 id="eventInfoId">{{eventInfoId}}</h3>
         <div class="form-group">
-          <label for="vendorName">Name</label>
-          <input type="text" class="form-control" id="vendorNameInput" placeholder="Vendor Name">
-        </div>
-        {{!-- Service --}}
-        <div class="form-group">
-          <label for="vendorService">Service</label>
-          <input type="text" class="form-control" id="vendorServiceInput" placeholder="Vendor Service">
-        </div>
-        {{!-- Email --}}
-        <div class="form-group">
-          <label for="vendorEmail">Email</label>
-          <input type="text" class="form-control" id="vendorEmailInput" placeholder="Email">
-        </div>
-        {{!-- Phone --}}
-        <div class="form-group">
-          <label for="vendorPhone">Phone</label>
-          <input type="text" class="form-control" id="vendorPhoneInput" placeholder="Phone">
-        </div>
-    </form>
+          {{!-- Name --}}
+          <div class="form-group">
+            <label for="vendorName">Name</label>
+            <input type="text" class="form-control" id="vendorNameInput" placeholder="Vendor Name">
+          </div>
+          {{!-- Service --}}
+          <div class="form-group">
+            <label for="vendorService">Service</label>
+            <input type="text" class="form-control" id="vendorServiceInput" placeholder="Vendor Service">
+          </div>
+          {{!-- Email --}}
+          <div class="form-group">
+            <label for="vendorEmail">Email</label>
+            <input type="text" class="form-control" id="vendorEmailInput" placeholder="Email">
+          </div>
+          {{!-- Phone --}}
+          <div class="form-group">
+            <label for="vendorPhone">Phone</label>
+            <input type="text" class="form-control" id="vendorPhoneInput" placeholder="Phone">
+          </div>
+          {{!-- Submit button --}}
+          <button type="button" class="btn btn-success" id="submitVendorCreate">Submit</button>
+          <br>
+          <button type="button" class="btn btn-success" id="addNewVendor">New Vendor</button>
+      </form>
+    </div>
+
 
     {{!-- Submit button --}}
     <button type="button" class="btn navbtn1" id="submitVendorCreate">Submit<br><i class="fas fa-sign-in-alt"></i></button>

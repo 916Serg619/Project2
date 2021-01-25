@@ -8,11 +8,9 @@
 
   main,
   header,
-  section,
-  aside,
-  .container {
+  section {
     margin: 10;
-    margin-bottom:20px;
+    /* margin-bottom:20px; */
     padding: 10px;
     justify-content: center;
     box-sizing: border-box;
@@ -20,16 +18,34 @@
     list-style: none;
     text-decoration: none;
     font-family: "Raleway", sans-serif;
+    /* position: relative; */
+  }
+
+  .container {
+    width: auto;
+    /* padding: 0 15px; */
+  }
+
+  #summary-card {
+    max-width: 900px;
+  }
+
+  #members-card {
+    max-width: 700px;
   }
 
   .card {
-    width: 50rem;
+   max-width: 500px;
     padding: 10px;
     margin: 15px;
   }
 
+  .btn {
+    margin: 5px;
+  }
+
   .summary-card {
-    width: 50rem;
+    width: 45rem;
     padding: 10px;
     margin: 10px;
     }
@@ -57,10 +73,8 @@ textarea {
   visibility: hidden;
 }
 
-#sticky-footer {
+footer {
   position: fixed;
-  left: 
-  0;
   bottom: 0;
   width: 100%;  
   text-align: center;
@@ -87,7 +101,7 @@ color: black !important;
   width: 60%;
 }
 
-.col{
+.linkcolor{
   color: black;
 }
 
