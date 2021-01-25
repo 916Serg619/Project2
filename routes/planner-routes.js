@@ -14,9 +14,7 @@ module.exports = function(app) {
       .create({
         couple: req.body.couple,
         venueName: req.body.venueName,
-        eventDate: req.body.eventDate,
-        foodOptionOne: req.body.foodOptionOne,
-        foodOptionTwo: req.body.foodOptionTwo
+        eventDate: req.body.eventDate
       })
       .then(dbEventInfos => {
         res.json(dbEventInfos);
