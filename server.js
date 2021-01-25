@@ -34,6 +34,7 @@ require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 require("./routes/planner-routes.js")(app);
 require("./routes/vendor-create-routes.js")(app);
+require("./routes/guest-create-routes.js")(app);
 require("./routes/summary-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success

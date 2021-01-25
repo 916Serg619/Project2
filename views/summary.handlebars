@@ -1,6 +1,7 @@
 <body>
   <main>
 
+    {{!-- Nav Bar --}}
     <nav class="navbar navbar-expand-sm bg-light">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -52,7 +53,6 @@
       </div>
     </div>
 
-
     {{!-- Vendor Info Card--}}
     <div class="card">
       <div class="card-header">
@@ -98,7 +98,47 @@
       </div>
     </div>
     </div>
-
+    {{!-- Guest List Card--}}
+    <div class="card">
+      <div class="card-header">
+        <h3>Guest List</h3>
+      </div>
+      <div style="overflow-x:auto;">
+        <table class="table table-striped"></table>
+        <table class="table table-striped">
+          {{!-- Head --}}
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          {{!-- Row populate --}}
+          {{#each guest}}
+          <tr>
+            <td id="guest-data{{dataValues.id}}"><textarea readonly>{{dataValues.firstName}}</textarea></td>
+            <td id="guest-data{{dataValues.id}}"><textarea readonly>{{dataValues.lastName}}</textarea></td>
+            <td id="guest-data{{dataValues.id}}"><textarea readonly>{{dataValues.email}}</textarea></td>
+            <td id="guest-data{{dataValues.id}}"><textarea readonly>{{dataValues.phone}}</textarea></td>
+            <td><button type="button" class="btn btn-success editGuest" id="{{dataValues.id}}"><i
+                  class="far fa-edit fa-1x"></i> Edit</button>
+              <button type="button" class="btn btn-primary editVendorSave" id="{{dataValues.id}}"><i
+                  class="far fa-save fa-1x"></i> Save</button>
+            <td>
+            <td><button type="button" class="btn btn-danger delete-guest" data-Id="{{dataValues.id}}"
+                onclick="deleteGuest({{dataValues.id}})"><i class="far fa-trash-alt fa-1x"></i> Delete</button>
+            </td>
+          </tr>
+          {{/each}}
+        </table>
+        <a type="button" class="btn btn-success col-1" id="circleButton" href="/guests/{{event.id}}">Add Guest</a>
+      </div>
+    </div>
+    </div>
     {{!-- Scripts --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/summary.js"></script>
@@ -138,18 +178,6 @@
           console.log("event edited");
         })
       });
-
-      // DELETE VENDOR
-      function deleteVendor(id) {
-        console.log("this was deleted");
-        console.log(id);
-        $.ajax({
-          method: "DELETE",
-          url: "/api/vendorInfos/" + id
-        }
-        )
-        location.reload();
-      }
 
       // DELETE EVENT
       function deleteEvent(id) {
@@ -202,6 +230,70 @@
           console.log("vendor edited");
         })
       });
+
+      // DELETE VENDOR
+      function deleteVendor(id) {
+        console.log("this was deleted");
+        console.log(id);
+        $.ajax({
+          method: "DELETE",
+          url: "/api/vendorInfos/" + id
+        }
+        )
+        location.reload();
+      }
+
+      // EDIT GUEST
+      // When edit button toggle textarea readonly
+      $('td').on('click', '.editGuest', function (event) {
+        event.preventDefault();
+
+        // Id of the row
+        var idNum = $(this).attr("id");
+
+        // Target all text areas and toggle readonly
+        $(`*[id*=guest-data${idNum}]`).children("textarea").each(function () {
+          var re = $(this).prop('readonly');
+          $(this).prop('readonly', !re);
+        });
+      });
+
+      // SAVE Guest
+      // Save button 
+      $('td').on('click', '.editGuestSave', function (event) {
+        event.preventDefault();
+
+        // Id of the row
+        var idNum = $(this).attr("id");
+        // This holds our event data
+        var data = {};
+        var counter = 0
+        // Target all text areas and put data into array
+        $(`*[id*=guest-data${idNum}]`).children("textarea").each(function () {
+          // We create key value pairs for the data obj
+          var key = "key" + counter;
+          data[key] = $(this).val();
+          counter++;
+        });
+        $.ajax("/api/guests/" + idNum, {
+          type: "PUT",
+          data: data
+        }).then(function () {
+          console.log("guest edited");
+        })
+      });
+
+      // DELETE GUEST
+      function deleteGuest(id) {
+        console.log("this was deleted");
+        console.log(id);
+        $.ajax({
+          method: "DELETE",
+          url: "/api/guests/" + id
+        }
+        )
+        location.reload();
+      }
     </script>
+  </main>
 </body>
-</main>

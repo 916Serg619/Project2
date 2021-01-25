@@ -50,6 +50,13 @@ module.exports = function(app) {
     });
   });
 
+  // Guest creation page
+  app.get("/guests/:id?", isAuthenticated, (req, res) => {
+    res.render("guest-create.handlebars", {
+      eventInfoId: req.params.id
+    });
+  });
+
   // Summary Page/Event summary
   app.get("/summary/:id?", isAuthenticated, (req, res) => {
     pageNum = req.params.id;
@@ -70,9 +77,17 @@ module.exports = function(app) {
           })
           .then(dbVendorInfos => {
             const vendor = dbVendorInfos;
-            res.render("summary", {
-              event: event,
-              vendor: vendor
+            // Finds all associated guests
+            db.Guest.findAll({
+              where: { eventInfoId: req.params.id }
+            }).then(dbGuest => {
+              console.log(dbGuest);
+              const guest = dbGuest;
+              res.render("summary", {
+                event: event,
+                vendor: vendor,
+                guest: guest
+              });
             });
           });
       });
