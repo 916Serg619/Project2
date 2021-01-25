@@ -22,19 +22,19 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     phone: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
       validate: {
-        len: [7 - 10]
+        len: [1]
       }
     }
-    // foodChoice: {
-    //   type: DataTypes.STRING,
-    //   allowNull: true,
-    //   validate: {
-    //     len: [1]
-    //   }
-    // }
   });
+  Guest.associate = function(models) {
+    Guest.belongsTo(models.eventInfos, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
   return Guest;
 };
