@@ -80,6 +80,42 @@ footer {
   text-align: center;
 }
 
-#circleButton {
-  width: fit-content;
+
+body{
+  background-color: #e6e3de !important;
+}
+
+#logo{
+  width: 100%;
+}
+.color{
+background-color: #e6e3de;
+color: black !important;
+}
+
+.navbtn1{
+  background: transparent;
+  border: none;
+}
+#memberslogo{
+  width: 60%;
+}
+
+.linkcolor{
+  color: black;
+}
+
+button:hover{
+  border-color: black;
+
+}
+.col:hover{
+  border-color: black;
+  
+}
+.loginbutton{
+  background-color: #f3f5e2;
+  border-radius: .25rem;
+  border-color: black;
+  margin-top: 2%;
 }

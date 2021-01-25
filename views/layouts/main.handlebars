@@ -15,18 +15,18 @@
 
 <body>
 	<div class="wrapper">
-		<nav class="navbar navbar-expand-sm bg-dark">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="/members">
-						Main
-					</a>
-					<a class="navbar-brand" href="/logout">
-						Logout
-					</a>
-				</div>
-			</div>
-		</nav>
+		<div class="container-fluid">
+        <div class="navbar-header row">
+          <a class="navbar-brand navbtn1 col-1 linkcolor" href="/members"><i class="fab fa-pagelines fa-1x"></i>
+          <br>
+            Main
+          </a>
+          <a class="navbar-brand navbtn1 col linkcolor" href="/logout"><i class="fab fa-envira"></i>
+          <br>
+            Logout
+          </a>
+        </div>
+      </div>
 		<div class="container">
 			{{{ body }}}
 			<script src="/js/login.js"></script>
