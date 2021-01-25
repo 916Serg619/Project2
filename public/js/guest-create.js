@@ -51,7 +51,6 @@ $(document).ready(() => {
   }
   $("#addNewGuest").on("click", event => {
     event.preventDefault();
-    console.log('123')
     const guestCreateData = {
       firstName: $("#firstNameInput")
         .val()
