@@ -1,6 +1,6 @@
-<body>
-  <main>
+<main>
 
+  <body>
     {{!-- Event Info Table --}}
     <div class="card">
       <div class="card-header">
@@ -8,47 +8,47 @@
       </div>
       <div style="overflow-x:auto;">
         <table class="table table-striped">
-            {{!-- Head --}}
-            <thead>
-              <tr>
-                <th>Couple</th>
-                <th>Venue</th>
-                <th>Event Date</th>
-                <th>Food Option One</th>
-                <th>Food Option Two</th>
-                <th></th>
-                <th></th>
-              </tr>
-            </thead>
-            {{!-- Body --}}
-            <tr class="eventInfoEdit">
-              <td class="event-data"><textarea readonly>{{event.couple}}</textarea></td>
-              <td class="event-data"><textarea readonly>{{event.venueName}}</textarea></td>
-              <td class="event-data"><textarea readonly>{{event.eventDate}}</textarea></td>
-              <td class="event-data"><textarea readonly>{{event.foodOptionOne}}</textarea></td>
-              <td class="event-data"><textarea readonly>{{event.foodOptionTwo}}</textarea></td>
+          {{!-- Head --}}
+          <thead>
+            <tr>
+              <th>Couple</th>
+              <th>Venue</th>
+              <th>Event Date</th>
+              <th>Food Option One</th>
+              <th>Food Option Two</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          {{!-- Body --}}
+          <tr class="eventInfoEdit">
+            <td class="event-data"><textarea readonly>{{event.couple}}</textarea></td>
+            <td class="event-data"><textarea readonly>{{event.venueName}}</textarea></td>
+            <td class="event-data"><textarea readonly>{{event.eventDate}}</textarea></td>
+            <td class="event-data"><textarea readonly>{{event.foodOptionOne}}</textarea></td>
+            <td class="event-data"><textarea readonly>{{event.foodOptionTwo}}</textarea></td>
             <td><button type="button" class="btn btn-success editEvent"><i class="far fa-edit fa-1x"></i>
-                  Edit</button>
-                <button type="button" class="btn btn-primary editEventSave"><i class="far fa-save fa-1x"></i>
-                  Save</button>
-                  <button type="button" class="btn btn-danger delete-event" data-Id="{{event.id}}"
-                  onclick="deleteEvent({{event.id}})" href="/members"><i class="far fa-trash-alt fa-1x"></i>
-                  Delete</button>
-                  </td>
-                {{!--
-              <td><a style='cursor:pointer;color:red' data-Id="{{event.id}}" class='delete-event'
-                  href="/members">Delete</a></td> --}}
+                Edit</button>
+              <button type="button" class="btn btn-primary editEventSave"><i class="far fa-save fa-1x"></i>
+                Save</button>
+              <button type="button" class="btn btn-danger delete-event" data-Id="{{event.id}}"
+                onclick="deleteEvent({{event.id}})" href="/members"><i class="far fa-trash-alt fa-1x"></i>
+                Delete</button>
+            </td>
+            {{!--
+            <td><a style='cursor:pointer;color:red' data-Id="{{event.id}}" class='delete-event'
+                href="/members">Delete</a></td> --}}
           </tr>
         </table>
       </div>
     </div>
 
-   
+
     {{!-- Vendor Info Card--}}
     <div class="card">
       <div class="card-header">
         <h3>Vendor Info</h3>
-       </div>
+      </div>
       {{!-- <div style="overflow-x:auto;"></div> --}}
       <div style="overflow-x:auto;">
         <table class="table table-striped"></table>
@@ -194,5 +194,5 @@
         })
       });
     </script>
-</body>
+  </body>
 </main>
