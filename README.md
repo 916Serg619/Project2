@@ -14,7 +14,7 @@ Planning a big event such as a wedding requires the coordination of vendors and 
 
 The app uses the following technologies:
 * [Handlebars.js](https://handlebarsjs.com/) is used as the template engine.
-* Backed by a [MySQL] (https://www.mysql.com/) database with a Sequelize ORM.
+* Backed by a [MySQL](https://www.mysql.com/) database with a Sequelize ORM.
 * Utilize both GET and POST routes for retrieving and adding new data.
 * [Passport.js](http://www.passportjs.org/) authentication middleware for Node.js. 
 * [GSAP](https://greensock.com/gsap/) for page animations. 
