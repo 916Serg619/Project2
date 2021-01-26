@@ -36,7 +36,8 @@ module.exports = function(app) {
       .then(dbEventInfo => {
         res.json({
           dbEventInfo: dbEventInfo,
-          vendorInfo: vendorInfo
+          vendorInfo: vendorInfo,
+          guest: guest
         });
       });
   });
@@ -100,5 +101,79 @@ module.exports = function(app) {
       .catch(err => {
         res.json(err);
       });
+  });
+  app.post("/api/guests", (req, res) => {
+    console.log("here" + req.body);
+    db.Guest.create({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      phone: req.body.phone,
+      // hard-coded event foreign key
+      eventInfoId: req.body.eventInfoId
+    })
+      .then(dbGuests => {
+        res.json(dbGuests);
+      })
+      .catch(err => {
+        res.json(err);
+      });
+  });
+
+  // Edit guest
+  app.put("/api/guests/:id", (req, res) => {
+    console.log(req.body);
+    db.Guest.update(
+      {
+        firstName: req.body.key0,
+        lastName: req.body.key1,
+        email: req.body.key2,
+        phone: req.body.key3
+      },
+      {
+        where: {
+          id: req.params.id
+        }
+      }
+    )
+      .then(dbGuests => {
+        res.json(dbGuests);
+      })
+      .catch(err => {
+        res.json(err);
+      });
+  });
+  app.delete("/api/guests/:id?", (req, res) => {
+    db.Guest.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(dbGuests => {
+      res.json({
+        dbGuests: dbGuests
+      });
+    });
+  });
+  app.get("/api/guests", (req, res) => {
+    db.Guest.findAll({}).then(dbGuests => {
+      res.json({
+        dbGuests: dbGuests
+        // eventInfoId: res.params.eventInfoId
+      });
+    });
+  });
+  app.get("/api/guests/:id", (req, res) => {
+    db.Guest.findOne({
+      where: [
+        {
+          id: req.params.id
+        }
+      ]
+    }).then(dbGuests => {
+      res.json({
+        dbGuests: dbGuests
+        // eventInfoId: res.params.eventInfoId
+      });
+    });
   });
 };

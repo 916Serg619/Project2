@@ -1,18 +1,7 @@
 <body>
   <main>
-      <nav class="navbar navbar-expand-sm bg-light">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/members">
-            Main
-          </a>
-          <a class="navbar-brand" href="/logout">
-            Logout
-          </a>
-        </div>
-      </div>
-    </nav>
-    {{!-- Guest Input Form --}}
+    <div class = "card">
+      {{!-- Guest Input Form --}}
     <form class="guest">
       {{!-- This value here is for the eventInfoId to create guest --}}
       <h3 id="eventInfoId">{{eventInfoId}}</h3>
@@ -38,10 +27,11 @@
           <input type="text" class="form-control" id="phoneInput" placeholder="Phone">
         </div>
     </form>
+    </div>
 
     {{!-- Submit button --}}
-    <button type="button" class="btn btn-success" id="submitGuestCreate">Submit</button>
-    <button type="button" class="btn btn-success" id="addNewGuest">New Guest</button>
+    <button type="button" class="btn navbtn1" id="submitGuestCreate">Submit<br><i class="fas fa-sign-in-alt"></i></button>
+    <button type="button" class="btn navbtn1" id="addNewGuest">New Guest<br><i class="fas fa-user-plus"></i></button>
 
     {{!-- Scripts --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

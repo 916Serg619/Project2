@@ -1,18 +1,10 @@
-<body id="swup" class="transition-fade">
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        {{!-- <ul>
-          <li><a href="#">Home</a></li>
-        </ul> --}}
-      </div>
-    </div>
-  </nav>
+<body id="swup" class="">
+    <img src="/assets/Ap4p.png" class="jumbotron" id="logo"></img>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h4>Sign Up</h4>
+  <div class="card">
+    <div class="card-header">
+        <h3>Sign Up</h3>
+      </div>
         <form class="signup">
           <div class="form-group">
             <label for="firstName">Name</label>
@@ -30,7 +22,7 @@
             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
             <span class="sr-only">Error:</span> <span class="msg"></span>
           </div>
-          <button type="submit" class="btn btn-success">Sign Up</button>
+          <button type="submit" class="loginbutton">Sign Up</button>
         </form>
         <br />
         <p>Or log in <a href="/login">here</a>.</p>
@@ -42,5 +34,13 @@
   <script type="text/javascript" src="js/signup.js"></script>
   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
   <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+
+   <script>
+        hidebar();
+        function hidebar() {
+            console.log('123')
+            $(".navbar").hide();
+        }
+    </script>
 
 </body>
