@@ -1,25 +1,44 @@
 <body>
 
 
-    <div class="col-lg 3 col-md-3 col-sm-12 col-xs-12"></div>
+
     <div class="card">
         <div class="card-header">
-            <h3>Sign Up</h3>
+            <h3>Log In</h3>
+            </div>
+            <form class="login">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control" id="email-input" placeholder="Email">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="password-input" placeholder="Password">
+                <button type="submit" class="btn btn-success">Login</button>
+            </form>
+            <br>
+            <p>Or sign up <a href="/signup">here</a>.</p>
         </div>
-        <form class="login">
-            <label for="exampleInputEmail1">Email</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
-            <button type="submit" class="btn btn-success">Login</button>
-        </form>
-        <br>
-        <p>Or sign up <a href="/signup">here</a>.</p>
     </div>
-    </div>
-    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <form class="login">
+                        <label for="exampleInputEmail1">Email</label>
+                        <input type="email" class="form-control" id="email-input" placeholder="Email">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="password-input" placeholder="Password">
+                        <button type="submit" class="loginbutton">Login</button>
+                    </form>
+                    <br>
+                    <p>Or sign up <a href="/signup">here</a>.</p>
+                </div>
+            </div>
+        </div>
+</div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/signup.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+  <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+
 
     <script>
         hidebar();
@@ -29,5 +48,5 @@
         }
     </script>
 
-    </main>
+
 </body>
