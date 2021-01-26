@@ -26,26 +26,25 @@
     /* padding: 0 15px; */
   }
 
-  #summary-card {
+  /* #summary-card {
     max-width: 900px;
-  }
+  } */
 
   #members-card {
     max-width: 700px;
   }
 
   .card {
-   max-width: 500px;
     padding: 10px;
     margin: 15px;
+    word-wrap: none;
   }
 
   .btn {
     margin: 5px;
   }
 
-  .summary-card {
-    width: 45rem;
+  #summary-card {
     padding: 10px;
     margin: 10px;
     }
@@ -118,4 +117,7 @@ button:hover{
   border-radius: .25rem;
   border-color: black;
   margin-top: 2%;
+}
+.buttonrow{
+  align-content: right;
 }
