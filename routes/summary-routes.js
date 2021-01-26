@@ -144,16 +144,18 @@ module.exports = function(app) {
       });
   });
   app.delete("/api/guests/:id?", (req, res) => {
-    console.log("************")
-    db.guests.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(dbGuests => {
-      res.json({
-        dbGuests: dbGuests
+    console.log("************");
+    db.guests
+      .destroy({
+        where: {
+          id: req.params.id
+        }
+      })
+      .then(dbGuests => {
+        res.json({
+          dbGuests: dbGuests
+        });
       });
-    });
   });
   app.get("/api/guests", (req, res) => {
     db.Guest.findAll({}).then(dbGuests => {

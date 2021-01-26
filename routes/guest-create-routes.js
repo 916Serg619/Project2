@@ -44,16 +44,14 @@ module.exports = function(app) {
       });
   });
   app.delete("/api/guests/:id?", (req, res) => {
-    db.Guest
-      .destroy({
-        where: {
-          id: req.params.id
-        }
-      })
-      .then(dbEventInfo => {
-        res.json({
-          dbEventInfo: dbEventInfo
-        });
+    db.Guest.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(dbEventInfo => {
+      res.json({
+        dbEventInfo: dbEventInfo
       });
+    });
   });
 };
