@@ -24,9 +24,13 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
   eventInfo.associate = function(models) {
-    eventInfo.hasMany(models.vendorInfos, models.guests, {
+    eventInfo.hasMany(models.vendorInfos, {
+      onDelete: "cascade"
+    });
+    eventInfo.hasMany(models.Guest, {
       onDelete: "cascade"
     });
   };
   return eventInfo;
 };
+// Guest vendorInfos
