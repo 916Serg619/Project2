@@ -103,7 +103,7 @@ module.exports = function(app) {
       });
   });
   app.post("/api/guests", (req, res) => {
-    console.log("here" + req.body);
+    // console.log("here" + req.body);
     db.Guest.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
@@ -122,7 +122,7 @@ module.exports = function(app) {
 
   // Edit guest
   app.put("/api/guests/:id", (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     db.Guest.update(
       {
         firstName: req.body.key0,
@@ -144,15 +144,18 @@ module.exports = function(app) {
       });
   });
   app.delete("/api/guests/:id?", (req, res) => {
-    db.Guest.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(dbGuests => {
-      res.json({
-        dbGuests: dbGuests
+    console.log("************");
+    db.guests
+      .destroy({
+        where: {
+          id: req.params.id
+        }
+      })
+      .then(dbGuests => {
+        res.json({
+          dbGuests: dbGuests
+        });
       });
-    });
   });
   app.get("/api/guests", (req, res) => {
     db.Guest.findAll({}).then(dbGuests => {

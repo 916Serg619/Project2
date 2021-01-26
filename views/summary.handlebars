@@ -28,8 +28,7 @@
               class="far fa-save fa-1x"></i><br>
             Save</button>
           <a type="button" class="btn navbtn1 delete-event col-2 text-nowrap" onclick="deleteEvent({{event.id}})"
-            data-id="{{event.id}}"><i class="far fa-trash-alt fa-1x"></i><br>
-            {{event.id}} Delete</a>
+            data-id="{{event.id}}"><i class="far fa-trash-alt fa-1x"></i><br>Delete</a>
   </div>
   </td>
   </tr>
@@ -114,8 +113,7 @@
             Save</button>
         <td>
         <td><button type="button" class="navbtn1 delete-guest" data-Id="{{dataValues.id}}"
-            onclick="deleteGuest({{dataValues.id}})"><i class="far fa-trash-alt fa-1x"></i>{{dataValues.id}}
-            Delete</button>
+            onclick="deleteGuest({{dataValues.id}})"><i class="far fa-trash-alt fa-1x"></i>Delete</button>
         </td>
       </tr>
       {{/each}}
