@@ -16,7 +16,7 @@ The app uses the following technologies:
 * [Handlebars.js](https://handlebarsjs.com/) is used as the template engine.
 * Backed by a [MySQL] (https://www.mysql.com/) database with a Sequelize ORM.
 * Utilize both GET and POST routes for retrieving and adding new data.
-* [Passportjs](http://www.passportjs.org/) authentication middleware for Node.js. 
+* [Passport.js](http://www.passportjs.org/) authentication middleware for Node.js. 
 * [GSAP](https://greensock.com/gsap/) for page animations. 
 
 
@@ -29,7 +29,7 @@ See images below for screenshots of the app, and [here](https://project2-275.her
 
 ## License
 MIT License
-Copyright (c) 2020 Michael Bubel, Erika Cueva, Anastasia Ivanshchenko, and Amanda LeMoine
+Copyright (c) 2021 Shane Webber, Brian Parker, Erika Cueva, and Sergio Aguirre.
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
