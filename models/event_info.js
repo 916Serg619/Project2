@@ -27,6 +27,9 @@ module.exports = function(sequelize, DataTypes) {
     eventInfo.hasMany(models.vendorInfos, {
       onDelete: "cascade"
     });
+    eventInfo.hasMany(models.Guest, {
+      onDelete: "cascade"
+    });
   };
   return eventInfo;
 };

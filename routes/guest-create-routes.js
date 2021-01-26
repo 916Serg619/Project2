@@ -3,7 +3,7 @@ const db = require("../models");
 module.exports = function(app) {
   // Posts the data from the page to the db
   app.post("/api/guests", (req, res) => {
-    console.log("here" + req.body);
+    // console.log("here" + req.body);
     db.Guest.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
@@ -42,5 +42,16 @@ module.exports = function(app) {
       .catch(err => {
         res.json(err);
       });
+  });
+  app.delete("/api/guests/:id?", (req, res) => {
+    db.Guest.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(dbEventInfo => {
+      res.json({
+        dbEventInfo: dbEventInfo
+      });
+    });
   });
 };
