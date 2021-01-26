@@ -1,37 +1,45 @@
 <body>
   <main>
-    <div class = "card">
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+      <div class="card-header">
+        <h3>Add a New Guest</h3>
+      </div>
       {{!-- Guest Input Form --}}
-    <form class="guest">
-      {{!-- This value here is for the eventInfoId to create guest --}}
-      <h3 id="eventInfoId">{{eventInfoId}}</h3>
-      <div class="form-group">
-        {{!-- First Name --}}
+      <form class="guest">
+        {{!-- This value here is for the eventInfoId to create guest --}}
+        <h3 id="eventInfoId">{{eventInfoId}}</h3>
         <div class="form-group">
-          <label for="firstName">Name</label>
-          <input type="text" class="form-control" id="firstNameInput" placeholder="First Name">
-        </div>
-        {{!-- Last Name --}}
-        <div class="form-group">
-          <label for="lastName">Name</label>
-          <input type="text" class="form-control" id="lastNameInput" placeholder="Last Name">
-        </div>
-        {{!-- Email --}}
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="text" class="form-control" id="emailInput" placeholder="Email">
-        </div>
-        {{!-- Phone --}}
-        <div class="form-group">
-          <label for="phone">Phone</label>
-          <input type="text" class="form-control" id="phoneInput" placeholder="Phone">
-        </div>
-    </form>
+          {{!-- First Name --}}
+          <div class="form-group">
+            <label for="firstName">Name</label>
+            <input type="text" class="form-control" id="firstNameInput" placeholder="First Name">
+          </div>
+          {{!-- Last Name --}}
+          <div class="form-group">
+            <label for="lastName">Name</label>
+            <input type="text" class="form-control" id="lastNameInput" placeholder="Last Name">
+          </div>
+          {{!-- Email --}}
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="emailInput" placeholder="Email">
+          </div>
+          {{!-- Phone --}}
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control" id="phoneInput" placeholder="Phone">
+          </div>
+          {{!-- Submit button --}}
+    <button type="button" class="btn navbtn1" id="submitGuestCreate">Submit<br><i class="fas fa-sign-in-alt"></i></button>
+    <button type="button" class="btn navbtn1" id="addNewGuest">New Guest<br><i class="fas fa-user-plus"></i></button>
+      </form>
+    </div>
+    </div>
     </div>
 
     {{!-- Submit button --}}
-    <button type="button" class="btn navbtn1" id="submitGuestCreate">Submit<br><i class="fas fa-sign-in-alt"></i></button>
-    <button type="button" class="btn navbtn1" id="addNewGuest">New Guest<br><i class="fas fa-user-plus"></i></button>
+    {{!-- <button type="button" class="btn navbtn1" id="submitGuestCreate">Submit</button>
+    <button type="button" class="btn navbtn1" id="addNewGuest">New Guest</button> --}}
 
     {{!-- Scripts --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
