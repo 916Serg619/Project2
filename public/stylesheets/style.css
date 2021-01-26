@@ -38,6 +38,7 @@
     padding: 10px;
     margin: 15px;
     word-wrap: none;
+    font-family: "Raleway", sans-serif;
   }
 
   .btn {
@@ -77,6 +78,7 @@ footer {
   bottom: 0;
   width: 100%;  
   text-align: center;
+  font-family: "Raleway", sans-serif;
 }
 
 
