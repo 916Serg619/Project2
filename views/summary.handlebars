@@ -28,10 +28,10 @@
               class="far fa-save fa-1x"></i><br>
             Save</button>
           <a type="button" class="btn navbtn1 delete-event col-2 text-nowrap" onclick="deleteEvent({{event.id}})"
-            data-id="{{event.id}}" href="/members"><i class="far fa-trash-alt fa-1x"></i><br>Delete</a>
-  </div>
-  </td>
-  </tr>
+            data-id="{{event.id}}"><i class="far fa-trash-alt fa-1x"></i><br>Delete</a>
+          </div>
+        </td>
+      </tr>
   </table>
 </div>
 </div>
@@ -64,13 +64,14 @@
           <td scope="col" id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.email}}</textarea></td>
           <td scope="col" id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.phone}}</textarea></td>
           <td scope="col">
-            <div class="row"><button type="button" class="navbtn1 btn editVendor text-nowrap col-4"
+            <button type="button" class="navbtn1 btn editVendor text-nowrap col-4"
                 id="{{dataValues.id}}"><i class="far fa-edit fa-1x"></i> Edit</button>
               <button type="button" class="navbtn1 btn editVendorSave text-nowrap col-4" id="{{dataValues.id}}"><i
                   class="far fa-save fa-1x"></i> Save</button>
+          </td>
+          <td>
               <button type="button" class="navbtn1 btn delete-vendor text-nowrap col-4" data-Id="{{dataValues.id}}"
                 onclick="deleteVendor({{dataValues.id}})"><i class="far fa-trash-alt fa-1x"></i> Delete</button>
-            </div>
           </td>
         </tr>
         {{/each}}
@@ -111,17 +112,16 @@
             Edit</button>
           <button type="button" class="navbtn1 editGuestSave" id="{{dataValues.id}}"><i class="far fa-save fa-1x"></i>
             Save</button>
-        <td>
-        <td><button type="button" class="navbtn1 delete-guest" data-Id="{{dataValues.id}}"
+        </td>
+        <td><button type="button" class="navbtn1 delete-guest" id="{{dataValues.id}}"
             onclick="deleteGuest({{dataValues.id}})"><i class="far fa-trash-alt fa-1x"></i>Delete</button>
         </td>
       </tr>
       {{/each}}
     </table>
-    <button type="button" class="btn navbtn1 col-2 loginbutton" id="circleButton" href="/guests/{{event.id}}">Add Guest<br><i class="fas fa-user-plus"></i> 
-            </button>
-    {{!-- <button type="button" class="btn navbtn1" onclick="window.location = '/guests/{{dataValues.id}}';"><i class="fas fa-user-plus"></i> 
-            <br>Add Guest</button> --}}
+    <a type="button" class="btn navbtn1 col-2 loginbutton" id="circleButton" href="/guests/{{event.id}}">Add Guest<br><i class="fas fa-user-plus"></i> 
+            </a>
+
   </div>
 </div>
 
@@ -136,6 +136,7 @@
   // EDIT EVENT
   // When edit button toggle textarea readonly
   $('td').on('click', '.editEvent', function (event) {
+    console.log("this is a test")
     event.preventDefault();
     // Target all text areas and toggle readonly
     $("td.event-data").children("textarea").each(function () {
@@ -153,6 +154,7 @@
       method: "DELETE",
       url: "/api/eventInfos/" + data
     });
+  window.location.href = "/members";
   });
 
   function deleteEvent(newId) {
@@ -164,6 +166,7 @@
       method: "DELETE",
       url: "/api/eventInfos/" + newId
     }
+   // window.location.href = "/members";
     )
   }
 
@@ -193,16 +196,16 @@
   });
 
   // DELETE EVENT
-  function deleteEvent(id) {
-    console.log("this event was deleted");
-    console.log(id);
-    $.ajax({
-      method: "DELETE",
-      url: "/api/eventInfos/" + id
-    }
-    )
-    window.location.href = "/members";
-  }
+  //function deleteEvent(id) {
+    //console.log("this event was deleted");
+    //console.log(id);
+    //$.ajax({
+      //method: "DELETE",
+      //url: "/api/eventInfos/" + id
+    //}
+    //)
+    
+  //}
 
   // EDIT VENDOR
   // When edit button toggle textarea readonly

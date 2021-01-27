@@ -82,4 +82,5 @@ $(document).ready(() => {
     .from(".btn", { y: -50, opacity: 0 })
     .from(".newSign", { y: -50, opacity: 0 })
     .from(".navbar", { x: -100, stagger: 0.2, opacity: 0 });
+  gsap.from(".palmtrees", { x: -100, stagger: 2, opacity: 0 });
 });

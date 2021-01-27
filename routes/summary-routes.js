@@ -36,7 +36,7 @@ module.exports = function(app) {
       .then(dbEventInfo => {
         res.json({
           dbEventInfo: dbEventInfo,
-          vendorInfo: vendorInfo,
+          vendorInfos: vendorInfos,
           guest: guest
         });
       });
