@@ -40,6 +40,15 @@ The app uses the following technologies:
 See images below for screenshots of the app, and [here](https://project2-275.herokuapp.com/) is a link to use the app.
 
 # Images
+ ### User sign up page
+ <img src="https://github.com/916Serg619/Project2/blob/c4580ee5770d4ee21fab57fcbcd6776c8614803c/public/assets/Screen%20Shot%202021-01-27%20at%2010.18.59%20AM.png" width="750" height="500">
+ 
+  ### Home Page
+ <img src="https://github.com/916Serg619/Project2/blob/c4580ee5770d4ee21fab57fcbcd6776c8614803c/public/assets/Screen%20Shot%202021-01-27%20at%2010.23.14%20AM.png" width="750" height="500">
+ 
+  ### Wedding Summary Page
+ <img src="https://github.com/916Serg619/Project2/blob/c4580ee5770d4ee21fab57fcbcd6776c8614803c/public/assets/Screen%20Shot%202021-01-27%20at%2010.25.40%20AM.png" width="750" height="800">
+ 
  
 # License
 This repository is released under the [MIT License](https://opensource.org/licenses/MIT)
