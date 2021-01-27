@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
 html, body {
   width: 100%;
   height:100%;
@@ -25,14 +26,14 @@ body {
     }
 }
 
-  form.signup,
-  form.login {
+form.signup,
+form.login {
     margin-top: 20px;
-  }
+}
 
-  main,
-  header,
-  section {
+main,
+header,
+section {
     margin: 10;
     /* margin-bottom:20px; */
     padding: 10px;
@@ -43,61 +44,63 @@ body {
     text-decoration: none;
     font-family: "Raleway", sans-serif;
     /* position: relative; */
-  }
+}
 
-  .container {
+.container {
     width: auto;
     /* padding: 0 15px; */
-  }
+}
 
-  /* #summary-card {
+
+/* #summary-card {
     max-width: 900px;
   } */
 
-  #members-card {
+#members-card {
     max-width: 700px;
-  }
+}
+
 
   .card {
     font-family: "Raleway", sans-serif;
     padding: 10px;
     margin: 15px;
     word-wrap: none;
-  }
+}
 
-  .btn {
+.btn {
     margin: 5px;
-  }
+}
 
-  #summary-card {
+#summary-card {
     padding: 10px;
     margin: 10px;
-    }
+}
 
-  #vendor-section {
+#vendor-section {
     margin-bottom: 10px;
-  }
+}
 
-  p {
+p {
     margin-bottom: 15px;
     font-size: 14px;
     line-height: 20px;
     color: #a9a9a9;
-  }
-
+}
 
 textarea {
-  border: none;
-  background-color: transparent;
-  outline: none;
-  resize: none;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    resize: none;
 }
 
 #eventInfoId {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 footer {
+
   z-index: -3;  
   position: fixed;
   bottom: 0;
@@ -112,34 +115,42 @@ footer {
 .color{
 background-color: #e6e3de;
 color: black !important;
-}
-
-.navbtn1{
-  background: transparent;
-  border: none;
-}
-#memberslogo{
-  width: 60%;
-}
-
-.linkcolor{
-  color: black;
-}
-
-button:hover{
-  border-color: black;
 
 }
-.col:hover{
-  border-color: black;
-  
+
+.color {
+    background-color: #e6e3de;
+    color: black !important;
 }
-.loginbutton{
-  background-color: #f3f5e2;
-  border-radius: .25rem;
-  border-color: black;
-  margin-top: 2%;
+
+.navbtn1 {
+    background: transparent;
+    border: none;
 }
-.buttonrow{
-  align-content: right;
+
+#memberslogo {
+    width: 60%;
+}
+
+.linkcolor {
+    color: black;
+}
+
+button:hover {
+    border-color: black;
+}
+
+.col:hover {
+    border-color: black;
+}
+
+.loginbutton {
+    background-color: #f3f5e2;
+    border-radius: .25rem;
+    border-color: black;
+    margin-top: 2%;
+}
+
+.buttonrow {
+    align-content: right;
 }
