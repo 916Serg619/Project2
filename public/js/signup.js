@@ -40,7 +40,7 @@ $(document).ready(() => {
   }
 
   function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
+    $("#alert .msg").text("You already have an account");
     $("#alert").fadeIn(500);
   }
 });

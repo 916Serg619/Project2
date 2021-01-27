@@ -20,6 +20,7 @@
         <td class="event-data col-2"><textarea readonly>{{event.couple}}</textarea></td>
         <td class="event-data col-2"><textarea readonly>{{event.venueName}}</textarea></td>
         <td class="event-data col-2"><textarea readonly>{{event.eventDate}}</textarea></td>
+        <td><textarea>                              </textarea></td>
         <td>
           <div class="row"></div><button type="button" class="btn navbtn1 editEvent col-2 text-nowrap"><i
               class="far fa-edit fa-1x"></i><br>
@@ -29,9 +30,9 @@
             Save</button>
           <a type="button" class="btn navbtn1 delete-event col-2 text-nowrap" onclick="deleteEvent({{event.id}})"
             data-id="{{event.id}}"><i class="far fa-trash-alt fa-1x"></i><br>Delete</a>
-  </div>
-  </td>
-  </tr>
+          </div>
+        </td>
+      </tr>
   </table>
 </div>
 </div>
@@ -52,6 +53,8 @@
             <th>Service</th>
             <th>Email</th>
             <th>Phone</th>
+            <th></th>
+            <th></th>
           </tr>
         </thead>
         {{!-- Row populate --}}
@@ -64,20 +67,21 @@
           <td scope="col" id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.email}}</textarea></td>
           <td scope="col" id="vendor-data{{dataValues.id}}"><textarea readonly>{{dataValues.phone}}</textarea></td>
           <td scope="col">
-            <div class="row"><button type="button" class="navbtn1 btn editVendor text-nowrap col-4"
+            <button type="button" class="navbtn1 btn editVendor text-nowrap col-4"
                 id="{{dataValues.id}}"><i class="far fa-edit fa-1x"></i> Edit</button>
               <button type="button" class="navbtn1 btn editVendorSave text-nowrap col-4" id="{{dataValues.id}}"><i
                   class="far fa-save fa-1x"></i> Save</button>
+          </td>
+          <td>
               <button type="button" class="navbtn1 btn delete-vendor text-nowrap col-4" data-Id="{{dataValues.id}}"
                 onclick="deleteVendor({{dataValues.id}})"><i class="far fa-trash-alt fa-1x"></i> Delete</button>
-            </div>
           </td>
         </tr>
         {{/each}}
     </table>
   </div>
 
-    <a type="button" class="btn navbtn1 col-1" id="circleButton" href="/vendorInfos/{{event.id}}">Add Vendor<br><i class="fas fa-user-plus"></i></a>
+    <a type="button" class="btn navbtn1 col-2 loginbutton" id="circleButton" href="/vendorInfos/{{event.id}}">Add Vendor<br><i class="fas fa-user-plus"></i></a>
 {{!-- <button type="button" class="btn navbtn1 col-1" id="addNewVendor">New Vendor<br><i class="fas fa-user-plus"></i></button> --}}
 </div>
 
@@ -98,6 +102,8 @@
           <th>Last Name</th>
           <th>Email</th>
           <th>Phone</th>
+          <th></th>
+          <th></th>
         </tr>
       </thead>
       {{!-- Row populate --}}
@@ -111,17 +117,16 @@
             Edit</button>
           <button type="button" class="navbtn1 editGuestSave" id="{{dataValues.id}}"><i class="far fa-save fa-1x"></i>
             Save</button>
-        <td>
-        <td><button type="button" class="navbtn1 delete-guest" data-Id="{{dataValues.id}}"
+        
+        <button type="button" class="navbtn1 delete-guest" id="{{dataValues.id}}"
             onclick="deleteGuest({{dataValues.id}})"><i class="far fa-trash-alt fa-1x"></i>Delete</button>
         </td>
       </tr>
       {{/each}}
     </table>
-    <button type="button" class="btn navbtn1 col-1" id="circleButton" href="/guests/{{event.id}}">Add Guest<i class="fas fa-user-plus"></i> 
-            <br></button>
-    {{!-- <button type="button" class="btn navbtn1" onclick="window.location = '/guests/{{dataValues.id}}';"><i class="fas fa-user-plus"></i> 
-            <br>Add Guest</button> --}}
+    <a type="button" class="btn navbtn1 col-2 loginbutton" id="circleButton" href="/guests/{{event.id}}">Add Guest<br><i class="fas fa-user-plus"></i> 
+            </a>
+
   </div>
 </div>
 
@@ -136,6 +141,7 @@
   // EDIT EVENT
   // When edit button toggle textarea readonly
   $('td').on('click', '.editEvent', function (event) {
+    console.log("this is a test")
     event.preventDefault();
     // Target all text areas and toggle readonly
     $("td.event-data").children("textarea").each(function () {
@@ -153,6 +159,7 @@
       method: "DELETE",
       url: "/api/eventInfos/" + data
     });
+  window.location.href = "/members";
   });
 
   function deleteEvent(newId) {
@@ -164,6 +171,7 @@
       method: "DELETE",
       url: "/api/eventInfos/" + newId
     }
+   // window.location.href = "/members";
     )
   }
 
@@ -193,16 +201,16 @@
   });
 
   // DELETE EVENT
-  function deleteEvent(id) {
-    console.log("this event was deleted");
-    console.log(id);
-    $.ajax({
-      method: "DELETE",
-      url: "/api/eventInfos/" + id
-    }
-    )
-    window.location.href = "/members";
-  }
+  //function deleteEvent(id) {
+    //console.log("this event was deleted");
+    //console.log(id);
+    //$.ajax({
+      //method: "DELETE",
+      //url: "/api/eventInfos/" + id
+    //}
+    //)
+    
+  //}
 
   // EDIT VENDOR
   // When edit button toggle textarea readonly

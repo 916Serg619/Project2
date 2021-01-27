@@ -24,6 +24,7 @@ $(document).ready(() => {
     enterData(guestCreateData);
     const url = window.location.href;
     const path = url.substr(url.length - 1);
+    console.log(guestCreateData.eventInfoId);
     window.location.href = `/summary/${path}`;
   });
 

@@ -1,8 +1,8 @@
 {
     "development": {
         "username": "root",
-        "password": "rootroot",
-        "database": "wedding_planner_db",
+        "password": "Shalyn112!",
+         "database": "wedding_planner_db",
         "host": "127.0.0.1",
         "dialect": "mysql"
     },
