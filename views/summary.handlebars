@@ -20,6 +20,7 @@
         <td class="event-data col-2"><textarea readonly>{{event.couple}}</textarea></td>
         <td class="event-data col-2"><textarea readonly>{{event.venueName}}</textarea></td>
         <td class="event-data col-2"><textarea readonly>{{event.eventDate}}</textarea></td>
+        <td><textarea>                              </textarea></td>
         <td>
           <div class="row"></div><button type="button" class="btn navbtn1 editEvent col-2 text-nowrap"><i
               class="far fa-edit fa-1x"></i><br>
@@ -52,6 +53,8 @@
             <th>Service</th>
             <th>Email</th>
             <th>Phone</th>
+            <th></th>
+            <th></th>
           </tr>
         </thead>
         {{!-- Row populate --}}
@@ -99,6 +102,8 @@
           <th>Last Name</th>
           <th>Email</th>
           <th>Phone</th>
+          <th></th>
+          <th></th>
         </tr>
       </thead>
       {{!-- Row populate --}}
@@ -112,8 +117,8 @@
             Edit</button>
           <button type="button" class="navbtn1 editGuestSave" id="{{dataValues.id}}"><i class="far fa-save fa-1x"></i>
             Save</button>
-        </td>
-        <td><button type="button" class="navbtn1 delete-guest" id="{{dataValues.id}}"
+        
+        <button type="button" class="navbtn1 delete-guest" id="{{dataValues.id}}"
             onclick="deleteGuest({{dataValues.id}})"><i class="far fa-trash-alt fa-1x"></i>Delete</button>
         </td>
       </tr>
