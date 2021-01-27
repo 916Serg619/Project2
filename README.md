@@ -41,13 +41,13 @@ See images below for screenshots of the app, and [here](https://project2-275.her
 
 # Images
  ### User sign up page
- <img src="https://github.com/916Serg619/Project2/blob/c4580ee5770d4ee21fab57fcbcd6776c8614803c/public/assets/Screen%20Shot%202021-01-27%20at%2010.18.59%20AM.png" width="750" height="500">
+ <img src="https://github.com/916Serg619/Project2/blob/c4580ee5770d4ee21fab57fcbcd6776c8614803c/public/assets/Screen%20Shot%202021-01-27%20at%2010.18.59%20AM.png" width="850" height="600">
  
   ### Home Page
- <img src="https://github.com/916Serg619/Project2/blob/c4580ee5770d4ee21fab57fcbcd6776c8614803c/public/assets/Screen%20Shot%202021-01-27%20at%2010.23.14%20AM.png" width="750" height="500">
+ <img src="https://github.com/916Serg619/Project2/blob/c4580ee5770d4ee21fab57fcbcd6776c8614803c/public/assets/Screen%20Shot%202021-01-27%20at%2010.23.14%20AM.png" width="850" height="700">
  
   ### Wedding Summary Page
- <img src="https://github.com/916Serg619/Project2/blob/c4580ee5770d4ee21fab57fcbcd6776c8614803c/public/assets/Screen%20Shot%202021-01-27%20at%2010.25.40%20AM.png" width="750" height="800">
+ <img src="https://github.com/916Serg619/Project2/blob/c4580ee5770d4ee21fab57fcbcd6776c8614803c/public/assets/Screen%20Shot%202021-01-27%20at%2010.25.40%20AM.png" width="870" height="900">
  
  
 # License
