@@ -20,7 +20,7 @@ Wedding planners rejoice! This app offers users the ability to store important d
 * [License](#License)
 
 # Link
-https://project2-275.herokuapp.com/
+https://salty-earth-89090.herokuapp.com/
 
 # Motivation
 
